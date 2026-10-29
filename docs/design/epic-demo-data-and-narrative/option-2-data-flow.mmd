@@ -1,0 +1,9 @@
+flowchart TD
+  seed[Seed value] --> gen[Seeded generator script]
+  gen --> json[(data/cyber fixtures)]
+  json --> checks[Schema, reconcile, name scan]
+  json --> build[View model builder]
+  build --> models[(Derived models and index)]
+  models --> rsc[Server rendered cyber screens]
+  rsc --> ui[Role scoped UI with banner]
+  ui --> pdf[Export PDF with banner]
