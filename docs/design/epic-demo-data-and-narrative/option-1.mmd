@@ -1,0 +1,15 @@
+C4Container
+  title Option A — fixtures bundled in the existing app
+  Person(user, "Demo user", "Three demo roles")
+  System_Boundary(poc, "Innovation Pathway POC") {
+    Container(shell, "App shell", "Next.js", "Header, sidebar, banner")
+    Container(cyber, "Cyber route group", "React", "Portfolio and member screens")
+    Container(data, "Fixture access module", "TypeScript", "Imports and selectors")
+    ContainerDb(files, "Fixture JSON files", "Static files", "Eleven entity files")
+    Container(gen, "Seeded generator script", "Node", "Writes fixtures once")
+  }
+  Rel(user, shell, "Uses demo roles")
+  Rel(shell, cyber, "Mounts cyber screens")
+  Rel(cyber, data, "Requests scoped data")
+  Rel(data, files, "Imports static JSON")
+  Rel(gen, files, "Generates committed fixtures")
