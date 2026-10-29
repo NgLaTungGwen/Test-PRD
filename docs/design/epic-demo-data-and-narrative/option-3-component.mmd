@@ -1,0 +1,15 @@
+C4Component
+  title Option C — cyber mock API components
+  Container(spa, "Cyber client screens", "React", "Query cache")
+  Component(route, "Endpoint router", "Route handlers", "Entity read routes")
+  Component(guard, "Role scope guard", "TypeScript", "Role and facility filter")
+  Component(query, "Query and filter layer", "TypeScript", "Sort, page, search")
+  Component(repo, "Fixture repository", "TypeScript", "Loads entity files")
+  Component(latency, "Demo latency shim", "TypeScript", "Simulates response delay")
+  Component(exporter, "Export composer", "TypeScript", "Banner stamped report")
+  Rel(spa, route, "Calls scoped endpoints")
+  Rel(route, guard, "Applies role scope")
+  Rel(guard, query, "Filters entity sets")
+  Rel(query, repo, "Reads fixture entities")
+  Rel(route, latency, "Delays demo responses")
+  Rel(route, exporter, "Builds export payload")
