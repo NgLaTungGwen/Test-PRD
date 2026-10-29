@@ -1,0 +1,11 @@
+C4Context
+  title Cyber module demo — system context
+  Person(lead, "HealthPRO Program Lead", "Runs the member programme")
+  Person(exec, "Member Executive", "Facility leadership")
+  Person(it, "Member IT Lead", "Facility IT operations")
+  System(poc, "Innovation Pathway POC", "Demo web app hosting the cyber module")
+  System_Ext(print, "Browser print engine", "Produces PDF exports")
+  Rel(lead, poc, "Reviews portfolio posture")
+  Rel(exec, poc, "Reviews facility posture")
+  Rel(it, poc, "Works findings and tickets")
+  Rel(poc, print, "Renders report PDF")
