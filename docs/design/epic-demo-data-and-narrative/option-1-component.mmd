@@ -1,0 +1,15 @@
+C4Component
+  title Option A — cyber route group components
+  Container(shell, "App shell", "Next.js", "Header, sidebar, banner")
+  Component(scope, "Role and facility scope", "React context", "Active role and facility")
+  Component(nav, "Cyber sidebar section", "React", "Role scoped links")
+  Component(screens, "Cyber screens", "React", "Portfolio, member, reports")
+  Component(search, "Search index provider", "TypeScript", "Feeds command palette")
+  Component(tokens, "Grade and priority badges", "CSS tokens", "A-F and P1-P4")
+  Component(printcss, "Print layout rules", "CSS", "Banner in export")
+  Rel(shell, nav, "Renders sidebar section")
+  Rel(nav, screens, "Routes to screens")
+  Rel(scope, screens, "Scopes member data")
+  Rel(screens, tokens, "Renders grades priorities")
+  Rel(screens, search, "Registers searchable records")
+  Rel(screens, printcss, "Applies print rules")
