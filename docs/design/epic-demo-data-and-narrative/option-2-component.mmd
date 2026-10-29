@@ -1,0 +1,15 @@
+C4Component
+  title Option B — view model builder components
+  ContainerDb(files, "Fixture JSON files", "Static files", "Eleven entity files")
+  Component(load, "Fixture loader", "TypeScript", "Parses entity files")
+  Component(recon, "Reconciliation checker", "TypeScript", "Funnel, tickets, SLA")
+  Component(agg, "Metric aggregator", "TypeScript", "Grades, MTTA, breaches")
+  Component(scope, "Scope projector", "TypeScript", "Per facility slices")
+  Component(idx, "Search index builder", "TypeScript", "Members, incidents, findings")
+  Component(emit, "Model writer", "TypeScript", "Emits static JSON")
+  Rel(files, load, "Provides entity files")
+  Rel(load, recon, "Feeds loaded entities")
+  Rel(recon, agg, "Passes verified data")
+  Rel(agg, scope, "Supplies metric rollups")
+  Rel(scope, emit, "Writes scoped models")
+  Rel(idx, emit, "Writes search index")
