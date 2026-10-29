@@ -1,0 +1,9 @@
+flowchart LR
+  seed[Seed value] --> gen[Seeded generator script]
+  gen --> json[(data/cyber JSON fixtures)]
+  json --> bundle[Module imports at build]
+  bundle --> sel[Selectors and derivations]
+  sel --> ctx[Role and facility context]
+  ctx --> ui[Cyber screens with banner]
+  ui --> pal[Command palette index]
+  ui --> pdf[Browser print to PDF]
