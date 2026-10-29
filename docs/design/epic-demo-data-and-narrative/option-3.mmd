@@ -1,0 +1,17 @@
+C4Container
+  title Option C — mock API behind a swappable contract
+  Person(user, "Demo user", "Three demo roles")
+  System_Boundary(poc, "Innovation Pathway POC") {
+    Container(shell, "App shell", "Next.js", "Header, sidebar, banner")
+    Container(spa, "Cyber client screens", "React", "Query cache and scope")
+    Container(api, "Cyber mock API", "Route handlers", "Scoped read endpoints")
+    Container(repo, "Fixture repository", "TypeScript", "In-memory entity store")
+    ContainerDb(files, "Fixture JSON files", "Static files", "Eleven entity files")
+    Container(pdf, "Report export endpoint", "Route handler", "Banner stamped PDF")
+  }
+  Rel(user, shell, "Uses demo roles")
+  Rel(shell, spa, "Mounts cyber screens")
+  Rel(spa, api, "Fetches scoped JSON")
+  Rel(api, repo, "Queries entity store")
+  Rel(repo, files, "Loads seeded fixtures")
+  Rel(spa, pdf, "Requests report export")
