@@ -1,0 +1,9 @@
+flowchart LR
+  gen[Seeded generator script] --> json[(data/cyber fixtures)]
+  json --> repo[In-memory repository]
+  repo --> api[Scoped API endpoints]
+  api --> cache[Client query cache]
+  cache --> ui[Cyber screens with banner]
+  ui --> palette[Command palette search]
+  api --> exporter[Export composer]
+  exporter --> pdf[PDF with banner]
