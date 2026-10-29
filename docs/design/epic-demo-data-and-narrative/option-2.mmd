@@ -1,0 +1,17 @@
+C4Container
+  title Option B — build-time view models and checks
+  Person(user, "Demo user", "Three demo roles")
+  System_Boundary(poc, "Innovation Pathway POC") {
+    Container(shell, "App shell", "Next.js", "Header, sidebar, banner")
+    Container(screens, "Cyber server screens", "React Server", "Reads view models")
+    Container(builder, "View model builder", "Node", "Aggregates at build")
+    ContainerDb(files, "Fixture JSON files", "Static files", "Eleven entity files")
+    ContainerDb(models, "Derived view models", "Static JSON", "Per role and facility")
+    Container(checks, "Fixture check suite", "Node tests", "Schema, reconcile, names")
+  }
+  Rel(user, shell, "Uses demo roles")
+  Rel(shell, screens, "Mounts cyber screens")
+  Rel(screens, models, "Reads prebuilt models")
+  Rel(builder, files, "Reads seeded fixtures")
+  Rel(builder, models, "Writes derived models")
+  Rel(checks, files, "Validates fixture content")
