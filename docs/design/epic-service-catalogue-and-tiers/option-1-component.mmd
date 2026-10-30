@@ -1,0 +1,18 @@
+C4Component
+  title Component view — catalogue web app
+  Person(prospect, "Prospective client", "Compares tiers")
+  Container_Boundary(spa, "Catalogue web app") {
+    Component(page, "Tier catalogue page", "UI route", "Lays out the three tiers")
+    Component(loader, "Tier fixture loader", "Module", "Parses and validates fixture")
+    Component(incl, "Inclusions table", "UI component", "MDR, IR hours, cadences")
+    Component(sla, "SLA target table", "UI component", "Ack and notify per priority")
+    Component(figure, "Illustrative figure", "UI component", "Labels every tier figure")
+  }
+  ComponentDb_Ext(fixture, "Tiers fixture", "JSON", "Tier data")
+  Rel(prospect, page, "Opens tier page")
+  Rel(page, loader, "Requests tier data")
+  Rel(loader, fixture, "Reads bundled JSON")
+  Rel(page, incl, "Renders inclusions per tier")
+  Rel(page, sla, "Renders SLA targets")
+  Rel(incl, figure, "Wraps numeric figures")
+  Rel(sla, figure, "Wraps time targets")
