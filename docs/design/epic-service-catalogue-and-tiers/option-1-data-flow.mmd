@@ -1,0 +1,12 @@
+flowchart TB
+  A[Tiers fixture JSON] --> B[Schema validation in CI]
+  B --> C[App bundle with fixture]
+  C --> D[Tier fixture loader]
+  D --> E{Tier and priority selected}
+  E --> F[Inclusions rows: MDR, IR hours, cadences]
+  E --> G[SLA pair: ack time / notify time]
+  E --> H[IR time-to-engage target]
+  F --> I[Illustrative figure wrapper]
+  G --> I
+  H --> I
+  I --> J[Rendered tier page with illustrative labels]
