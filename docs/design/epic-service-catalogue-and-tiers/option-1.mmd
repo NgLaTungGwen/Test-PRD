@@ -1,0 +1,12 @@
+C4Container
+  title Container view — fixture-driven tier catalogue
+  Person(prospect, "Prospective client", "Compares tiers")
+  Container(spa, "Catalogue web app", "Web SPA", "Renders tier pages and tables")
+  ContainerDb(fixture, "Tiers fixture", "JSON", "Inclusions, cadences, SLA targets")
+  Container(build, "Build pipeline", "CI", "Validates fixture, bundles app")
+  System_Ext(hosting, "Static hosting CDN", "Serves built bundle")
+  Rel(prospect, spa, "Views tier comparison")
+  Rel(build, fixture, "Validates against schema")
+  Rel(build, hosting, "Publishes built bundle")
+  Rel(hosting, spa, "Delivers app bundle")
+  Rel(spa, fixture, "Reads bundled tiers")
