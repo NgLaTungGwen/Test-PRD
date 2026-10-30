@@ -1,0 +1,13 @@
+C4Context
+  title System context — service catalogue and tiers
+  Person(prospect, "Prospective client", "Compares service tiers")
+  Person(advisor, "Service advisor", "Presents tiers to clients")
+  Person(editor, "Catalogue maintainer", "Owns tier content")
+  System(catalogue, "Service catalogue site", "Shows Essentials, Standard and Advanced tiers with illustrative figures")
+  System_Ext(repo, "Source repository", "Holds tier fixture and app code")
+  System_Ext(hosting, "Static hosting CDN", "Serves the built site")
+  Rel(prospect, catalogue, "Browses tier comparison")
+  Rel(advisor, catalogue, "Presents tier figures")
+  Rel(editor, repo, "Edits tier fixture")
+  Rel(repo, hosting, "Publishes built site")
+  Rel(catalogue, hosting, "Served as assets")
