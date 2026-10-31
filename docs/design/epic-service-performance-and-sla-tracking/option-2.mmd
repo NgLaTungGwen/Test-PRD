@@ -1,0 +1,14 @@
+C4Container
+  title Container view - memoised metric store
+  Person(member, "Member", "Reads metrics")
+  Container(spa, "Portal SPA", "TypeScript", "Screens and report builder")
+  Container(store, "Metric store", "TypeScript", "Memoised per member period")
+  Container(sel, "Selector and registry module", "TypeScript", "K01-K20 formulas and metadata")
+  Container(meth, "Methodology page", "Generated docs", "Definitions from registry")
+  ContainerDb(fx, "Fixture bundle", "JSON", "Ticket, funnel, posture rows")
+  Rel(member, spa, "Opens screen or report")
+  Rel(spa, store, "Subscribes to metric")
+  Rel(store, sel, "Computes missing metrics")
+  Rel(sel, fx, "Reads raw rows")
+  Rel(sel, meth, "Generates definition entries")
+  Rel(member, meth, "Reads metric definition")
