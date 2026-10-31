@@ -1,0 +1,18 @@
+C4Component
+  title Component view - metric selector library
+  Container(spa, "Portal SPA", "TypeScript", "Screens and reports")
+  Container_Boundary(sel, "Metric selector library") {
+    Component(reader, "Typed row reader", "TypeScript", "Parses fixture rows")
+    Component(registry, "Metric catalogue registry", "TypeScript", "K01-K20 ids and labels")
+    Component(calc, "Metric calculators", "TypeScript", "Funnel, SLA, MTTA")
+    Component(grade, "Grade mapper", "TypeScript", "Posture score to A-F")
+    Component(subset, "Report subset resolver", "TypeScript", "Metrics per report type")
+  }
+  ContainerDb(fx, "Fixture bundle", "JSON", "Raw rows")
+  Rel(spa, calc, "Calls metric selector")
+  Rel(spa, subset, "Asks report metrics")
+  Rel(reader, fx, "Loads member rows")
+  Rel(calc, reader, "Reads typed rows")
+  Rel(calc, grade, "Maps score band")
+  Rel(subset, registry, "Looks up ids")
+  Rel(spa, registry, "Reads label anchor")
