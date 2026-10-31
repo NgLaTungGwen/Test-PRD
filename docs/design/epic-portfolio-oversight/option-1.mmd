@@ -1,0 +1,11 @@
+C4Container
+  title Container view - members and benchmarks screen
+  Person(programLead, "Program Lead", "GPO oversight user")
+  Container(browserUi, "Portfolio Screen", "React", "Table, filters, benchmark panel")
+  Container(webApp, "Cyber Web App", "Next.js", "Routing, server rendering, data loading")
+  ContainerDb(assessDb, "Assessment Database", "Postgres", "Members, grades, metrics, facility types")
+  System_Ext(idp, "Identity Provider", "Sessions and role claims")
+  Rel(programLead, browserUi, "Sorts, filters, selects", "HTTPS")
+  Rel(browserUi, webApp, "Requests pages and benchmarks", "HTTPS")
+  Rel(webApp, idp, "Verifies role claims", "OIDC")
+  Rel(webApp, assessDb, "Reads members and medians", "SQL")
