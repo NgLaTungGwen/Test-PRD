@@ -1,0 +1,12 @@
+C4Context
+  title System context - cyber service performance and SLA tracking
+  Person(member, "Member", "Reads dashboards and reports")
+  Person(analyst, "Service analyst", "Checks SLA and remediation")
+  System(portal, "Cyber portal", "Screens, reports and the methodology page")
+  System_Ext(fixtures, "Fixture data set", "Ticket, funnel and posture rows")
+  System_Ext(export, "Report export target", "PDF or print output")
+  Rel(member, portal, "Views metrics screens")
+  Rel(analyst, portal, "Generates periodic reports")
+  Rel(portal, fixtures, "Loads raw rows")
+  Rel(portal, export, "Emits generated report")
+  Rel(member, export, "Reads board summary")
