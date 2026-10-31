@@ -1,0 +1,15 @@
+flowchart TB
+  user["Program Lead or Member"] --> route["/cyber/advisories route"]
+  session["Session context: role, memberId"] --> route
+  fixture["Advisories fixture records"] --> route
+  route --> projection["Exposure projection"]
+  projection --> common["Severity, date, source type, action"]
+  projection --> isLead{"Role is Program Lead?"}
+  isLead -- yes --> leadView["Exposed member count and list"]
+  isLead -- no --> match{"memberId in affectedMemberIds?"}
+  match -- yes --> yesView["Answer yes with affected assets"]
+  match -- no --> noView["Answer no"]
+  common --> screen["Advisory cards on screen"]
+  leadView --> screen
+  yesView --> screen
+  noView --> screen
