@@ -1,0 +1,17 @@
+C4Container
+  title Option B - mock API boundary over fixtures
+  Person(exec, "Member Executive", "Reads short summaries")
+  Person(analyst, "Member Security Analyst", "Reviews incidents")
+  Container_Boundary(portal, "Cyber Member Portal") {
+    Container(web, "Web App", "React, TypeScript", "Incident and retainer routes")
+    Container(client, "Typed API Client", "TypeScript", "Fetch, cache, error states")
+    Container(api, "Incident Mock API", "Route handlers", "Incidents and retainer endpoints")
+    ContainerDb(store, "Fixture Files", "JSON", "Seed incidents and retainer data")
+  }
+  System_Ext(idp, "Identity Provider", "Member roles and sessions")
+  Rel(exec, web, "Opens incident detail")
+  Rel(analyst, web, "Opens incidents list")
+  Rel(web, client, "Requests screen data")
+  Rel(client, api, "Calls JSON endpoints")
+  Rel(api, store, "Loads seed records")
+  Rel(api, idp, "Checks role claims")
