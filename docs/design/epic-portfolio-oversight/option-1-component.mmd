@@ -1,0 +1,17 @@
+C4Component
+  title Component view - Cyber Web App
+  Container_Ext(browserUi, "Portfolio Screen", "React", "Table, filters, benchmark panel")
+  Component(roleGate, "Program lead role check", "Server util", "Authorises portfolio access")
+  Component(membersLoader, "Members list loader", "Server component", "Loads all portfolio rows")
+  Component(benchmarkQuery, "Benchmark median query", "Query module", "Grade and metrics versus median")
+  Component(viewAsContext, "Read-only view-as context", "Server provider", "Flags GPO viewing session")
+  Component(memberHome, "Member home route", "Server component", "Renders home with banner")
+  ContainerDb_Ext(assessDb, "Assessment Database", "Postgres", "Members, grades, metrics")
+  Rel(browserUi, roleGate, "Sends session cookie", "HTTPS")
+  Rel(roleGate, membersLoader, "Permits portfolio load", "Call")
+  Rel(membersLoader, assessDb, "Selects member rows", "SQL")
+  Rel(browserUi, benchmarkQuery, "Requests selected member benchmark", "HTTPS")
+  Rel(benchmarkQuery, assessDb, "Aggregates facility-type median", "SQL")
+  Rel(browserUi, memberHome, "Opens member home", "HTTPS")
+  Rel(viewAsContext, memberHome, "Supplies read-only flag", "Call")
+  Rel(memberHome, assessDb, "Reads member detail", "SQL")
