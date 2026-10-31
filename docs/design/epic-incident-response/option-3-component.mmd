@@ -1,0 +1,18 @@
+C4Component
+  title Option C - components of the Cyber Domain Package
+  Container_Boundary(domain, "Cyber Domain Package") {
+    Component(schemas, "Record Schemas", "TypeScript", "Incident, retainer, playbook shapes")
+    Component(listproj, "Incident List Projection", "Module", "Rows with contain metrics")
+    Component(timeline, "Timeline Projection", "Module", "Milestones, assets, tactic")
+    Component(retproj, "Retainer Projection", "Module", "Hours, renewal, engagements")
+    Component(policy, "Role Presentation Policy", "Module", "Executive summary ordering")
+    Component(declare, "Declaration Simulator", "Module", "Tier target, no transport")
+    Component(port, "Data Source Port", "Interface", "Fetch records by kind")
+  }
+  Rel(listproj, port, "Requests incident records")
+  Rel(timeline, port, "Requests detail records")
+  Rel(retproj, port, "Requests retainer records")
+  Rel(timeline, policy, "Applies role ordering")
+  Rel(declare, port, "Requests tier targets")
+  Rel(port, schemas, "Parses incoming records")
+  Rel(policy, schemas, "Reads summary fields")
