@@ -1,0 +1,12 @@
+flowchart TB
+  fx["Fixture JSON rows"] --> loader["Build time loader"]
+  loader --> calc["Calculator library K01-K20"]
+  calc --> grade["Posture grade mapper"]
+  calc --> writer["Snapshot writer"]
+  grade --> writer
+  writer --> snap["Typed metric snapshot"]
+  docgen["Definition generator"] --> snap
+  snap --> screens["Dashboard screens"]
+  snap --> report["Report builder output"]
+  docgen --> meth["Methodology definition page"]
+  screens --> meth
