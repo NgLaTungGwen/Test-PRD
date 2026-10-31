@@ -1,0 +1,15 @@
+C4Container
+  title Option A - fixture modules inside the web app
+  Person(exec, "Member Executive", "Reads short summaries")
+  Person(analyst, "Member Security Analyst", "Reviews incidents")
+  Container_Boundary(portal, "Cyber Member Portal") {
+    Container(web, "Web App", "React, TypeScript", "Incident and retainer routes")
+    Container(fixtures, "Fixture Modules", "TypeScript", "Seed incidents and retainer records")
+    Container(session, "Session Context", "React", "Current member role")
+  }
+  System_Ext(idp, "Identity Provider", "Member roles and sessions")
+  Rel(exec, web, "Opens incident detail")
+  Rel(analyst, web, "Opens incidents list")
+  Rel(web, fixtures, "Imports typed records")
+  Rel(web, session, "Reads member role")
+  Rel(session, idp, "Reads role claims")
