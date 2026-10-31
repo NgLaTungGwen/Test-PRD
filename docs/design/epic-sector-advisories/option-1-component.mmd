@@ -1,0 +1,17 @@
+C4Component
+  title Component view - Web UI advisories screen
+  Container_Ext(session, "Session context", "TypeScript", "Role and member id")
+  ComponentDb_Ext(fixture, "Advisories fixture", "TypeScript", "Advisories, members, assets")
+  Container_Boundary(web, "Web UI") {
+    Component(route, "Advisories route", "Router entry", "Serves /cyber/advisories")
+    Component(projection, "Exposure projection", "Pure function", "Derives role specific view")
+    Component(card, "Advisory card", "View", "Severity date source action")
+    Component(leadPanel, "Lead exposure panel", "View", "Count and member list")
+    Component(memberPanel, "Member exposure answer", "View", "Yes or no, assets")
+  }
+  Rel(route, fixture, "Reads advisory records")
+  Rel(route, session, "Reads role identity")
+  Rel(route, projection, "Requests projected advisories")
+  Rel(projection, card, "Supplies advisory fields")
+  Rel(card, leadPanel, "Renders lead section")
+  Rel(card, memberPanel, "Renders member section")
