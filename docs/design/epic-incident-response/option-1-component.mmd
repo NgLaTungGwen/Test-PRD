@@ -1,0 +1,17 @@
+C4Component
+  title Option A - components of the Web App
+  Container_Boundary(web, "Web App") {
+    Component(list, "Incidents List Route", "React", "Rows with priority, status, time-to-contain")
+    Component(detail, "Incident Detail Route", "React", "Timeline, assets, tactic, actions")
+    Component(summary, "Executive Summary Panel", "React", "Three-sentence impact and status")
+    Component(retainer, "Retainer Route", "React", "Hours, renewal, engagements, playbooks")
+    Component(declare, "Declare Incident Form", "React", "Three fields and confirmation")
+    Component(role, "Role Gate Helper", "TypeScript", "Executive-first ordering")
+    ComponentDb(fx, "Fixture Modules", "TypeScript", "Incidents, retainer, playbooks")
+  }
+  Rel(list, fx, "Reads incident records")
+  Rel(detail, fx, "Reads timeline records")
+  Rel(detail, role, "Asks about executive")
+  Rel(role, summary, "Renders summary first")
+  Rel(retainer, fx, "Reads retainer records")
+  Rel(declare, fx, "Reads tier targets")
