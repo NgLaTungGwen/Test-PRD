@@ -1,0 +1,14 @@
+C4Container
+  title Container view - compiled metric snapshot
+  Person(member, "Member", "Reads metrics")
+  Container(compiler, "Metric compiler", "Node script", "Computes K01-K20 at build")
+  ContainerDb(snapshot, "Metric snapshot", "Typed JSON", "Values per member period")
+  Container(spa, "Portal SPA", "TypeScript", "Screens and report builder")
+  Container(meth, "Methodology page", "Generated docs", "Definitions and formulas")
+  ContainerDb(fx, "Fixture bundle", "JSON", "Ticket, funnel, posture rows")
+  Rel(compiler, fx, "Reads raw rows")
+  Rel(compiler, snapshot, "Writes computed values")
+  Rel(compiler, meth, "Writes definition entries")
+  Rel(spa, snapshot, "Reads metric values")
+  Rel(member, spa, "Opens screen or report")
+  Rel(member, meth, "Reads metric definition")
