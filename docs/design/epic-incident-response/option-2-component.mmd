@@ -1,0 +1,19 @@
+C4Component
+  title Option B - components of the Incident Mock API
+  Container_Boundary(api, "Incident Mock API") {
+    Component(listep, "Incidents Endpoint", "Handler", "List rows with key fields")
+    Component(detailep, "Incident Detail Endpoint", "Handler", "Timeline, tactic, actions")
+    Component(retainerep, "Retainer Endpoint", "Handler", "Hours, renewal, engagements")
+    Component(rolemw, "Role Resolver", "Middleware", "Role from session claims")
+    Component(summaries, "Summary Selector", "Module", "Executive summary when allowed")
+    Component(repo, "Fixture Repository", "Module", "Reads and parses files")
+    Component(schema, "Response Validator", "Module", "Checks payload shape")
+    ComponentDb(store, "Fixture Files", "JSON", "Seed records")
+  }
+  Rel(listep, repo, "Requests incident records")
+  Rel(detailep, rolemw, "Resolves caller role")
+  Rel(detailep, summaries, "Adds executive summary")
+  Rel(detailep, repo, "Requests timeline records")
+  Rel(retainerep, repo, "Requests retainer records")
+  Rel(repo, store, "Reads seed files")
+  Rel(repo, schema, "Validates parsed payload")
