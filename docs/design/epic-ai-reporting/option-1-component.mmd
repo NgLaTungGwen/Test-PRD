@@ -1,0 +1,19 @@
+C4Component
+  title Component view - Prototype Web App
+  Person(presenter, "Demo Presenter", "Runs the walkthrough")
+  Container_Boundary(spa, "Prototype Web App") {
+    Component(shell, "Cyber screen shell", "UI layout", "Wraps every cyber screen")
+    Component(screen, "Member report screen", "UI", "Hosts the generate action")
+    Component(anim, "Staged generation animation", "UI", "Plays timed stages")
+    Component(lookup, "Narrative lookup", "Module", "Resolves member period key")
+    Component(viewer, "Stored report viewer", "UI", "Renders the narrative")
+    Component(label, "AI disclosure label", "UI", "Shows illustrative notice")
+  }
+  ContainerDb(reports, "Report Narrative Fixtures", "JSON", "Narrative per member period")
+  Rel(presenter, screen, "Clicks generate report")
+  Rel(screen, anim, "Starts staged animation")
+  Rel(anim, lookup, "Requests stored narrative")
+  Rel(lookup, reports, "Reads narrative entry")
+  Rel(lookup, viewer, "Hands resolved narrative")
+  Rel(shell, label, "Renders disclosure label")
+  Rel(viewer, label, "Renders disclosure label")
