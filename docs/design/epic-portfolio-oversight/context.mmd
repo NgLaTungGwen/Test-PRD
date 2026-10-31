@@ -1,0 +1,11 @@
+C4Context
+  title System context - cyber program portfolio oversight
+  Person(programLead, "Program Lead", "HealthPRO GPO oversight user")
+  Person(memberStaff, "Member Staff", "Facility user of own home")
+  System(cyberApp, "Cyber Program App", "Member homes, portfolio screens, benchmarks")
+  System_Ext(idp, "Identity Provider", "Sessions and role claims")
+  SystemDb_Ext(assessStore, "Assessment Store", "Grades, metrics, facility types")
+  Rel(programLead, cyberApp, "Views members and benchmarks", "HTTPS")
+  Rel(memberStaff, cyberApp, "Uses own member home", "HTTPS")
+  Rel(cyberApp, idp, "Verifies role claims", "OIDC")
+  Rel(cyberApp, assessStore, "Reads member metrics", "SQL")
