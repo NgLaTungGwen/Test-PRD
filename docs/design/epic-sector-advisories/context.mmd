@@ -1,0 +1,9 @@
+C4Context
+  title System context for sector advisories
+  Person(lead, "Program Lead", "Oversees program readiness")
+  Person(member, "Member Role", "Owns member assets")
+  System(app, "Cyber Readiness App", "Demo web application with fixture data")
+  System_Ext(session, "Role Session Provider", "Supplies current role and member identity")
+  Rel(lead, app, "Views advisory exposure", "HTTPS")
+  Rel(member, app, "Checks own exposure", "HTTPS")
+  Rel(app, session, "Reads role identity", "Session")
