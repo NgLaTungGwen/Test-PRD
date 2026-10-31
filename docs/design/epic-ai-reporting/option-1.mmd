@@ -1,0 +1,13 @@
+C4Container
+  title Container view - fixture-backed report generation
+  Person(presenter, "Demo Presenter", "Runs the walkthrough")
+  Container_Boundary(proto, "Cyber Reporting Prototype") {
+    Container(spa, "Prototype Web App", "SPA", "Screens, animation, labelling")
+    ContainerDb(reports, "Report Narrative Fixtures", "JSON", "Narrative per member period")
+    ContainerDb(members, "Member Fixtures", "JSON", "Members and their periods")
+  }
+  System_Ext(host, "Static Web Host", "Serves the bundle")
+  Rel(presenter, spa, "Clicks generate report")
+  Rel(spa, reports, "Reads stored narrative")
+  Rel(spa, members, "Reads member periods")
+  Rel(host, spa, "Serves application bundle")
