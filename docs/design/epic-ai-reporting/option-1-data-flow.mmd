@@ -1,0 +1,11 @@
+flowchart TB
+  U["User clicks Generate report"] --> K["Build member and period key"]
+  K --> M[("Member fixtures")]
+  M --> F[("Report narrative fixtures")]
+  F --> D{"Stored narrative found?"}
+  D -- yes --> A["Staged animation runs 2-3s"]
+  D -- no --> E["Missing report empty state"]
+  A --> V["Stored report opens"]
+  V --> L["Shell applies AI-generated, illustrative label"]
+  E --> L
+  L --> S["Rendered cyber screen"]
