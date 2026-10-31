@@ -1,0 +1,13 @@
+C4Container
+  title Container view - fixture backed advisories screen
+  Person(lead, "Program Lead", "Oversees program readiness")
+  Person(member, "Member Role", "Owns member assets")
+  System_Boundary(app, "Cyber Readiness App") {
+    Container(web, "Web UI", "React", "Renders the advisories screen")
+    Container(fixture, "Advisories fixture module", "TypeScript", "Advisories, members, assets")
+    Container(session, "Session context", "TypeScript", "Current role and member id")
+  }
+  Rel(lead, web, "Opens advisories screen", "HTTPS")
+  Rel(member, web, "Opens advisories screen", "HTTPS")
+  Rel(web, fixture, "Imports advisory records")
+  Rel(web, session, "Reads role identity")
