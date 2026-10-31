@@ -1,0 +1,13 @@
+flowchart TB
+  user[Member opens route] --> view[Thin view requests projection]
+  view --> proj[Projection module]
+  proj --> port[Data source port]
+  port --> adapter[Fixture adapter]
+  adapter --> seed[(Seed dataset)]
+  seed --> parse[Schema parse and normalise]
+  parse --> policy[Role presentation policy]
+  policy --> vm[Ordered view model]
+  vm --> render[List, detail or retainer view]
+  decl[Declare form submitted] --> sim[Declaration simulator]
+  sim --> conf[Target time and hotline text]
+  conf --> render
