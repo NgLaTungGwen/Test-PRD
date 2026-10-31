@@ -1,0 +1,12 @@
+flowchart TB
+  user[Member opens route] --> page[Route requests data]
+  page --> client[Typed API client]
+  client --> api[Mock API handler]
+  api --> role[Resolve role claims]
+  role --> repo[Fixture repository read]
+  repo --> valid[Validate payload shape]
+  valid --> resp[JSON response]
+  resp --> render[List, detail or retainer view]
+  declare[Declare form submitted] --> localcalc[Client-side tier lookup]
+  localcalc --> conf[Confirmation, no request sent]
+  conf --> render
