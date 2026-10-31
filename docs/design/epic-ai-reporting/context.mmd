@@ -1,0 +1,9 @@
+C4Context
+  title System context - AI reporting prototype
+  Person(presenter, "Demo Presenter", "Runs the cyber walkthrough")
+  Person(stakeholder, "Stakeholder Viewer", "Reads reports on screen")
+  System(proto, "Cyber Reporting Prototype", "Browser prototype driven by fixture data")
+  System_Ext(host, "Static Web Host", "Serves the built bundle")
+  Rel(presenter, proto, "Generates member reports")
+  Rel(stakeholder, proto, "Reads illustrative narratives")
+  Rel(host, proto, "Delivers application bundle")
