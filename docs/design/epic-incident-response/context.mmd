@@ -1,0 +1,13 @@
+C4Context
+  title Cyber member portal - incident response context
+  Person(exec, "Member Executive", "Reads short impact summaries")
+  Person(analyst, "Member Security Analyst", "Tracks incidents and retainer")
+  System(portal, "Cyber Member Portal", "Incidents list, incident detail, IR retainer screens")
+  System_Ext(idp, "Identity Provider", "Member roles and sessions")
+  System_Ext(mdr, "Provider Detection Platform", "Future source of incidents")
+  System_Ext(desk, "IR Retainer Desk", "Future hotline and engagements")
+  Rel(exec, portal, "Opens incident detail")
+  Rel(analyst, portal, "Reviews incidents and retainer")
+  Rel(portal, idp, "Reads member role")
+  Rel(portal, mdr, "Planned incident feed")
+  Rel(portal, desk, "Planned engagement records")
