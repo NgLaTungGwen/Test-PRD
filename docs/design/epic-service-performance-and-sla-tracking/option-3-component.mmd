@@ -1,0 +1,17 @@
+C4Component
+  title Component view - metric compiler
+  ContainerDb(fx, "Fixture bundle", "JSON", "Raw rows")
+  Container_Boundary(compiler, "Metric compiler") {
+    Component(loader, "Fixture loader", "TypeScript", "Reads and types rows")
+    Component(calc, "Calculator library", "TypeScript", "Funnel, SLA, MTTA")
+    Component(grade, "Grade mapper", "TypeScript", "Posture score bands")
+    Component(writer, "Snapshot writer", "TypeScript", "Emits typed artifact")
+    Component(docgen, "Definition generator", "TypeScript", "Methodology and manifests")
+  }
+  ContainerDb(snapshot, "Metric snapshot", "Typed JSON", "Values and manifests")
+  Rel(loader, fx, "Loads member rows")
+  Rel(calc, loader, "Reads typed rows")
+  Rel(calc, grade, "Maps score band")
+  Rel(writer, calc, "Collects metric values")
+  Rel(writer, snapshot, "Writes artifact file")
+  Rel(docgen, snapshot, "Writes report manifests")
