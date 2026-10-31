@@ -1,0 +1,12 @@
+flowchart TB
+  user[Member opens route] --> route[Route component mounts]
+  route --> fx[(Fixture modules)]
+  fx --> map[Map to rows and timeline]
+  map --> role{Executive role?}
+  role -->|yes| ai[AI summary panel first]
+  role -->|no| body[Detail and retainer sections]
+  ai --> body
+  body --> page[Rendered page]
+  form[Declare form submitted] --> tier[Local tier target lookup]
+  tier --> conf[Confirmation, placeholder hotline]
+  conf --> page
