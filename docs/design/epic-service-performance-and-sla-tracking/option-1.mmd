@@ -1,0 +1,12 @@
+C4Container
+  title Container view - selector library in the portal app
+  Person(member, "Member", "Reads metrics")
+  Container(spa, "Portal SPA", "TypeScript", "Screens and report builder")
+  Container(sel, "Metric selector library", "TypeScript", "K01-K20 computation and registry")
+  Container(meth, "Methodology page", "Markdown", "Metric definitions and anchors")
+  ContainerDb(fx, "Fixture bundle", "JSON", "Ticket, funnel, posture rows")
+  Rel(member, spa, "Opens screen or report")
+  Rel(spa, sel, "Requests metric values")
+  Rel(sel, fx, "Reads raw rows")
+  Rel(spa, meth, "Links metric label")
+  Rel(member, meth, "Reads metric definition")
