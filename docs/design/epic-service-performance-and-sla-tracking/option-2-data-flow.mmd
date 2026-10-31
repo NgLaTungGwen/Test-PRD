@@ -1,0 +1,11 @@
+flowchart TB
+  fx["Fixture JSON rows"] --> sel["Selector and registry module"]
+  scope["Member and period scope"] --> cache["Memoised metric cache"]
+  sel --> cache
+  cache --> hook["Metric subscription API"]
+  hook --> screenA["Funnel and SLA screen"]
+  hook --> screenB["Posture and MTTA screen"]
+  manifest["Report manifest resolver"] --> hook
+  hook --> report["Generated report output"]
+  sel --> docs["Generated methodology entries"]
+  docs --> link["Metric label anchor"]
