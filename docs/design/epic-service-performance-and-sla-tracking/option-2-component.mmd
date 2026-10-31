@@ -1,0 +1,18 @@
+C4Component
+  title Component view - metric store
+  Container(spa, "Portal SPA", "TypeScript", "Screens and reports")
+  Container_Boundary(store, "Metric store") {
+    Component(scope, "Scope resolver", "TypeScript", "Member and period key")
+    Component(cache, "Memoisation cache", "TypeScript", "Values by metric id")
+    Component(hook, "Subscription API", "TypeScript", "Metric id to value")
+    Component(manifest, "Report manifest resolver", "TypeScript", "Subset per report type")
+  }
+  Container(sel, "Selector and registry module", "TypeScript", "Formulas and metadata")
+  ContainerDb(fx, "Fixture bundle", "JSON", "Raw rows")
+  Rel(spa, hook, "Subscribes to metric")
+  Rel(spa, manifest, "Asks report metrics")
+  Rel(hook, cache, "Reads cached value")
+  Rel(cache, scope, "Builds cache key")
+  Rel(cache, sel, "Computes on miss")
+  Rel(manifest, sel, "Reads registry metadata")
+  Rel(sel, fx, "Loads member rows")
