@@ -1,0 +1,61 @@
+{
+  "tiers": [
+    {
+      "id": "essentials",
+      "name": "Essentials",
+      "facilitySize": "Single facility, up to 250 endpoints",
+      "mdrScope": "MDR across endpoints and email",
+      "monitoringScope": "Continuous monitoring with 8x5 analyst triage",
+      "irRetainerHours": 20,
+      "remediationSupport": "Remote remediation advisory guidance",
+      "tabletopExercises": 1,
+      "postureAssessmentCadence": "Annual",
+      "reportCadence": "Quarterly",
+      "irTimeToEngageMinutes": 240,
+      "slaTargets": [
+        { "priority": "P1", "ackMinutes": 60, "notifyMinutes": 60 },
+        { "priority": "P2", "ackMinutes": 120, "notifyMinutes": 240 },
+        { "priority": "P3", "ackMinutes": 240, "notifyMinutes": 480 },
+        { "priority": "P4", "ackMinutes": 480, "notifyMinutes": 960 }
+      ]
+    },
+    {
+      "id": "standard",
+      "name": "Standard",
+      "facilitySize": "Up to 3 facilities, up to 1,000 endpoints",
+      "mdrScope": "MDR across endpoints, email and cloud workloads",
+      "monitoringScope": "Continuous 24x7 monitoring with OT network visibility",
+      "irRetainerHours": 40,
+      "remediationSupport": "Guided remediation with analyst support",
+      "tabletopExercises": 2,
+      "postureAssessmentCadence": "Semi-annual",
+      "reportCadence": "Monthly",
+      "irTimeToEngageMinutes": 60,
+      "slaTargets": [
+        { "priority": "P1", "ackMinutes": 30, "notifyMinutes": 30 },
+        { "priority": "P2", "ackMinutes": 60, "notifyMinutes": 120 },
+        { "priority": "P3", "ackMinutes": 120, "notifyMinutes": 240 },
+        { "priority": "P4", "ackMinutes": 240, "notifyMinutes": 480 }
+      ]
+    },
+    {
+      "id": "advanced",
+      "name": "Advanced",
+      "facilitySize": "Multi-facility estate, 1,000+ endpoints",
+      "mdrScope": "MDR across endpoints, email, cloud, identity and OT/ICS",
+      "monitoringScope": "Continuous 24x7 monitoring with proactive threat hunting",
+      "irRetainerHours": 80,
+      "remediationSupport": "Hands-on remediation delivered by the response team",
+      "tabletopExercises": 4,
+      "postureAssessmentCadence": "Quarterly",
+      "reportCadence": "Monthly with weekly operational review",
+      "irTimeToEngageMinutes": 15,
+      "slaTargets": [
+        { "priority": "P1", "ackMinutes": 15, "notifyMinutes": 15 },
+        { "priority": "P2", "ackMinutes": 30, "notifyMinutes": 60 },
+        { "priority": "P3", "ackMinutes": 60, "notifyMinutes": 120 },
+        { "priority": "P4", "ackMinutes": 120, "notifyMinutes": 240 }
+      ]
+    }
+  ]
+}
