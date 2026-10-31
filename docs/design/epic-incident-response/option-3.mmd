@@ -1,0 +1,19 @@
+C4Container
+  title Option C - domain package behind a data-source port
+  Person(exec, "Member Executive", "Reads short summaries")
+  Person(analyst, "Member Security Analyst", "Reviews incidents")
+  Container_Boundary(portal, "Cyber Member Portal") {
+    Container(web, "Web App", "React, TypeScript", "Thin incident and retainer views")
+    Container(domain, "Cyber Domain Package", "TypeScript", "Schemas, projections, role policy")
+    Container(adapter, "Fixture Adapter", "TypeScript", "Implements data-source port")
+    ContainerDb(seed, "Seed Dataset", "JSON", "Incidents, retainer, playbooks")
+  }
+  System_Ext(idp, "Identity Provider", "Member roles and sessions")
+  System_Ext(mdr, "Provider Detection Platform", "Future source of incidents")
+  Rel(exec, web, "Opens incident detail")
+  Rel(analyst, web, "Opens incidents list")
+  Rel(web, domain, "Requests screen projections")
+  Rel(domain, adapter, "Calls data-source port")
+  Rel(adapter, seed, "Loads seed dataset")
+  Rel(web, idp, "Reads member role")
+  Rel(adapter, mdr, "Planned adapter swap")
