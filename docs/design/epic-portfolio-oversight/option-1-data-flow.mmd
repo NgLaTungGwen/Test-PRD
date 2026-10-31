@@ -1,0 +1,23 @@
+flowchart TB
+  lead["Program Lead"]
+  screen["Portfolio screen in browser"]
+  gate["Role check"]
+  loader["Members list loader"]
+  table["In-memory sort and filter"]
+  bench["Benchmark median query"]
+  home["Member home read-only route"]
+  db[("Assessment database")]
+  lead -->|opens members screen| screen
+  screen -->|session and role| gate
+  gate -->|authorised request| loader
+  loader -->|select member rows| db
+  db -->|member rows and grades| loader
+  loader -->|portfolio dataset| table
+  table -->|visible sorted rows| screen
+  screen -->|selected member id| bench
+  bench -->|median by facility type| db
+  db -->|peer median metrics| bench
+  bench -->|grade versus median| screen
+  screen -->|row click with view-as flag| home
+  home -->|member detail read| db
+  home -->|read-only page plus banner| lead
