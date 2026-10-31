@@ -1,0 +1,12 @@
+flowchart TB
+  fx["Fixture JSON rows"] --> reader["Typed row reader"]
+  reader --> calc["Metric calculators K01-K20"]
+  reg["Metric catalogue registry"] --> calc
+  calc --> grade["Posture grade mapper"]
+  calc --> screens["Dashboard screens"]
+  grade --> screens
+  reg --> subset["Report subset resolver"]
+  subset --> report["Report builder output"]
+  calc --> report
+  reg --> link["Metric label link"]
+  link --> meth["Methodology definition anchor"]
