@@ -1,0 +1,112 @@
+{
+  "generator": "src/generateCyberFixtures.ts",
+  "kind": "vendor",
+  "records": [
+    {
+      "category": "Clinical device support",
+      "contactEmail": "peregrine-everly@quillstone-cloud-works.example",
+      "contactName": "Peregrine Everly (Fictional)",
+      "contractRef": "CTR-2058",
+      "criticality": "high",
+      "dataAccess": "metadata only",
+      "id": "ven-001",
+      "kind": "vendor",
+      "lastAssessedOn": "2024-05-23",
+      "name": "Quillstone Cloud Works (Fictional)",
+      "reassessmentDueOn": "2025-01-05"
+    },
+    {
+      "category": "Identity and access",
+      "contactEmail": "rowan-ashgrove@vantabrook-data-guild.example",
+      "contactName": "Rowan Ashgrove (Fictional)",
+      "contractRef": "CTR-6993",
+      "criticality": "moderate",
+      "dataAccess": "clinical records",
+      "id": "ven-002",
+      "kind": "vendor",
+      "lastAssessedOn": "2024-08-06",
+      "name": "Vantabrook Data Guild (Fictional)",
+      "reassessmentDueOn": "2025-05-20"
+    },
+    {
+      "category": "Identity and access",
+      "contactEmail": "caspian-fairweather@wyndholt-network-forge.example",
+      "contactName": "Caspian Fairweather (Fictional)",
+      "contractRef": "CTR-1005",
+      "criticality": "moderate",
+      "dataAccess": "clinical records",
+      "id": "ven-003",
+      "kind": "vendor",
+      "lastAssessedOn": "2024-03-14",
+      "name": "Wyndholt Network Forge (Fictional)",
+      "reassessmentDueOn": "2025-02-17"
+    },
+    {
+      "category": "Clinical device support",
+      "contactEmail": "tamsin-everly@thornvale-data-guild.example",
+      "contactName": "Tamsin Everly (Fictional)",
+      "contractRef": "CTR-3620",
+      "criticality": "critical",
+      "dataAccess": "clinical records",
+      "id": "ven-004",
+      "kind": "vendor",
+      "lastAssessedOn": "2024-11-06",
+      "name": "Thornvale Data Guild (Fictional)",
+      "reassessmentDueOn": "2025-06-26"
+    },
+    {
+      "category": "Application hosting",
+      "contactEmail": "peregrine-fairweather@zephyrine-network-forge.example",
+      "contactName": "Peregrine Fairweather (Fictional)",
+      "contractRef": "CTR-2974",
+      "criticality": "moderate",
+      "dataAccess": "metadata only",
+      "id": "ven-005",
+      "kind": "vendor",
+      "lastAssessedOn": "2024-08-06",
+      "name": "Zephyrine Network Forge (Fictional)",
+      "reassessmentDueOn": "2025-10-01"
+    },
+    {
+      "category": "Identity and access",
+      "contactEmail": "soren-berrington@umberlight-network-forge.example",
+      "contactName": "Soren Berrington (Fictional)",
+      "contractRef": "CTR-1283",
+      "criticality": "moderate",
+      "dataAccess": "none",
+      "id": "ven-006",
+      "kind": "vendor",
+      "lastAssessedOn": "2024-10-28",
+      "name": "Umberlight Network Forge (Fictional)",
+      "reassessmentDueOn": "2025-09-11"
+    },
+    {
+      "category": "Endpoint protection",
+      "contactEmail": "rowan-greenhalgh@marrowgate-identity-works.example",
+      "contactName": "Rowan Greenhalgh (Fictional)",
+      "contractRef": "CTR-5625",
+      "criticality": "moderate",
+      "dataAccess": "none",
+      "id": "ven-007",
+      "kind": "vendor",
+      "lastAssessedOn": "2024-10-20",
+      "name": "Marrowgate Identity Works (Fictional)",
+      "reassessmentDueOn": "2025-07-08"
+    },
+    {
+      "category": "Backup and recovery",
+      "contactEmail": "isolde-ashgrove@pellucid-identity-works.example",
+      "contactName": "Isolde Ashgrove (Fictional)",
+      "contractRef": "CTR-4017",
+      "criticality": "moderate",
+      "dataAccess": "telemetry",
+      "id": "ven-008",
+      "kind": "vendor",
+      "lastAssessedOn": "2024-04-13",
+      "name": "Pellucid Identity Works (Fictional)",
+      "reassessmentDueOn": "2025-01-27"
+    }
+  ],
+  "seed": 20240917,
+  "version": 1
+}

@@ -1,0 +1,86 @@
+{
+  "generator": "src/generateCyberFixtures.ts",
+  "kind": "facility",
+  "records": [
+    {
+      "bedCount": 302,
+      "contactEmail": "isolde-fairweather@glimmerbrook-community-clinic.example",
+      "contactName": "Isolde Fairweather (Fictional)",
+      "endpointCount": 834,
+      "id": "fac-001",
+      "kind": "facility",
+      "name": "Glimmerbrook Community Clinic (Fictional)",
+      "onboardedOn": "2024-02-24",
+      "region": "Central Quadrant",
+      "serviceTier": "standard",
+      "siteProfile": "Outpatient"
+    },
+    {
+      "bedCount": 169,
+      "contactEmail": "isolde-hartleaf@larkmoor-residential-lodge.example",
+      "contactName": "Isolde Hartleaf (Fictional)",
+      "endpointCount": 142,
+      "id": "fac-002",
+      "kind": "facility",
+      "name": "Larkmoor Residential Lodge (Fictional)",
+      "onboardedOn": "2024-10-23",
+      "region": "North Quadrant",
+      "serviceTier": "advanced",
+      "siteProfile": "Sub-acute"
+    },
+    {
+      "bedCount": 248,
+      "contactEmail": "soren-everly@caldermoor-wellbeing-centre.example",
+      "contactName": "Soren Everly (Fictional)",
+      "endpointCount": 480,
+      "id": "fac-003",
+      "kind": "facility",
+      "name": "Caldermoor Wellbeing Centre (Fictional)",
+      "onboardedOn": "2024-04-07",
+      "region": "East Quadrant",
+      "serviceTier": "essentials",
+      "siteProfile": "Acute"
+    },
+    {
+      "bedCount": 109,
+      "contactEmail": "rowan-berrington@dunhollow-care-campus.example",
+      "contactName": "Rowan Berrington (Fictional)",
+      "endpointCount": 313,
+      "id": "fac-004",
+      "kind": "facility",
+      "name": "Dunhollow Care Campus (Fictional)",
+      "onboardedOn": "2024-08-04",
+      "region": "Central Quadrant",
+      "serviceTier": "advanced",
+      "siteProfile": "Acute"
+    },
+    {
+      "bedCount": 225,
+      "contactEmail": "soren-ashgrove@hollowmere-community-clinic.example",
+      "contactName": "Soren Ashgrove (Fictional)",
+      "endpointCount": 939,
+      "id": "fac-005",
+      "kind": "facility",
+      "name": "Hollowmere Community Clinic (Fictional)",
+      "onboardedOn": "2024-09-20",
+      "region": "West Quadrant",
+      "serviceTier": "standard",
+      "siteProfile": "Outpatient"
+    },
+    {
+      "bedCount": 61,
+      "contactEmail": "peregrine-fairweather@jarrowfield-care-campus.example",
+      "contactName": "Peregrine Fairweather (Fictional)",
+      "endpointCount": 1216,
+      "id": "fac-006",
+      "kind": "facility",
+      "name": "Jarrowfield Care Campus (Fictional)",
+      "onboardedOn": "2024-01-05",
+      "region": "North Quadrant",
+      "serviceTier": "essentials",
+      "siteProfile": "Acute"
+    }
+  ],
+  "seed": 20240917,
+  "version": 1
+}
