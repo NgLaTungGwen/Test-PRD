@@ -16,6 +16,7 @@ import type { CyberRole } from './cyberData';
 import {
   getCyberScopeState,
   resetCyberScope,
+  scopeFromSearch,
   setCyberFacility,
   setCyberRole,
 } from './cyberScope';
@@ -136,6 +137,22 @@ describe('Cyber shell', () => {
     expect(getCyberScopeState().facilityId).toBe(getFacilities(DEFAULT_MEMBER_ID)[0]?.id);
     setCyberRole('program-lead');
     expect(getCyberScopeState().facilityId).toBeUndefined();
+
+    // A link may ask for a scope; anything it cannot have is ignored.
+    const second = getFacilities(DEFAULT_MEMBER_ID)[1]?.id as string;
+    expect(scopeFromSearch(`?role=member-it&facility=${second}`)).toEqual({
+      role: 'member-it',
+      facilityId: second,
+    });
+    expect(scopeFromSearch('?role=member-exec')).toEqual({
+      role: 'member-exec',
+      facilityId: getFacilities(DEFAULT_MEMBER_ID)[0]?.id,
+    });
+    expect(scopeFromSearch('?role=auditor&facility=fac-001')).toEqual({
+      role: 'program-lead',
+      facilityId: undefined,
+    });
+    expect(scopeFromSearch('')).toEqual({ role: 'program-lead', facilityId: undefined });
   });
 
   it('shows Program Lead sidebar items', () => {

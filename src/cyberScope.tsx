@@ -54,7 +54,32 @@ export function facilityAfterRoleChange(
   return currentFacilityId;
 }
 
-let state: CyberScopeState = { ...INITIAL_CYBER_SCOPE };
+/**
+ * The scope a link can ask for: `?role=member-it&facility=fac-002`.
+ *
+ * It makes a cyber screen shareable in the state it was looked at, and it is
+ * read once, on load — the header's switchers own the scope from then on. An
+ * unknown role or a facility that is not the role's own is ignored rather than
+ * obeyed, so a hand-edited link cannot put the shell in a scope its own
+ * controls could not reach.
+ */
+export function scopeFromSearch(search: string): CyberScopeState {
+  const params = new URLSearchParams(search);
+  const requestedRole = params.get('role');
+  const role = CYBER_ROLES.some((entry) => entry.id === requestedRole)
+    ? (requestedRole as CyberRole)
+    : INITIAL_CYBER_SCOPE.role;
+
+  if (!isMemberRole(role)) return { role, facilityId: undefined };
+
+  const requestedFacility = params.get('facility') ?? undefined;
+  return { role, facilityId: facilityAfterRoleChange(role, requestedFacility) };
+}
+
+let state: CyberScopeState =
+  typeof window === 'undefined'
+    ? { ...INITIAL_CYBER_SCOPE }
+    : scopeFromSearch(window.location.search);
 const listeners = new Set<() => void>();
 
 function emit(): void {
