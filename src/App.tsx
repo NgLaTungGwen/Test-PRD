@@ -1,9 +1,13 @@
 import { useEffect } from 'react';
 import type { ChangeEvent } from 'react';
 
+import CyberFindings from './CyberFindings';
+import CyberOverview from './CyberOverview';
 import CyberRoutes, { CyberLink, isCyberPath, navigate, usePath } from './CyberRoutes';
+import { CyberScopeProvider as CyberPocScopeProvider } from './CyberScopeContext';
 import CyberSidebar from './CyberSidebar';
 import FacilitySelector from './FacilitySelector';
+import { IllustrativeNotice } from './IllustrativeFigure';
 import TierCatalogue from './TierCatalogue';
 import { CYBER_ROLES, activeMemberId, isMemberRole } from './cyberData';
 import type { CyberRole } from './cyberData';
@@ -17,8 +21,98 @@ import {
 } from './cyberSearch';
 import './cyber.css';
 
+/**
+ * The cyber posture route group, mounted inside the existing shell.
+ *
+ * These are entries in the app's own navigation list, not a second sidebar:
+ * the header, the sidebar and the content container the screens render into
+ * are the ones that were already there.
+ */
+export const CYBER_POC_NAV = [
+  { label: 'Cyber posture (POC)', path: '/cyber-poc' },
+  { label: 'Cyber posture overview', path: '/cyber-poc/overview' },
+  { label: 'Cyber findings', path: '/cyber-poc/findings' },
+];
+
 /** The app's own navigation, outside the cyber module. */
-const APP_NAV = [{ label: 'Service tiers', path: '/' }];
+const APP_NAV = [{ label: 'Service tiers', path: '/' }, ...CYBER_POC_NAV];
+
+/** Whether a path belongs to the cyber posture route group. */
+export function isCyberPocPath(path: string): boolean {
+  return path === '/cyber-poc' || path.startsWith('/cyber-poc/');
+}
+
+/**
+ * The landing card of the cyber posture group: the existing card pattern,
+ * with a link to each screen of the group.
+ */
+function CyberPocLanding() {
+  return (
+    <>
+      <IllustrativeNotice />
+
+      <section className="cyber-screen" data-testid="cyber-poc-landing">
+        <h1>Cyber posture</h1>
+        <p className="cyber-screen__lede">
+          The cyber posture screens, inside the existing Innovation Pathway shell.
+        </p>
+
+        <div className="cyber-cards">
+          {CYBER_POC_NAV.filter((item) => item.path !== '/cyber-poc').map((item) => (
+            <article
+              key={item.path}
+              className="cyber-card"
+              data-testid={`cyber-poc-landing-card-${item.path.split('/').pop() as string}`}
+              aria-labelledby={`cyber-poc-landing-heading-${item.path.split('/').pop() as string}`}
+            >
+              <h2 id={`cyber-poc-landing-heading-${item.path.split('/').pop() as string}`}>
+                {item.label}
+              </h2>
+              <dl className="cyber-card__facts">
+                <div>
+                  <dt>Screen</dt>
+                  <dd>
+                    <CyberLink to={item.path}>{item.label}</CyberLink>
+                  </dd>
+                </div>
+              </dl>
+            </article>
+          ))}
+        </div>
+      </section>
+    </>
+  );
+}
+
+/** One screen of the cyber posture group, by path. */
+function CyberPocScreen({ path }: { path: string }) {
+  switch (path) {
+    case '/cyber-poc/overview':
+      return <CyberOverview />;
+    case '/cyber-poc/findings':
+      return <CyberFindings />;
+    default:
+      return <CyberPocLanding />;
+  }
+}
+
+/**
+ * The cyber posture group: the shared scope, then the screen, inside the
+ * existing content container. No new layout primitive is introduced — the
+ * wrapper is the same `cyber-group` element the existing cyber routes use.
+ */
+function CyberPocRoutes() {
+  const path = usePath();
+  const resolved = path === '/cyber-poc/' ? '/cyber-poc' : path;
+
+  return (
+    <CyberPocScopeProvider>
+      <div className="cyber-group" data-testid="cyber-poc-group" data-path={resolved}>
+        <CyberPocScreen path={resolved} />
+      </div>
+    </CyberPocScopeProvider>
+  );
+}
 
 /** The header's role switcher: the three demo roles, driving the cyber scope. */
 function RoleSwitcher() {
@@ -178,7 +272,13 @@ function Shell() {
         </aside>
 
         <main className="app-shell__main" data-testid="app-main">
-          {isCyberPath(path) ? <CyberRoutes /> : <TierCatalogue />}
+          {isCyberPocPath(path) ? (
+            <CyberPocRoutes />
+          ) : isCyberPath(path) ? (
+            <CyberRoutes />
+          ) : (
+            <TierCatalogue />
+          )}
         </main>
       </div>
 

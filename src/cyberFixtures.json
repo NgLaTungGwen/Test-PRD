@@ -1,0 +1,389 @@
+{
+  "facilities": [
+    {
+      "id": "cyb-fac-001",
+      "name": "Glimmerbrook Community Clinic (Fictional)",
+      "region": "West Quadrant",
+      "serviceTier": "advanced",
+      "site": "Glimmerbrook Community Clinic"
+    },
+    {
+      "id": "cyb-fac-002",
+      "name": "Kestrelvale Residential Lodge (Fictional)",
+      "region": "Central Quadrant",
+      "serviceTier": "standard",
+      "site": "Kestrelvale Residential Lodge"
+    },
+    {
+      "id": "cyb-fac-003",
+      "name": "Fernlowe Health Pavilion (Fictional)",
+      "region": "Central Quadrant",
+      "serviceTier": "advanced",
+      "site": "Fernlowe Health Pavilion"
+    },
+    {
+      "id": "cyb-fac-004",
+      "name": "Ivyholt Wellbeing Centre (Fictional)",
+      "region": "North Quadrant",
+      "serviceTier": "essentials",
+      "site": "Ivyholt Wellbeing Centre"
+    }
+  ],
+  "findings": [
+    {
+      "facilityId": "cyb-fac-001",
+      "grade": "C",
+      "id": "cyb-fnd-001",
+      "owner": "Isolde Hartleaf (Fictional)",
+      "priority": "P1",
+      "raisedOn": "2024-02-23",
+      "status": "awaiting-evidence",
+      "title": "Multi-factor access enforcement"
+    },
+    {
+      "facilityId": "cyb-fac-001",
+      "grade": "B",
+      "id": "cyb-fnd-002",
+      "owner": "Wren Berrington (Fictional)",
+      "priority": "P3",
+      "raisedOn": "2024-08-31",
+      "status": "open",
+      "title": "Patch currency for clinical systems"
+    },
+    {
+      "facilityId": "cyb-fac-001",
+      "grade": "B",
+      "id": "cyb-fnd-003",
+      "owner": "Marlowe Ashgrove (Fictional)",
+      "priority": "P2",
+      "raisedOn": "2024-01-08",
+      "status": "open",
+      "title": "Network segmentation of device estate"
+    },
+    {
+      "facilityId": "cyb-fac-001",
+      "grade": "F",
+      "id": "cyb-fnd-004",
+      "owner": "Soren Berrington (Fictional)",
+      "priority": "P1",
+      "raisedOn": "2024-09-10",
+      "status": "awaiting-evidence",
+      "title": "Log retention coverage"
+    },
+    {
+      "facilityId": "cyb-fac-001",
+      "grade": "D",
+      "id": "cyb-fnd-005",
+      "owner": "Soren Ashgrove (Fictional)",
+      "priority": "P2",
+      "raisedOn": "2024-08-17",
+      "status": "awaiting-evidence",
+      "title": "Third-party access review"
+    },
+    {
+      "facilityId": "cyb-fac-001",
+      "grade": "E",
+      "id": "cyb-fnd-006",
+      "owner": "Wren Greenhalgh (Fictional)",
+      "priority": "P3",
+      "raisedOn": "2024-09-06",
+      "status": "open",
+      "title": "Multi-factor access enforcement"
+    },
+    {
+      "facilityId": "cyb-fac-001",
+      "grade": "D",
+      "id": "cyb-fnd-007",
+      "owner": "Rowan Ashgrove (Fictional)",
+      "priority": "P3",
+      "raisedOn": "2024-02-14",
+      "status": "awaiting-evidence",
+      "title": "Patch currency for clinical systems"
+    },
+    {
+      "facilityId": "cyb-fac-002",
+      "grade": "B",
+      "id": "cyb-fnd-008",
+      "owner": "Marlowe Darrowfield (Fictional)",
+      "priority": "P1",
+      "raisedOn": "2024-06-22",
+      "status": "in-remediation",
+      "title": "Joiner mover leaver checks"
+    },
+    {
+      "facilityId": "cyb-fac-002",
+      "grade": "E",
+      "id": "cyb-fnd-009",
+      "owner": "Rowan Darrowfield (Fictional)",
+      "priority": "P3",
+      "raisedOn": "2024-05-19",
+      "status": "open",
+      "title": "Tabletop exercise cadence"
+    },
+    {
+      "facilityId": "cyb-fac-002",
+      "grade": "C",
+      "id": "cyb-fnd-010",
+      "owner": "Rowan Ashgrove (Fictional)",
+      "priority": "P3",
+      "raisedOn": "2024-05-07",
+      "status": "in-remediation",
+      "title": "Privileged account review"
+    },
+    {
+      "facilityId": "cyb-fac-002",
+      "grade": "D",
+      "id": "cyb-fnd-011",
+      "owner": "Isolde Darrowfield (Fictional)",
+      "priority": "P3",
+      "raisedOn": "2024-10-19",
+      "status": "awaiting-evidence",
+      "title": "Immutable backup verification"
+    },
+    {
+      "facilityId": "cyb-fac-002",
+      "grade": "F",
+      "id": "cyb-fnd-012",
+      "owner": "Wren Darrowfield (Fictional)",
+      "priority": "P3",
+      "raisedOn": "2024-01-01",
+      "status": "awaiting-evidence",
+      "title": "Security awareness refresher"
+    },
+    {
+      "facilityId": "cyb-fac-002",
+      "grade": "B",
+      "id": "cyb-fnd-013",
+      "owner": "Isolde Everly (Fictional)",
+      "priority": "P1",
+      "raisedOn": "2024-11-14",
+      "status": "in-remediation",
+      "title": "Joiner mover leaver checks"
+    },
+    {
+      "facilityId": "cyb-fac-002",
+      "grade": "E",
+      "id": "cyb-fnd-014",
+      "owner": "Soren Everly (Fictional)",
+      "priority": "P4",
+      "raisedOn": "2024-10-28",
+      "status": "in-remediation",
+      "title": "Tabletop exercise cadence"
+    },
+    {
+      "facilityId": "cyb-fac-003",
+      "grade": "A",
+      "id": "cyb-fnd-015",
+      "owner": "Peregrine Fairweather (Fictional)",
+      "priority": "P3",
+      "raisedOn": "2024-11-06",
+      "status": "in-remediation",
+      "title": "Network segmentation of device estate"
+    },
+    {
+      "facilityId": "cyb-fac-003",
+      "grade": "B",
+      "id": "cyb-fnd-016",
+      "owner": "Isolde Greenhalgh (Fictional)",
+      "priority": "P2",
+      "raisedOn": "2024-10-11",
+      "status": "awaiting-evidence",
+      "title": "Log retention coverage"
+    },
+    {
+      "facilityId": "cyb-fac-003",
+      "grade": "C",
+      "id": "cyb-fnd-017",
+      "owner": "Wren Darrowfield (Fictional)",
+      "priority": "P1",
+      "raisedOn": "2024-01-11",
+      "status": "open",
+      "title": "Third-party access review"
+    },
+    {
+      "facilityId": "cyb-fac-003",
+      "grade": "F",
+      "id": "cyb-fnd-018",
+      "owner": "Marlowe Hartleaf (Fictional)",
+      "priority": "P4",
+      "raisedOn": "2024-02-06",
+      "status": "awaiting-evidence",
+      "title": "Multi-factor access enforcement"
+    },
+    {
+      "facilityId": "cyb-fac-003",
+      "grade": "B",
+      "id": "cyb-fnd-019",
+      "owner": "Peregrine Ashgrove (Fictional)",
+      "priority": "P2",
+      "raisedOn": "2024-10-11",
+      "status": "in-remediation",
+      "title": "Patch currency for clinical systems"
+    },
+    {
+      "facilityId": "cyb-fac-003",
+      "grade": "E",
+      "id": "cyb-fnd-020",
+      "owner": "Isolde Ashgrove (Fictional)",
+      "priority": "P4",
+      "raisedOn": "2024-06-11",
+      "status": "open",
+      "title": "Network segmentation of device estate"
+    },
+    {
+      "facilityId": "cyb-fac-003",
+      "grade": "C",
+      "id": "cyb-fnd-021",
+      "owner": "Soren Berrington (Fictional)",
+      "priority": "P4",
+      "raisedOn": "2024-07-29",
+      "status": "open",
+      "title": "Log retention coverage"
+    },
+    {
+      "facilityId": "cyb-fac-004",
+      "grade": "D",
+      "id": "cyb-fnd-022",
+      "owner": "Marlowe Greenhalgh (Fictional)",
+      "priority": "P3",
+      "raisedOn": "2024-02-08",
+      "status": "open",
+      "title": "Privileged account review"
+    },
+    {
+      "facilityId": "cyb-fac-004",
+      "grade": "A",
+      "id": "cyb-fnd-023",
+      "owner": "Soren Greenhalgh (Fictional)",
+      "priority": "P2",
+      "raisedOn": "2024-02-09",
+      "status": "open",
+      "title": "Immutable backup verification"
+    },
+    {
+      "facilityId": "cyb-fac-004",
+      "grade": "E",
+      "id": "cyb-fnd-024",
+      "owner": "Marlowe Fairweather (Fictional)",
+      "priority": "P1",
+      "raisedOn": "2024-08-17",
+      "status": "in-remediation",
+      "title": "Security awareness refresher"
+    },
+    {
+      "facilityId": "cyb-fac-004",
+      "grade": "A",
+      "id": "cyb-fnd-025",
+      "owner": "Caspian Cloudsley (Fictional)",
+      "priority": "P4",
+      "raisedOn": "2024-03-08",
+      "status": "open",
+      "title": "Joiner mover leaver checks"
+    },
+    {
+      "facilityId": "cyb-fac-004",
+      "grade": "F",
+      "id": "cyb-fnd-026",
+      "owner": "Tamsin Everly (Fictional)",
+      "priority": "P2",
+      "raisedOn": "2024-02-19",
+      "status": "open",
+      "title": "Tabletop exercise cadence"
+    },
+    {
+      "facilityId": "cyb-fac-004",
+      "grade": "D",
+      "id": "cyb-fnd-027",
+      "owner": "Soren Cloudsley (Fictional)",
+      "priority": "P2",
+      "raisedOn": "2024-02-22",
+      "status": "in-remediation",
+      "title": "Privileged account review"
+    },
+    {
+      "facilityId": "cyb-fac-004",
+      "grade": "D",
+      "id": "cyb-fnd-028",
+      "owner": "Marlowe Everly (Fictional)",
+      "priority": "P4",
+      "raisedOn": "2024-01-17",
+      "status": "awaiting-evidence",
+      "title": "Immutable backup verification"
+    }
+  ],
+  "generator": "src/generateCyberFixtures.ts",
+  "kind": "cyber-parity",
+  "roles": [
+    {
+      "facilityIds": [
+        "cyb-fac-001",
+        "cyb-fac-002",
+        "cyb-fac-003",
+        "cyb-fac-004"
+      ],
+      "id": "program-lead",
+      "label": "HealthPRO Program Lead"
+    },
+    {
+      "facilityIds": [
+        "cyb-fac-001",
+        "cyb-fac-002"
+      ],
+      "id": "member-exec",
+      "label": "Member Executive"
+    },
+    {
+      "facilityIds": [
+        "cyb-fac-002",
+        "cyb-fac-003",
+        "cyb-fac-004"
+      ],
+      "id": "member-it",
+      "label": "Member IT Lead"
+    }
+  ],
+  "seed": 20240917,
+  "summaries": [
+    {
+      "counts": {
+        "P1": 2,
+        "P2": 2,
+        "P3": 3,
+        "P4": 0
+      },
+      "facilityId": "cyb-fac-001",
+      "grade": "D"
+    },
+    {
+      "counts": {
+        "P1": 2,
+        "P2": 0,
+        "P3": 4,
+        "P4": 1
+      },
+      "facilityId": "cyb-fac-002",
+      "grade": "D"
+    },
+    {
+      "counts": {
+        "P1": 1,
+        "P2": 2,
+        "P3": 1,
+        "P4": 3
+      },
+      "facilityId": "cyb-fac-003",
+      "grade": "C"
+    },
+    {
+      "counts": {
+        "P1": 1,
+        "P2": 3,
+        "P3": 1,
+        "P4": 2
+      },
+      "facilityId": "cyb-fac-004",
+      "grade": "D"
+    }
+  ],
+  "version": 1
+}
