@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest';
 
 import App from './App';
+import { CYBER_POC_NAV, isCyberPocPath } from './App';
 import CyberFindings from './CyberFindings';
 import CyberOverview from './CyberOverview';
-import { PARITY_MAPPING } from './ui-parity.spec';
 
 describe('smoke', () => {
   it('runs the test toolchain', () => {
@@ -14,17 +14,18 @@ describe('smoke', () => {
     expect(typeof App).toBe('function');
   });
 
-  it('loads the cyber screens and their parity mapping', () => {
+  it('loads the cyber screens into the existing shell', () => {
     expect(typeof CyberOverview).toBe('function');
     expect(typeof CyberFindings).toBe('function');
 
-    // Every new screen is recorded against the existing POC screen it is
-    // reviewed side by side with, before sign-off.
-    expect(PARITY_MAPPING.length).toBeGreaterThan(0);
-    for (const { cyberScreen, referenceScreen } of PARITY_MAPPING) {
-      expect(cyberScreen.startsWith('/cyber-poc')).toBe(true);
-      expect(referenceScreen.startsWith('/cyber-poc')).toBe(false);
-      expect(referenceScreen.startsWith('/')).toBe(true);
+    // The cyber screens are entries in the shell's own navigation list, and
+    // every one of them is routed by the group the shell mounts. The parity
+    // review of those screens lives in `ui-parity.spec.ts`.
+    expect(CYBER_POC_NAV.length).toBeGreaterThan(0);
+    for (const item of CYBER_POC_NAV) {
+      expect(isCyberPocPath(item.path), `${item.path} is not routed`).toBe(true);
     }
+    expect(isCyberPocPath('/')).toBe(false);
+    expect(isCyberPocPath('/cyber/portfolio')).toBe(false);
   });
 });
