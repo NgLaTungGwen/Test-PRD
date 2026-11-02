@@ -394,3 +394,247 @@ export function getMembersForAdvisory(advisoryId: string): CyberMember[] {
     .map((id) => getMemberById(id))
     .filter((member): member is CyberMember => member !== undefined);
 }
+
+/* ------------------------------------------------------------------ *
+ * The cyber module shell: facilities, role scope and the derived rows
+ * the /cyber screens read.
+ *
+ * Everything below comes out of `src/cyberData.json`, written by
+ * `generate-cyber-fixtures.mjs` (`npm run gen:cyber-shell-fixtures`) from
+ * the same committed mock data the selectors above expose. The bundle adds
+ * what the shell needs and the mock data set does not carry: facilities,
+ * several per member, and the facility each incident, finding and report
+ * belongs to.
+ * ------------------------------------------------------------------ */
+import shellBundle from './cyberData.json';
+
+/** A member's site. Every member screen is scoped to exactly one of these. */
+export type Facility = { id: string; memberId: string; name: string; kind: string; city: string };
+
+/** The three demo roles the /cyber shell offers. */
+export type CyberRole = 'program-lead' | 'member-exec' | 'member-it';
+
+/** A record that belongs to one facility of one member. */
+export type FacilityScoped = { facilityId: string };
+
+export type ScopedIncident = CyberIncident & FacilityScoped;
+export type ScopedFinding = Finding & FacilityScoped;
+export type ScopedReport = CyberReport & FacilityScoped;
+
+/** One member's SLA / MTTA figures for one month. */
+export type ServicePerformanceRow = {
+  memberId: string;
+  month: string;
+  tickets: number;
+  breached: number;
+  slaAttainmentPercent: number;
+  mttaMins: number;
+  mttrMins: number;
+};
+
+/** One service tier as the catalogue screen shows it. */
+export type CatalogueEntry = {
+  id: string;
+  name: string;
+  services: string[];
+  facilitySize: string;
+  reportCadence: string;
+  irRetainerHours: number;
+  irTimeToEngageMinutes: number;
+  memberCount: number;
+};
+
+type ShellBundle = {
+  generator: string;
+  kind: string;
+  version: number;
+  seed: number;
+  months: string[];
+  members: CyberMember[];
+  facilities: Facility[];
+  incidents: ScopedIncident[];
+  findings: ScopedFinding[];
+  reports: ScopedReport[];
+  advisories: Advisory[];
+  servicePerformance: ServicePerformanceRow[];
+  catalogue: CatalogueEntry[];
+};
+
+const SHELL = shellBundle as unknown as ShellBundle;
+
+/** The seed `src/cyberData.json` was generated from. */
+export const SHELL_SEED: number = SHELL.seed;
+
+/**
+ * The member a demo member role signs in as. The demo has one member login,
+ * so a member role is always this organisation until a facility of another
+ * member is selected.
+ */
+export const DEFAULT_MEMBER_ID = 'mem-lakeshore';
+
+/** The three roles, in the order the role switcher lists them. */
+export const CYBER_ROLES: { id: CyberRole; label: string }[] = [
+  { id: 'program-lead', label: 'HealthPRO Program Lead' },
+  { id: 'member-exec', label: 'Member Executive' },
+  { id: 'member-it', label: 'Member IT Lead' },
+];
+
+/** The label the role switcher shows for a role. */
+export function roleLabel(role: CyberRole): string {
+  return CYBER_ROLES.find((entry) => entry.id === role)?.label ?? role;
+}
+
+/** Whether a role signs in on behalf of a member rather than of HealthPRO. */
+export function isMemberRole(role: CyberRole): boolean {
+  return role === 'member-exec' || role === 'member-it';
+}
+
+/** Every facility in the data set, members in table order. */
+export function getAllFacilities(): Facility[] {
+  return [...SHELL.facilities];
+}
+
+/** The facilities of one member, in id order. */
+export function getFacilities(memberId: string): Facility[] {
+  return SHELL.facilities.filter((facility) => facility.memberId === memberId);
+}
+
+/** One facility by id, or `undefined`. */
+export function getFacilityById(id: string | undefined): Facility | undefined {
+  return id === undefined ? undefined : SHELL.facilities.find((facility) => facility.id === id);
+}
+
+/** The first facility of a member — what a member role starts scoped to. */
+export function getDefaultFacilityId(memberId: string): string | undefined {
+  return getFacilities(memberId)[0]?.id;
+}
+
+/**
+ * The member a scope is acting for: the owner of the selected facility, or the
+ * demo member login when a member role has not chosen one yet. A Program Lead
+ * acts for no single member, so this is `undefined` for that role.
+ */
+export function activeMemberId(role: CyberRole, facilityId?: string): string | undefined {
+  if (!isMemberRole(role)) return undefined;
+  return getFacilityById(facilityId)?.memberId ?? DEFAULT_MEMBER_ID;
+}
+
+/** Every incident with its facility, for one member, one facility, or all. */
+export function getScopedIncidents(memberId?: string, facilityId?: string): ScopedIncident[] {
+  return SHELL.incidents.filter(
+    (incident) =>
+      (memberId === undefined || incident.memberId === memberId) &&
+      (facilityId === undefined || incident.facilityId === facilityId),
+  );
+}
+
+/** Every finding with its facility, for one member, one facility, or all. */
+export function getScopedFindings(memberId?: string, facilityId?: string): ScopedFinding[] {
+  return SHELL.findings.filter(
+    (finding) =>
+      (memberId === undefined || finding.memberId === memberId) &&
+      (facilityId === undefined || finding.facilityId === facilityId),
+  );
+}
+
+/** Every report with its facility, for one member, one facility, or all. */
+export function getScopedReports(memberId?: string, facilityId?: string): ScopedReport[] {
+  return SHELL.reports.filter(
+    (report) =>
+      (memberId === undefined || report.memberId === memberId) &&
+      (facilityId === undefined || report.facilityId === facilityId),
+  );
+}
+
+export type CyberScopeSelection = {
+  members: CyberMember[];
+  incidents: ScopedIncident[];
+  findings: ScopedFinding[];
+  reports: ScopedReport[];
+  advisories: Advisory[];
+};
+
+/**
+ * The single read path every /cyber screen uses.
+ *
+ * A Program Lead sees the whole portfolio. A member role sees its own
+ * organisation only, and — once a facility is chosen in the header selector —
+ * only the records of that facility. Nothing downstream filters again: a
+ * screen shows what this returns.
+ */
+export function selectByScope(role: CyberRole, facilityId?: string): CyberScopeSelection {
+  if (!isMemberRole(role)) {
+    return {
+      members: getMembers(),
+      incidents: getScopedIncidents(),
+      findings: getScopedFindings(),
+      reports: getScopedReports(),
+      advisories: getAdvisories(),
+    };
+  }
+
+  const memberId = activeMemberId(role, facilityId) as string;
+  const facility = getFacilityById(facilityId);
+  const scopedFacilityId = facility?.memberId === memberId ? facility.id : undefined;
+  const member = getMemberById(memberId);
+
+  return {
+    members: member === undefined ? [] : [member],
+    incidents: getScopedIncidents(memberId, scopedFacilityId),
+    findings: getScopedFindings(memberId, scopedFacilityId),
+    reports: getScopedReports(memberId, scopedFacilityId),
+    advisories: getAdvisoriesForMember(memberId),
+  };
+}
+
+/** The SLA / MTTA rows, for one member or for all of them, oldest month first. */
+export function getServicePerformance(memberId?: string): ServicePerformanceRow[] {
+  return memberId === undefined
+    ? [...SHELL.servicePerformance]
+    : SHELL.servicePerformance.filter((row) => row.memberId === memberId);
+}
+
+/** The service tier catalogue entries, cheapest tier first. */
+export function getCatalogue(): CatalogueEntry[] {
+  return [...SHELL.catalogue];
+}
+
+/** The months the shell data covers, oldest first. */
+export function getShellMonths(): string[] {
+  return [...SHELL.months];
+}
+
+/** One row of the Program Lead portfolio summary. */
+export type PortfolioRow = {
+  memberId: string;
+  memberName: string;
+  tier: string;
+  facilities: number;
+  openIncidents: number;
+  overdueFindings: number;
+  postureGrade: string;
+  slaAttainmentPercent: number;
+};
+
+/** The portfolio summary: one row per member, in member table order. */
+export function getPortfolioRows(): PortfolioRow[] {
+  const latestMonth = SHELL.months[SHELL.months.length - 1] as string;
+
+  return getMembers().map((member) => {
+    const performance = SHELL.servicePerformance.find(
+      (row) => row.memberId === member.id && row.month === latestMonth,
+    );
+    return {
+      memberId: member.id,
+      memberName: member.name,
+      tier: member.tier,
+      facilities: getFacilities(member.id).length,
+      openIncidents: getIncidents(member.id).filter(
+        (incident) => incident.openActions.length > 0,
+      ).length,
+      overdueFindings: getOverdueFindings(member.id).length,
+      postureGrade: getLatestPosture(member.id)?.grade ?? '—',
+      slaAttainmentPercent: performance?.slaAttainmentPercent ?? 100,
+    };
+  });
+}
