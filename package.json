@@ -8,6 +8,7 @@
     "start": "vite --host 127.0.0.1 --port 5173",
     "build": "vite build",
     "preview": "vite preview",
+    "gen:cyber-fixtures": "node src/generateCyberFixtures.ts",
     "test": "vitest run"
   },
   "dependencies": {

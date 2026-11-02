@@ -1,0 +1,128 @@
+{
+  "generator": "src/generateCyberFixtures.ts",
+  "kind": "control",
+  "records": [
+    {
+      "baseline": "Prototype Control Baseline",
+      "coveragePercent": 69,
+      "facilityId": "fac-006",
+      "facilityName": "Jarrowfield Care Campus (Fictional)",
+      "id": "ctl-001",
+      "kind": "control",
+      "lastReviewedOn": "2024-04-01",
+      "name": "Multi-factor access enforcement (Fictional)",
+      "owner": "Peregrine Darrowfield (Fictional)",
+      "status": "planned"
+    },
+    {
+      "baseline": "Prototype Control Baseline",
+      "coveragePercent": 42,
+      "facilityId": "fac-002",
+      "facilityName": "Larkmoor Residential Lodge (Fictional)",
+      "id": "ctl-002",
+      "kind": "control",
+      "lastReviewedOn": "2024-03-17",
+      "name": "Privileged account review (Fictional)",
+      "owner": "Wren Berrington (Fictional)",
+      "status": "planned"
+    },
+    {
+      "baseline": "Prototype Control Baseline",
+      "coveragePercent": 73,
+      "facilityId": "fac-002",
+      "facilityName": "Larkmoor Residential Lodge (Fictional)",
+      "id": "ctl-003",
+      "kind": "control",
+      "lastReviewedOn": "2024-09-11",
+      "name": "Patch currency for clinical systems (Fictional)",
+      "owner": "Rowan Hartleaf (Fictional)",
+      "status": "needs-attention"
+    },
+    {
+      "baseline": "Prototype Control Baseline",
+      "coveragePercent": 53,
+      "facilityId": "fac-003",
+      "facilityName": "Caldermoor Wellbeing Centre (Fictional)",
+      "id": "ctl-004",
+      "kind": "control",
+      "lastReviewedOn": "2024-06-20",
+      "name": "Immutable backup verification (Fictional)",
+      "owner": "Peregrine Fairweather (Fictional)",
+      "status": "in-progress"
+    },
+    {
+      "baseline": "Prototype Control Baseline",
+      "coveragePercent": 92,
+      "facilityId": "fac-002",
+      "facilityName": "Larkmoor Residential Lodge (Fictional)",
+      "id": "ctl-005",
+      "kind": "control",
+      "lastReviewedOn": "2024-09-01",
+      "name": "Network segmentation of device estate (Fictional)",
+      "owner": "Marlowe Cloudsley (Fictional)",
+      "status": "operating"
+    },
+    {
+      "baseline": "Prototype Control Baseline",
+      "coveragePercent": 65,
+      "facilityId": "fac-001",
+      "facilityName": "Glimmerbrook Community Clinic (Fictional)",
+      "id": "ctl-006",
+      "kind": "control",
+      "lastReviewedOn": "2024-02-14",
+      "name": "Security awareness refresher (Fictional)",
+      "owner": "Soren Fairweather (Fictional)",
+      "status": "operating"
+    },
+    {
+      "baseline": "Prototype Control Baseline",
+      "coveragePercent": 69,
+      "facilityId": "fac-003",
+      "facilityName": "Caldermoor Wellbeing Centre (Fictional)",
+      "id": "ctl-007",
+      "kind": "control",
+      "lastReviewedOn": "2024-05-17",
+      "name": "Log retention coverage (Fictional)",
+      "owner": "Caspian Darrowfield (Fictional)",
+      "status": "operating"
+    },
+    {
+      "baseline": "Prototype Control Baseline",
+      "coveragePercent": 96,
+      "facilityId": "fac-002",
+      "facilityName": "Larkmoor Residential Lodge (Fictional)",
+      "id": "ctl-008",
+      "kind": "control",
+      "lastReviewedOn": "2024-05-16",
+      "name": "Joiner mover leaver checks (Fictional)",
+      "owner": "Wren Greenhalgh (Fictional)",
+      "status": "planned"
+    },
+    {
+      "baseline": "Prototype Control Baseline",
+      "coveragePercent": 47,
+      "facilityId": "fac-005",
+      "facilityName": "Hollowmere Community Clinic (Fictional)",
+      "id": "ctl-009",
+      "kind": "control",
+      "lastReviewedOn": "2024-08-03",
+      "name": "Third-party access review (Fictional)",
+      "owner": "Isolde Greenhalgh (Fictional)",
+      "status": "planned"
+    },
+    {
+      "baseline": "Prototype Control Baseline",
+      "coveragePercent": 59,
+      "facilityId": "fac-006",
+      "facilityName": "Jarrowfield Care Campus (Fictional)",
+      "id": "ctl-010",
+      "kind": "control",
+      "lastReviewedOn": "2024-01-17",
+      "name": "Tabletop exercise cadence (Fictional)",
+      "owner": "Marlowe Fairweather (Fictional)",
+      "status": "planned"
+    }
+  ],
+  "seed": 20240917,
+  "version": 1
+}
