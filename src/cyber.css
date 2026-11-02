@@ -1,0 +1,316 @@
+/*
+ * The cyber module shell: the app frame, the sidebar section, the screens and
+ * the illustrative banner. Plain CSS, loaded once by the /cyber layout and by
+ * the shell itself, so nothing here depends on a build step beyond Vite's own
+ * stylesheet handling.
+ */
+
+:root {
+  --cyber-ink: #10243a;
+  --cyber-muted: #5a6b7d;
+  --cyber-line: #d7dee6;
+  --cyber-surface: #ffffff;
+  --cyber-accent: #0b5cab;
+  --cyber-warn-bg: #fff4d6;
+  --cyber-warn-ink: #6b4b00;
+  --cyber-warn-line: #d9a400;
+}
+
+body {
+  margin: 0;
+  color: var(--cyber-ink);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background: #f4f6f9;
+}
+
+/* ---------------------------------------------------------------- *
+ * Shell frame
+ * ---------------------------------------------------------------- */
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.shell-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--cyber-surface);
+  border-bottom: 1px solid var(--cyber-line);
+}
+
+.shell-header__brand {
+  font-weight: 700;
+  color: var(--cyber-ink);
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.shell-header__search {
+  border: 1px solid var(--cyber-line);
+  background: #f8fafc;
+  border-radius: 6px;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  color: var(--cyber-muted);
+}
+
+.shell-header__role,
+.shell-header__facility {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+}
+
+.shell-header__label {
+  color: var(--cyber-muted);
+}
+
+.app-shell__body {
+  display: flex;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.sidebar {
+  width: 15rem;
+  flex: 0 0 15rem;
+  padding: 1rem;
+  background: var(--cyber-surface);
+  border-right: 1px solid var(--cyber-line);
+  min-height: calc(100vh - 3.5rem);
+}
+
+.sidebar__heading {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cyber-muted);
+  margin: 1rem 0 0.5rem;
+}
+
+.sidebar__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar__link {
+  display: block;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  color: var(--cyber-ink);
+  text-decoration: none;
+}
+
+.sidebar__link:hover,
+.sidebar__link[data-active='true'] {
+  background: #eaf2fb;
+  color: var(--cyber-accent);
+}
+
+.app-shell__main {
+  flex: 1;
+  padding: 1.25rem 1.5rem;
+  min-width: 0;
+}
+
+/* ---------------------------------------------------------------- *
+ * Illustrative banner. It follows the IllustrativeFigure convention:
+ * always visible, never decorative only.
+ * ---------------------------------------------------------------- */
+
+.illustrative-banner {
+  background: var(--cyber-warn-bg);
+  color: var(--cyber-warn-ink);
+  border: 1px solid var(--cyber-warn-line);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.illustrative-figure__label {
+  font-size: 0.75rem;
+  color: var(--cyber-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ---------------------------------------------------------------- *
+ * Screens
+ * ---------------------------------------------------------------- */
+
+.cyber-screen h1 {
+  font-size: 1.4rem;
+  margin: 0 0 0.25rem;
+}
+
+.cyber-screen__lede {
+  color: var(--cyber-muted);
+  margin: 0 0 1rem;
+}
+
+.cyber-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--cyber-surface);
+  border: 1px solid var(--cyber-line);
+}
+
+.cyber-table caption {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  font-weight: 600;
+  color: var(--cyber-muted);
+}
+
+.cyber-table th,
+.cyber-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.5rem 0.75rem;
+  border-top: 1px solid var(--cyber-line);
+  font-weight: 400;
+}
+
+.cyber-table thead th {
+  font-weight: 600;
+  background: #f8fafc;
+}
+
+.cyber-table__detail {
+  display: block;
+  color: var(--cyber-muted);
+  font-size: 0.8125rem;
+}
+
+.cyber-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cyber-card {
+  flex: 1 1 18rem;
+  background: var(--cyber-surface);
+  border: 1px solid var(--cyber-line);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.cyber-card__facts div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--cyber-line);
+  padding: 0.25rem 0;
+}
+
+.cyber-card__facts dt {
+  color: var(--cyber-muted);
+}
+
+.cyber-card__facts dd {
+  margin: 0;
+  text-align: right;
+}
+
+/* ---------------------------------------------------------------- *
+ * ⌘K palette
+ * ---------------------------------------------------------------- */
+
+.search-palette {
+  position: fixed;
+  inset: 0;
+  background: rgba(16, 36, 58, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 6rem;
+  z-index: 10;
+}
+
+.search-palette__box {
+  background: var(--cyber-surface);
+  border-radius: 10px;
+  width: min(44rem, 92vw);
+  max-height: 60vh;
+  overflow: auto;
+  padding: 1rem;
+  box-shadow: 0 16px 48px rgba(16, 36, 58, 0.25);
+}
+
+.search-palette__input {
+  width: 70%;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--cyber-line);
+  border-radius: 6px;
+}
+
+.search-palette__close {
+  margin-left: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--cyber-line);
+  border-radius: 6px;
+  background: #f8fafc;
+  cursor: pointer;
+}
+
+.search-palette__results {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+}
+
+.search-palette__result a {
+  display: block;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  color: var(--cyber-ink);
+  text-decoration: none;
+}
+
+.search-palette__result a:hover {
+  background: #eaf2fb;
+}
+
+.search-palette__entity {
+  display: inline-block;
+  min-width: 5.5rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--cyber-muted);
+}
+
+/* ---------------------------------------------------------------- *
+ * Print. The banner is the one thing that must survive a print or a
+ * PDF export, so it keeps its colours and is never broken across a
+ * page; the shell chrome around it is dropped.
+ * ---------------------------------------------------------------- */
+
+@media print {
+  .shell-header,
+  .sidebar,
+  .search-palette {
+    display: none !important;
+  }
+
+  .illustrative-banner {
+    display: block !important;
+    visibility: visible !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border: 1px solid var(--cyber-warn-line);
+    background: var(--cyber-warn-bg) !important;
+    color: var(--cyber-warn-ink) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
