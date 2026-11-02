@@ -4,13 +4,16 @@ import type { ChangeEvent } from 'react';
 import CyberFindings from './CyberFindings';
 import CyberOverview from './CyberOverview';
 import CyberRoutes, { CyberLink, isCyberPath, navigate, usePath } from './CyberRoutes';
-import { CyberScopeProvider as CyberPocScopeProvider } from './CyberScopeContext';
+import { useCyberScopeContext } from './CyberScopeContext';
+import CyberShell, { CYBER_EXPORT_PATH } from './CyberShell';
 import CyberSidebar from './CyberSidebar';
 import FacilitySelector from './FacilitySelector';
+import { StandingIllustrativeBanner } from './IllustrativeBanner';
 import { IllustrativeNotice } from './IllustrativeFigure';
 import TierCatalogue from './TierCatalogue';
 import { CYBER_ROLES, activeMemberId, isMemberRole } from './cyberData';
 import type { CyberRole } from './cyberData';
+import { selectScopedFixtures } from './cyberFixtures';
 import { CyberScopeProvider, useCyberScope } from './cyberScope';
 import {
   closeSearch,
@@ -84,6 +87,65 @@ function CyberPocLanding() {
   );
 }
 
+/**
+ * The report export: the findings report for the facility in scope, as the
+ * document the browser hands to its PDF writer.
+ *
+ * The prototype has no PDF engine of its own, so an export is the print
+ * rendering of this screen. The banner is therefore part of the exported
+ * document itself — it sits in the report table's header row, which an engine
+ * that repeats table headers carries onto each page the report spans — and
+ * `print.css` keeps it rendered and unbroken when the page is printed.
+ */
+function CyberPocExport() {
+  const { role, facilityId } = useCyberScopeContext();
+  const { findings, facilities } = selectScopedFixtures(role, facilityId);
+  const facility = facilities.find((entry) => entry.id === facilityId) ?? facilities[0];
+  const facilityName = facility?.name ?? 'no facility in scope';
+
+  return (
+    <section
+      className="cyber-screen"
+      data-testid="cyber-poc-export"
+      data-facility={facility?.id}
+      data-rows={findings.length}
+    >
+      <h1>Cyber posture report — PDF export</h1>
+      <p className="cyber-screen__lede" data-testid="cyber-poc-export-lede">
+        The report for {facilityName}, as it is exported. The illustrative banner is part of the
+        exported document, so a printed or saved PDF can never be mistaken for live data.
+      </p>
+
+      <table className="cyber-table" data-testid="cyber-export-document" data-export="pdf">
+        <caption>Findings at {facilityName} — illustrative report</caption>
+        <thead>
+          <tr data-testid="cyber-export-banner-row">
+            <th scope="col" colSpan={4}>
+              <StandingIllustrativeBanner />
+            </th>
+          </tr>
+          <tr>
+            <th scope="col">Finding</th>
+            <th scope="col">Owner</th>
+            <th scope="col">Grade</th>
+            <th scope="col">Priority</th>
+          </tr>
+        </thead>
+        <tbody>
+          {findings.map((finding) => (
+            <tr key={finding.id} data-testid={`cyber-export-row-${finding.id}`}>
+              <th scope="row">{finding.title}</th>
+              <td>{finding.owner ?? '—'}</td>
+              <td data-grade={finding.grade}>{finding.grade}</td>
+              <td data-priority={finding.priority}>{finding.priority}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  );
+}
+
 /** One screen of the cyber posture group, by path. */
 function CyberPocScreen({ path }: { path: string }) {
   switch (path) {
@@ -91,26 +153,28 @@ function CyberPocScreen({ path }: { path: string }) {
       return <CyberOverview />;
     case '/cyber-poc/findings':
       return <CyberFindings />;
+    case CYBER_EXPORT_PATH:
+      return <CyberPocExport />;
     default:
       return <CyberPocLanding />;
   }
 }
 
 /**
- * The cyber posture group: the shared scope, then the screen, inside the
- * existing content container. No new layout primitive is introduced — the
- * wrapper is the same `cyber-group` element the existing cyber routes use.
+ * The cyber posture group: the screen, inside the existing content container.
+ * No new layout primitive is introduced — the wrapper is the same
+ * `cyber-group` element the existing cyber routes use. The shared scope and
+ * the standing illustrative banner come from `CyberShell`, which the shell
+ * mounts this group inside.
  */
 function CyberPocRoutes() {
   const path = usePath();
   const resolved = path === '/cyber-poc/' ? '/cyber-poc' : path;
 
   return (
-    <CyberPocScopeProvider>
-      <div className="cyber-group" data-testid="cyber-poc-group" data-path={resolved}>
-        <CyberPocScreen path={resolved} />
-      </div>
-    </CyberPocScopeProvider>
+    <div className="cyber-group" data-testid="cyber-poc-group" data-path={resolved}>
+      <CyberPocScreen path={resolved} />
+    </div>
   );
 }
 
@@ -273,9 +337,13 @@ function Shell() {
 
         <main className="app-shell__main" data-testid="app-main">
           {isCyberPocPath(path) ? (
-            <CyberPocRoutes />
+            <CyberShell>
+              <CyberPocRoutes />
+            </CyberShell>
           ) : isCyberPath(path) ? (
-            <CyberRoutes />
+            <CyberShell>
+              <CyberRoutes />
+            </CyberShell>
           ) : (
             <TierCatalogue />
           )}

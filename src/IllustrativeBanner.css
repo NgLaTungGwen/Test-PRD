@@ -1,0 +1,26 @@
+/*
+ * The standing illustrative banner.
+ *
+ * The base `.illustrative-banner` colours live in `cyber.css` with the rest of
+ * the shell; this stylesheet only adds the standing strip the cyber route
+ * group carries above every screen, and pulls in the print rules that carry
+ * that strip into a PDF export.
+ *
+ * The strip is deliberately slimmer than the in-page notice a screen may also
+ * carry: it is a ribbon that stays put while the screen under it changes, not
+ * a second copy of that screen's notice.
+ */
+@import './print.css';
+
+.illustrative-banner--standing {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: block;
+  margin-bottom: 1rem;
+  padding: 0.35rem 0.75rem;
+  border-left: 6px solid var(--cyber-warn-line);
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}

@@ -1,0 +1,82 @@
+/*
+ * The print / PDF export path.
+ *
+ * A cyber screen exported to PDF is the same document the browser prints, so
+ * the one thing that must survive that path is the illustrative banner: a PDF
+ * of the prototype must never read as live data. These rules are loaded
+ * globally from `index.html` and again through `IllustrativeBanner.css`, so
+ * they apply whether a screen pulls the banner's stylesheet in or not.
+ */
+
+@page {
+  margin: 14mm 12mm 12mm;
+}
+
+@media print {
+  /* The chrome around the screen is not part of the exported report. */
+  .shell-header,
+  .sidebar,
+  .search-palette,
+  [data-print='hide'] {
+    display: none !important;
+  }
+
+  /*
+   * The banner itself: rendered, opaque, in its own colours, and never split
+   * across a page boundary. `!important` and the explicit visibility are
+   * deliberate — they beat any screen rule that would collapse the banner
+   * with the rest of the chrome when the page is printed.
+   */
+  .illustrative-banner,
+  .illustrative-banner--print {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+    max-height: none !important;
+    clip: auto !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    break-after: avoid;
+    page-break-after: avoid;
+    border: 1px solid var(--cyber-warn-line);
+    background: var(--cyber-warn-bg) !important;
+    color: var(--cyber-warn-ink) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /*
+   * The standing strip is sticky on screen; on paper a sticky element would
+   * scroll away with the first page, so it is pinned back into the flow.
+   */
+  .illustrative-banner--standing {
+    position: static !important;
+    display: block !important;
+    margin-bottom: 1rem;
+  }
+
+  /*
+   * The copy of the banner inside the exported report sits in the report
+   * table's header row, so an engine that repeats table headers carries it
+   * onto each page the table spans — Chromium repeats it while the header
+   * fits its own size limit, and prints it once at the head of the table
+   * otherwise. It is kept in the flow rather than pinned with
+   * `position: fixed`, because a fixed band is painted over the content of
+   * every page after the first instead of beside it.
+   */
+  thead .illustrative-banner--print {
+    display: block !important;
+    margin: 0 0 0.5rem;
+  }
+
+  /* Nothing may hide the banner by hiding what it sits in. */
+  .app-shell,
+  .app-shell__body,
+  .app-shell__main,
+  .cyber-group {
+    display: block !important;
+    visibility: visible !important;
+    overflow: visible !important;
+  }
+}

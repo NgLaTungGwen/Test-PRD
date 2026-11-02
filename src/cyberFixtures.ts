@@ -14,6 +14,7 @@ import controlsFixture from './cyber-controls.json';
 import facilitiesFixture from './cyber-facilities.json';
 import incidentsFixture from './cyber-incidents.json';
 import vendorsFixture from './cyber-vendors.json';
+import bundleFixture from './cyberFixtures.json';
 import type {
   CyberFixtureFile,
   CyberFixtureKind,
@@ -72,6 +73,101 @@ export function getControls(): CyberFixtureRecord[] {
 /** Every committed fixture record, in file order, for scanning. */
 export function getAllFixtureRecords(): CyberFixtureRecord[] {
   return [...getFacilities(), ...getVendors(), ...getIncidents(), ...getControls()];
+}
+
+/* ------------------------------------------------------------------ *
+ * The role- and facility-scoped lookups the cyber screens render from.
+ *
+ * These read the committed illustrative bundle `src/cyberFixtures.json`,
+ * written by `src/generateCyberFixtures.ts` (`npm run gen:cyber-parity-
+ * fixtures`) and committed as it comes out of it. Nothing here generates
+ * data, reads the clock or touches a Node built-in, so the module stays safe
+ * to import from the browser bundle.
+ * ------------------------------------------------------------------ */
+
+export type CyberGrade = 'A' | 'B' | 'C' | 'D' | 'E' | 'F';
+
+export type CyberPriority = 'P1' | 'P2' | 'P3' | 'P4';
+
+/** A facility in the illustrative bundle. */
+export type Facility = {
+  id: string;
+  name: string;
+  region: string;
+  serviceTier: string;
+  site: string;
+};
+
+/** A finding in the illustrative bundle. */
+export type CyberFinding = {
+  id: string;
+  facilityId: string;
+  title: string;
+  grade: CyberGrade;
+  priority: CyberPriority;
+  owner?: string;
+  raisedOn?: string;
+  status?: string;
+};
+
+/** A role in the illustrative bundle, and the facilities it may see. */
+export type CyberFixtureRole = { id: string; label: string; facilityIds: string[] };
+
+export type CyberFixtureBundle = {
+  facilities: Facility[];
+  findings: CyberFinding[];
+  roles: CyberFixtureRole[];
+};
+
+/** Everything the committed illustrative bundle holds, scope unapplied. */
+export type ScopedFixtures = { findings: CyberFinding[]; facilities: Facility[] };
+
+const BUNDLE = bundleFixture as unknown as CyberFixtureBundle;
+
+/** The illustrative bundle's facilities, in file order. */
+export function bundleFacilities(): Facility[] {
+  return BUNDLE.facilities;
+}
+
+/** The illustrative bundle's findings, in file order. */
+export function bundleFindings(): CyberFinding[] {
+  return BUNDLE.findings;
+}
+
+/** The illustrative bundle's roles, in file order. */
+export function bundleRoles(): CyberFixtureRole[] {
+  return BUNDLE.roles;
+}
+
+/** The facilities a role may see. A role the bundle does not declare sees none. */
+export function facilitiesForRole(role: string): Facility[] {
+  const declared = BUNDLE.roles.find((entry) => entry.id === role);
+  if (declared === undefined) return [];
+  return BUNDLE.facilities.filter((facility) => declared.facilityIds.includes(facility.id));
+}
+
+/**
+ * The fixtures one role sees at one facility.
+ *
+ * The facilities are every facility that role may see, so a scope control can
+ * be built straight from the result; the findings are the ones at
+ * `facilityId`, and a facility the role may not see is narrowed back to the
+ * first one it may, so a caller can never be left reading data outside its
+ * own scope.
+ */
+export function selectScopedFixtures(role: string, facilityId: string): ScopedFixtures {
+  const facilities = facilitiesForRole(role);
+  const scoped = facilities.some((facility) => facility.id === facilityId)
+    ? facilityId
+    : facilities[0]?.id;
+
+  return {
+    facilities,
+    findings:
+      scoped === undefined
+        ? []
+        : BUNDLE.findings.filter((finding) => finding.facilityId === scoped),
+  };
 }
 
 /* ------------------------------------------------------------------ *
