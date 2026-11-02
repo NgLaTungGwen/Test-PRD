@@ -4,16 +4,13 @@ import type { ReactNode } from 'react';
 import {
   CYBER_ROLES,
   DEFAULT_MEMBER_ID,
-  activeMemberId,
   getDefaultFacilityId,
   getFacilityById,
   isMemberRole,
-  roleLabel,
 } from './cyberData';
 import type { CyberRole } from './cyberData';
 
 export type { CyberRole };
-export { CYBER_ROLES, isMemberRole, roleLabel };
 
 /**
  * Who is looking at the cyber module, and at which facility.
@@ -152,10 +149,4 @@ export function useCyberScope(): CyberScope {
     setRole: setCyberRole,
     setFacility: setCyberFacility,
   };
-}
-
-/** The member the active scope acts for, or `undefined` for the Program Lead. */
-export function useActiveMemberId(): string | undefined {
-  const { role, facilityId } = useCyberScope();
-  return activeMemberId(role, facilityId);
 }
