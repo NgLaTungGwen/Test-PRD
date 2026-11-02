@@ -409,7 +409,16 @@ export function getMembersForAdvisory(advisoryId: string): CyberMember[] {
 import shellBundle from './cyberData.json';
 
 /** A member's site. Every member screen is scoped to exactly one of these. */
-export type Facility = { id: string; memberId: string; name: string; kind: string; city: string };
+export type Facility = {
+  id: string;
+  memberId: string;
+  /** The full name, member included: what the facility selector lists. */
+  name: string;
+  /** Just the site, member omitted: what a member screen's own header shows. */
+  site: string;
+  kind: string;
+  city: string;
+};
 
 /** The three demo roles the /cyber shell offers. */
 export type CyberRole = 'program-lead' | 'member-exec' | 'member-it';

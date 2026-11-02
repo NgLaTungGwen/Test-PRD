@@ -89,6 +89,7 @@ function buildFacilities(members, random) {
         id: `fac-${String(counter).padStart(3, '0')}`,
         memberId: member.id,
         name: `${member.name} — ${name}`,
+        site: name,
         kind: pick(random, SITE_KINDS),
         city: member.province,
       });

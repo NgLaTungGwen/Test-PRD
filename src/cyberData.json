@@ -82,6 +82,7 @@
       "id": "fac-001",
       "memberId": "mem-lakeshore",
       "name": "Lakeshore Regional Health Network — Lakeview Annex",
+      "site": "Lakeview Annex",
       "kind": "Acute site",
       "city": "Ontario"
     },
@@ -89,6 +90,7 @@
       "id": "fac-002",
       "memberId": "mem-lakeshore",
       "name": "Lakeshore Regional Health Network — North Campus",
+      "site": "North Campus",
       "kind": "Acute site",
       "city": "Ontario"
     },
@@ -96,6 +98,7 @@
       "id": "fac-003",
       "memberId": "mem-riverbend",
       "name": "Riverbend Community Health Centre — Lakeview Annex",
+      "site": "Lakeview Annex",
       "kind": "Acute site",
       "city": "British Columbia"
     },
@@ -103,6 +106,7 @@
       "id": "fac-004",
       "memberId": "mem-riverbend",
       "name": "Riverbend Community Health Centre — Riverside Site",
+      "site": "Riverside Site",
       "kind": "Acute site",
       "city": "British Columbia"
     },
@@ -110,6 +114,7 @@
       "id": "fac-005",
       "memberId": "mem-riverbend",
       "name": "Riverbend Community Health Centre — Main Campus",
+      "site": "Main Campus",
       "kind": "Acute site",
       "city": "British Columbia"
     },
@@ -117,6 +122,7 @@
       "id": "fac-006",
       "memberId": "mem-maple-grove",
       "name": "Maple Grove Long-Term Care — Westgate Clinic",
+      "site": "Westgate Clinic",
       "kind": "Ambulatory site",
       "city": "Alberta"
     },
@@ -124,6 +130,7 @@
       "id": "fac-007",
       "memberId": "mem-maple-grove",
       "name": "Maple Grove Long-Term Care — North Campus",
+      "site": "North Campus",
       "kind": "Administrative site",
       "city": "Alberta"
     },
@@ -131,6 +138,7 @@
       "id": "fac-008",
       "memberId": "mem-maple-grove",
       "name": "Maple Grove Long-Term Care — Lakeview Annex",
+      "site": "Lakeview Annex",
       "kind": "Residential site",
       "city": "Alberta"
     },
@@ -138,6 +146,7 @@
       "id": "fac-009",
       "memberId": "mem-st-brendans",
       "name": "St. Brendan's Memorial Hospital — Main Campus",
+      "site": "Main Campus",
       "kind": "Residential site",
       "city": "Nova Scotia"
     },
@@ -145,6 +154,7 @@
       "id": "fac-010",
       "memberId": "mem-st-brendans",
       "name": "St. Brendan's Memorial Hospital — North Campus",
+      "site": "North Campus",
       "kind": "Residential site",
       "city": "Nova Scotia"
     },
@@ -152,6 +162,7 @@
       "id": "fac-011",
       "memberId": "mem-st-brendans",
       "name": "St. Brendan's Memorial Hospital — Eastfield Site",
+      "site": "Eastfield Site",
       "kind": "Administrative site",
       "city": "Nova Scotia"
     },
@@ -159,6 +170,7 @@
       "id": "fac-012",
       "memberId": "mem-northern-lights",
       "name": "Northern Lights Health Centre — Main Campus",
+      "site": "Main Campus",
       "kind": "Administrative site",
       "city": "Manitoba"
     },
@@ -166,6 +178,7 @@
       "id": "fac-013",
       "memberId": "mem-northern-lights",
       "name": "Northern Lights Health Centre — Lakeview Annex",
+      "site": "Lakeview Annex",
       "kind": "Administrative site",
       "city": "Manitoba"
     },
@@ -173,6 +186,7 @@
       "id": "fac-014",
       "memberId": "mem-pinehurst",
       "name": "Pinehurst Seniors Residence — Eastfield Site",
+      "site": "Eastfield Site",
       "kind": "Residential site",
       "city": "Saskatchewan"
     },
@@ -180,6 +194,7 @@
       "id": "fac-015",
       "memberId": "mem-pinehurst",
       "name": "Pinehurst Seniors Residence — Westgate Clinic",
+      "site": "Westgate Clinic",
       "kind": "Acute site",
       "city": "Saskatchewan"
     },
@@ -187,6 +202,7 @@
       "id": "fac-016",
       "memberId": "mem-pinehurst",
       "name": "Pinehurst Seniors Residence — Lakeview Annex",
+      "site": "Lakeview Annex",
       "kind": "Administrative site",
       "city": "Saskatchewan"
     },
@@ -194,6 +210,7 @@
       "id": "fac-017",
       "memberId": "mem-harbourview",
       "name": "Harbourview Day Surgery Centre — North Campus",
+      "site": "North Campus",
       "kind": "Acute site",
       "city": "Quebec"
     },
@@ -201,6 +218,7 @@
       "id": "fac-018",
       "memberId": "mem-harbourview",
       "name": "Harbourview Day Surgery Centre — Lakeview Annex",
+      "site": "Lakeview Annex",
       "kind": "Residential site",
       "city": "Quebec"
     },
@@ -208,6 +226,7 @@
       "id": "fac-019",
       "memberId": "mem-cedar-valley",
       "name": "Cedar Valley Mental Health Partners — Main Campus",
+      "site": "Main Campus",
       "kind": "Ambulatory site",
       "city": "New Brunswick"
     },
@@ -215,6 +234,7 @@
       "id": "fac-020",
       "memberId": "mem-cedar-valley",
       "name": "Cedar Valley Mental Health Partners — Lakeview Annex",
+      "site": "Lakeview Annex",
       "kind": "Acute site",
       "city": "New Brunswick"
     }
