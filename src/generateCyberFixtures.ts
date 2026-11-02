@@ -576,7 +576,9 @@ function buildBundleFindings(
 
   for (const facility of facilities) {
     for (let slot = 0; slot < BUNDLE_FINDINGS_PER_FACILITY; slot += 1) {
-      const theme = CONTROL_THEMES[(index + slot) % CONTROL_THEMES.length] as string;
+      // Walk the theme pool one step per finding, so no facility lists the
+      // same control theme twice.
+      const theme = CONTROL_THEMES[index % CONTROL_THEMES.length] as string;
       findings.push({
         id: identifier('cyb-fnd', index),
         facilityId: facility.id,

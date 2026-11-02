@@ -84,7 +84,6 @@ export function CyberOverview() {
                       <dd data-testid={`priority-count-${rollup.facilityId}-${priority}`}>
                         <IllustrativeFigure
                           value={rollup.counts[priority]}
-                          unit="findings"
                           description={`${name} ${priority} findings`}
                         />
                       </dd>
@@ -95,7 +94,6 @@ export function CyberOverview() {
                     <dd data-testid={`finding-total-${rollup.facilityId}`}>
                       <IllustrativeFigure
                         value={findings.length}
-                        unit="findings"
                         description={`${name} findings`}
                       />
                     </dd>

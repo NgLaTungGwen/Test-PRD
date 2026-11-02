@@ -48,7 +48,7 @@
       "priority": "P3",
       "raisedOn": "2024-08-31",
       "status": "open",
-      "title": "Patch currency for clinical systems"
+      "title": "Privileged account review"
     },
     {
       "facilityId": "cyb-fac-001",
@@ -58,7 +58,7 @@
       "priority": "P2",
       "raisedOn": "2024-01-08",
       "status": "open",
-      "title": "Network segmentation of device estate"
+      "title": "Patch currency for clinical systems"
     },
     {
       "facilityId": "cyb-fac-001",
@@ -68,7 +68,7 @@
       "priority": "P1",
       "raisedOn": "2024-09-10",
       "status": "awaiting-evidence",
-      "title": "Log retention coverage"
+      "title": "Immutable backup verification"
     },
     {
       "facilityId": "cyb-fac-001",
@@ -78,7 +78,7 @@
       "priority": "P2",
       "raisedOn": "2024-08-17",
       "status": "awaiting-evidence",
-      "title": "Third-party access review"
+      "title": "Network segmentation of device estate"
     },
     {
       "facilityId": "cyb-fac-001",
@@ -88,7 +88,7 @@
       "priority": "P3",
       "raisedOn": "2024-09-06",
       "status": "open",
-      "title": "Multi-factor access enforcement"
+      "title": "Security awareness refresher"
     },
     {
       "facilityId": "cyb-fac-001",
@@ -98,7 +98,7 @@
       "priority": "P3",
       "raisedOn": "2024-02-14",
       "status": "awaiting-evidence",
-      "title": "Patch currency for clinical systems"
+      "title": "Log retention coverage"
     },
     {
       "facilityId": "cyb-fac-002",
@@ -118,7 +118,7 @@
       "priority": "P3",
       "raisedOn": "2024-05-19",
       "status": "open",
-      "title": "Tabletop exercise cadence"
+      "title": "Third-party access review"
     },
     {
       "facilityId": "cyb-fac-002",
@@ -128,7 +128,7 @@
       "priority": "P3",
       "raisedOn": "2024-05-07",
       "status": "in-remediation",
-      "title": "Privileged account review"
+      "title": "Tabletop exercise cadence"
     },
     {
       "facilityId": "cyb-fac-002",
@@ -138,7 +138,7 @@
       "priority": "P3",
       "raisedOn": "2024-10-19",
       "status": "awaiting-evidence",
-      "title": "Immutable backup verification"
+      "title": "Multi-factor access enforcement"
     },
     {
       "facilityId": "cyb-fac-002",
@@ -148,7 +148,7 @@
       "priority": "P3",
       "raisedOn": "2024-01-01",
       "status": "awaiting-evidence",
-      "title": "Security awareness refresher"
+      "title": "Privileged account review"
     },
     {
       "facilityId": "cyb-fac-002",
@@ -158,7 +158,7 @@
       "priority": "P1",
       "raisedOn": "2024-11-14",
       "status": "in-remediation",
-      "title": "Joiner mover leaver checks"
+      "title": "Patch currency for clinical systems"
     },
     {
       "facilityId": "cyb-fac-002",
@@ -168,7 +168,7 @@
       "priority": "P4",
       "raisedOn": "2024-10-28",
       "status": "in-remediation",
-      "title": "Tabletop exercise cadence"
+      "title": "Immutable backup verification"
     },
     {
       "facilityId": "cyb-fac-003",
@@ -188,7 +188,7 @@
       "priority": "P2",
       "raisedOn": "2024-10-11",
       "status": "awaiting-evidence",
-      "title": "Log retention coverage"
+      "title": "Security awareness refresher"
     },
     {
       "facilityId": "cyb-fac-003",
@@ -198,7 +198,7 @@
       "priority": "P1",
       "raisedOn": "2024-01-11",
       "status": "open",
-      "title": "Third-party access review"
+      "title": "Log retention coverage"
     },
     {
       "facilityId": "cyb-fac-003",
@@ -208,7 +208,7 @@
       "priority": "P4",
       "raisedOn": "2024-02-06",
       "status": "awaiting-evidence",
-      "title": "Multi-factor access enforcement"
+      "title": "Joiner mover leaver checks"
     },
     {
       "facilityId": "cyb-fac-003",
@@ -218,7 +218,7 @@
       "priority": "P2",
       "raisedOn": "2024-10-11",
       "status": "in-remediation",
-      "title": "Patch currency for clinical systems"
+      "title": "Third-party access review"
     },
     {
       "facilityId": "cyb-fac-003",
@@ -228,7 +228,7 @@
       "priority": "P4",
       "raisedOn": "2024-06-11",
       "status": "open",
-      "title": "Network segmentation of device estate"
+      "title": "Tabletop exercise cadence"
     },
     {
       "facilityId": "cyb-fac-003",
@@ -238,7 +238,7 @@
       "priority": "P4",
       "raisedOn": "2024-07-29",
       "status": "open",
-      "title": "Log retention coverage"
+      "title": "Multi-factor access enforcement"
     },
     {
       "facilityId": "cyb-fac-004",
@@ -258,7 +258,7 @@
       "priority": "P2",
       "raisedOn": "2024-02-09",
       "status": "open",
-      "title": "Immutable backup verification"
+      "title": "Patch currency for clinical systems"
     },
     {
       "facilityId": "cyb-fac-004",
@@ -268,7 +268,7 @@
       "priority": "P1",
       "raisedOn": "2024-08-17",
       "status": "in-remediation",
-      "title": "Security awareness refresher"
+      "title": "Immutable backup verification"
     },
     {
       "facilityId": "cyb-fac-004",
@@ -278,7 +278,7 @@
       "priority": "P4",
       "raisedOn": "2024-03-08",
       "status": "open",
-      "title": "Joiner mover leaver checks"
+      "title": "Network segmentation of device estate"
     },
     {
       "facilityId": "cyb-fac-004",
@@ -288,7 +288,7 @@
       "priority": "P2",
       "raisedOn": "2024-02-19",
       "status": "open",
-      "title": "Tabletop exercise cadence"
+      "title": "Security awareness refresher"
     },
     {
       "facilityId": "cyb-fac-004",
@@ -298,7 +298,7 @@
       "priority": "P2",
       "raisedOn": "2024-02-22",
       "status": "in-remediation",
-      "title": "Privileged account review"
+      "title": "Log retention coverage"
     },
     {
       "facilityId": "cyb-fac-004",
@@ -308,7 +308,7 @@
       "priority": "P4",
       "raisedOn": "2024-01-17",
       "status": "awaiting-evidence",
-      "title": "Immutable backup verification"
+      "title": "Joiner mover leaver checks"
     }
   ],
   "generator": "src/generateCyberFixtures.ts",
