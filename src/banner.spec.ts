@@ -284,8 +284,8 @@ describe('illustrative banner', () => {
 
         /* ---------------------------------------------------------- *
          * 2. The banner is inside the exported document, in the
-         *    report table's header row, which a print engine repeats
-         *    at the top of every page the report spans.
+         *    report table's header row, which an engine that repeats
+         *    table headers carries onto each page it spans.
          * ---------------------------------------------------------- */
         const bannerRow = elementByTestId(exported, 'cyber-export-banner-row');
         const banner = elementByTestId(bannerRow, STANDING_BANNER_TEST_ID);
@@ -354,8 +354,7 @@ describe('illustrative banner', () => {
       }
     }
 
-    setCurrentPath(CYBER_EXPORT_PATH);
-    const actions = openingTag(render(CYBER_EXPORT_PATH), 'cyber-export-actions');
+    const actions = openingTag(render(CYBER_EXPORT_PATH), 'cyber-shell-actions');
     expect(actions).toContain('data-print="hide"');
     expect(openingTag(render(CYBER_EXPORT_PATH), STANDING_BANNER_TEST_ID)).toContain(
       'data-print="true"',

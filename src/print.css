@@ -57,10 +57,11 @@
   }
 
   /*
-   * Carried onto each printed page of a multi-page export: the exported
-   * report puts a copy of the banner in the repeating header row of the
-   * report table, which print engines repeat at the top of every page the
-   * table spans. It is kept in the flow rather than pinned with
+   * The copy of the banner inside the exported report sits in the report
+   * table's header row, so an engine that repeats table headers carries it
+   * onto each page the table spans — Chromium repeats it while the header
+   * fits its own size limit, and prints it once at the head of the table
+   * otherwise. It is kept in the flow rather than pinned with
    * `position: fixed`, because a fixed band is painted over the content of
    * every page after the first instead of beside it.
    */

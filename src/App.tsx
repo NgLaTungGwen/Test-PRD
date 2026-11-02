@@ -5,7 +5,7 @@ import CyberFindings from './CyberFindings';
 import CyberOverview from './CyberOverview';
 import CyberRoutes, { CyberLink, isCyberPath, navigate, usePath } from './CyberRoutes';
 import { useCyberScopeContext } from './CyberScopeContext';
-import CyberShell, { CYBER_EXPORT_LABEL, CYBER_EXPORT_PATH, exportToPdf } from './CyberShell';
+import CyberShell, { CYBER_EXPORT_PATH } from './CyberShell';
 import CyberSidebar from './CyberSidebar';
 import FacilitySelector from './FacilitySelector';
 import { StandingIllustrativeBanner } from './IllustrativeBanner';
@@ -93,8 +93,8 @@ function CyberPocLanding() {
  *
  * The prototype has no PDF engine of its own, so an export is the print
  * rendering of this screen. The banner is therefore part of the exported
- * document itself — it sits in the report table's repeating header row, which
- * a print engine repeats at the top of every page the report spans — and
+ * document itself — it sits in the report table's header row, which an engine
+ * that repeats table headers carries onto each page the report spans — and
  * `print.css` keeps it rendered and unbroken when the page is printed.
  */
 function CyberPocExport() {
@@ -115,17 +115,6 @@ function CyberPocExport() {
         The report for {facilityName}, as it is exported. The illustrative banner is part of the
         exported document, so a printed or saved PDF can never be mistaken for live data.
       </p>
-
-      <div className="cyber-cards" data-testid="cyber-export-actions" data-print="hide">
-        <button
-          type="button"
-          className="shell-header__search"
-          data-testid="cyber-export-generate"
-          onClick={exportToPdf}
-        >
-          {CYBER_EXPORT_LABEL}
-        </button>
-      </div>
 
       <table className="cyber-table" data-testid="cyber-export-document" data-export="pdf">
         <caption>Findings at {facilityName} — illustrative report</caption>
