@@ -1,0 +1,86 @@
+{
+  "generator": "src/cyberFixtures.gen.ts",
+  "kind": "advisories",
+  "records": [
+    {
+      "action": "Add impersonation rules for payroll senders at the mail gateway and brief staff on the look-alike domain pattern.",
+      "affectedMemberIds": [
+        "mem-riverbend",
+        "mem-pinehurst",
+        "mem-cedar-valley"
+      ],
+      "id": "adv-001",
+      "publishedAt": "2026-05-14T09:00:00.000Z",
+      "severity": "medium",
+      "summary": "A long-running phishing campaign is impersonating payroll and benefits portals at care providers, using look-alike domains registered days before each wave.",
+      "title": "Credential-harvesting campaign targeting healthcare payroll portals"
+    },
+    {
+      "action": "Block unknown removable media estate-wide and confirm endpoint agent coverage on shared workstations.",
+      "affectedMemberIds": [
+        "mem-maple-grove",
+        "mem-pinehurst",
+        "mem-northern-lights"
+      ],
+      "id": "adv-002",
+      "publishedAt": "2026-06-23T09:00:00.000Z",
+      "severity": "high",
+      "summary": "Loader malware is being delivered on USB media left at shared nursing stations, then quarantined only where endpoint agents are current.",
+      "title": "Ransomware operators abusing unmanaged removable media in care homes"
+    },
+    {
+      "action": "Block unapproved remote-support binaries and route vendor sessions through the approved jump host.",
+      "affectedMemberIds": [
+        "mem-st-brendans",
+        "mem-lakeshore",
+        "mem-harbourview"
+      ],
+      "id": "adv-003",
+      "publishedAt": "2026-07-09T09:00:00.000Z",
+      "severity": "medium",
+      "summary": "Third-party engineers are installing unapproved remote-support tools on diagnostic imaging workstations, bypassing the approved jump host.",
+      "title": "Unsigned remote-support tooling used by imaging service engineers"
+    },
+    {
+      "action": "Apply the vendor firmware update to every affected appliance, force-reset remote access credentials and review VPN authentication logs for sessions from unrecognised networks.",
+      "affectedMemberIds": [
+        "mem-lakeshore",
+        "mem-st-brendans",
+        "mem-maple-grove"
+      ],
+      "id": "adv-004",
+      "publishedAt": "2026-10-06T09:00:00.000Z",
+      "severity": "critical",
+      "summary": "A pre-authentication bypass in a widely deployed remote-access VPN appliance allows a valid-looking session to be established without the second factor. Exploitation has been observed against healthcare members running the affected firmware, and the three members below are confirmed to run it.",
+      "title": "Authentication bypass in a remote-access VPN appliance (exploited in the wild)"
+    },
+    {
+      "action": "Enable credential guard on file servers, alert on LSASS access by unsigned processes and force-reset any credentials cached on an affected host.",
+      "affectedMemberIds": [
+        "mem-lakeshore",
+        "mem-st-brendans"
+      ],
+      "id": "adv-005",
+      "publishedAt": "2026-10-14T09:00:00.000Z",
+      "severity": "critical",
+      "summary": "Intrusions that begin at the vulnerable VPN appliance are moving to file servers within the hour and dumping LSASS memory for cached domain credentials.",
+      "title": "Credential dumping follow-on activity after VPN appliance compromise"
+    },
+    {
+      "action": "Confirm every collector resumed after maintenance and alert on sources quiet for more than 72 hours.",
+      "affectedMemberIds": [
+        "mem-maple-grove",
+        "mem-northern-lights",
+        "mem-harbourview",
+        "mem-cedar-valley"
+      ],
+      "id": "adv-006",
+      "publishedAt": "2026-10-22T09:00:00.000Z",
+      "severity": "medium",
+      "summary": "Clinical device and backup collectors are failing to restart after scheduled maintenance, leaving the member with no detection coverage on those sources.",
+      "title": "Silent telemetry loss after clinical network maintenance windows"
+    }
+  ],
+  "seed": 20260501,
+  "version": 1
+}

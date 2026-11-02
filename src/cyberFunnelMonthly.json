@@ -1,0 +1,440 @@
+{
+  "generator": "src/cyberFixtures.gen.ts",
+  "kind": "funnelMonthly",
+  "records": [
+    {
+      "alerts": 205,
+      "escalated": 8,
+      "events": 202685,
+      "memberId": "mem-lakeshore",
+      "month": "2026-05",
+      "tickets": 8,
+      "triaged": 40
+    },
+    {
+      "alerts": 250,
+      "escalated": 9,
+      "events": 279068,
+      "memberId": "mem-lakeshore",
+      "month": "2026-06",
+      "tickets": 9,
+      "triaged": 49
+    },
+    {
+      "alerts": 320,
+      "escalated": 9,
+      "events": 393895,
+      "memberId": "mem-lakeshore",
+      "month": "2026-07",
+      "tickets": 9,
+      "triaged": 64
+    },
+    {
+      "alerts": 210,
+      "escalated": 7,
+      "events": 306100,
+      "memberId": "mem-lakeshore",
+      "month": "2026-08",
+      "tickets": 7,
+      "triaged": 40
+    },
+    {
+      "alerts": 238,
+      "escalated": 8,
+      "events": 248983,
+      "memberId": "mem-lakeshore",
+      "month": "2026-09",
+      "tickets": 8,
+      "triaged": 57
+    },
+    {
+      "alerts": 169,
+      "escalated": 10,
+      "events": 238470,
+      "memberId": "mem-lakeshore",
+      "month": "2026-10",
+      "tickets": 10,
+      "triaged": 56
+    },
+    {
+      "alerts": 75,
+      "escalated": 4,
+      "events": 102777,
+      "memberId": "mem-riverbend",
+      "month": "2026-05",
+      "tickets": 4,
+      "triaged": 23
+    },
+    {
+      "alerts": 151,
+      "escalated": 5,
+      "events": 218987,
+      "memberId": "mem-riverbend",
+      "month": "2026-06",
+      "tickets": 5,
+      "triaged": 36
+    },
+    {
+      "alerts": 154,
+      "escalated": 4,
+      "events": 168571,
+      "memberId": "mem-riverbend",
+      "month": "2026-07",
+      "tickets": 4,
+      "triaged": 29
+    },
+    {
+      "alerts": 78,
+      "escalated": 6,
+      "events": 103104,
+      "memberId": "mem-riverbend",
+      "month": "2026-08",
+      "tickets": 6,
+      "triaged": 26
+    },
+    {
+      "alerts": 121,
+      "escalated": 5,
+      "events": 114069,
+      "memberId": "mem-riverbend",
+      "month": "2026-09",
+      "tickets": 5,
+      "triaged": 38
+    },
+    {
+      "alerts": 208,
+      "escalated": 6,
+      "events": 309024,
+      "memberId": "mem-riverbend",
+      "month": "2026-10",
+      "tickets": 6,
+      "triaged": 40
+    },
+    {
+      "alerts": 63,
+      "escalated": 4,
+      "events": 70133,
+      "memberId": "mem-maple-grove",
+      "month": "2026-05",
+      "tickets": 4,
+      "triaged": 21
+    },
+    {
+      "alerts": 110,
+      "escalated": 5,
+      "events": 142779,
+      "memberId": "mem-maple-grove",
+      "month": "2026-06",
+      "tickets": 5,
+      "triaged": 36
+    },
+    {
+      "alerts": 116,
+      "escalated": 4,
+      "events": 111587,
+      "memberId": "mem-maple-grove",
+      "month": "2026-07",
+      "tickets": 4,
+      "triaged": 28
+    },
+    {
+      "alerts": 145,
+      "escalated": 6,
+      "events": 160082,
+      "memberId": "mem-maple-grove",
+      "month": "2026-08",
+      "tickets": 6,
+      "triaged": 47
+    },
+    {
+      "alerts": 188,
+      "escalated": 6,
+      "events": 268884,
+      "memberId": "mem-maple-grove",
+      "month": "2026-09",
+      "tickets": 6,
+      "triaged": 46
+    },
+    {
+      "alerts": 123,
+      "escalated": 4,
+      "events": 147571,
+      "memberId": "mem-maple-grove",
+      "month": "2026-10",
+      "tickets": 4,
+      "triaged": 28
+    },
+    {
+      "alerts": 150,
+      "escalated": 7,
+      "events": 175607,
+      "memberId": "mem-st-brendans",
+      "month": "2026-05",
+      "tickets": 7,
+      "triaged": 36
+    },
+    {
+      "alerts": 166,
+      "escalated": 6,
+      "events": 211158,
+      "memberId": "mem-st-brendans",
+      "month": "2026-06",
+      "tickets": 6,
+      "triaged": 31
+    },
+    {
+      "alerts": 316,
+      "escalated": 8,
+      "events": 496068,
+      "memberId": "mem-st-brendans",
+      "month": "2026-07",
+      "tickets": 8,
+      "triaged": 61
+    },
+    {
+      "alerts": 229,
+      "escalated": 8,
+      "events": 320534,
+      "memberId": "mem-st-brendans",
+      "month": "2026-08",
+      "tickets": 8,
+      "triaged": 44
+    },
+    {
+      "alerts": 186,
+      "escalated": 7,
+      "events": 278673,
+      "memberId": "mem-st-brendans",
+      "month": "2026-09",
+      "tickets": 7,
+      "triaged": 37
+    },
+    {
+      "alerts": 119,
+      "escalated": 8,
+      "events": 148349,
+      "memberId": "mem-st-brendans",
+      "month": "2026-10",
+      "tickets": 8,
+      "triaged": 37
+    },
+    {
+      "alerts": 83,
+      "escalated": 4,
+      "events": 110542,
+      "memberId": "mem-northern-lights",
+      "month": "2026-05",
+      "tickets": 4,
+      "triaged": 19
+    },
+    {
+      "alerts": 108,
+      "escalated": 4,
+      "events": 106788,
+      "memberId": "mem-northern-lights",
+      "month": "2026-06",
+      "tickets": 4,
+      "triaged": 34
+    },
+    {
+      "alerts": 80,
+      "escalated": 4,
+      "events": 111718,
+      "memberId": "mem-northern-lights",
+      "month": "2026-07",
+      "tickets": 4,
+      "triaged": 18
+    },
+    {
+      "alerts": 60,
+      "escalated": 3,
+      "events": 80889,
+      "memberId": "mem-northern-lights",
+      "month": "2026-08",
+      "tickets": 3,
+      "triaged": 15
+    },
+    {
+      "alerts": 60,
+      "escalated": 4,
+      "events": 85270,
+      "memberId": "mem-northern-lights",
+      "month": "2026-09",
+      "tickets": 4,
+      "triaged": 20
+    },
+    {
+      "alerts": 84,
+      "escalated": 2,
+      "events": 109919,
+      "memberId": "mem-northern-lights",
+      "month": "2026-10",
+      "tickets": 2,
+      "triaged": 15
+    },
+    {
+      "alerts": 84,
+      "escalated": 2,
+      "events": 109421,
+      "memberId": "mem-pinehurst",
+      "month": "2026-05",
+      "tickets": 2,
+      "triaged": 16
+    },
+    {
+      "alerts": 77,
+      "escalated": 3,
+      "events": 89193,
+      "memberId": "mem-pinehurst",
+      "month": "2026-06",
+      "tickets": 3,
+      "triaged": 23
+    },
+    {
+      "alerts": 71,
+      "escalated": 3,
+      "events": 70576,
+      "memberId": "mem-pinehurst",
+      "month": "2026-07",
+      "tickets": 3,
+      "triaged": 15
+    },
+    {
+      "alerts": 93,
+      "escalated": 2,
+      "events": 126313,
+      "memberId": "mem-pinehurst",
+      "month": "2026-08",
+      "tickets": 2,
+      "triaged": 18
+    },
+    {
+      "alerts": 151,
+      "escalated": 4,
+      "events": 156115,
+      "memberId": "mem-pinehurst",
+      "month": "2026-09",
+      "tickets": 4,
+      "triaged": 28
+    },
+    {
+      "alerts": 78,
+      "escalated": 3,
+      "events": 72757,
+      "memberId": "mem-pinehurst",
+      "month": "2026-10",
+      "tickets": 3,
+      "triaged": 14
+    },
+    {
+      "alerts": 136,
+      "escalated": 5,
+      "events": 212585,
+      "memberId": "mem-harbourview",
+      "month": "2026-05",
+      "tickets": 5,
+      "triaged": 25
+    },
+    {
+      "alerts": 195,
+      "escalated": 6,
+      "events": 224916,
+      "memberId": "mem-harbourview",
+      "month": "2026-06",
+      "tickets": 6,
+      "triaged": 38
+    },
+    {
+      "alerts": 124,
+      "escalated": 4,
+      "events": 183430,
+      "memberId": "mem-harbourview",
+      "month": "2026-07",
+      "tickets": 4,
+      "triaged": 28
+    },
+    {
+      "alerts": 142,
+      "escalated": 5,
+      "events": 161446,
+      "memberId": "mem-harbourview",
+      "month": "2026-08",
+      "tickets": 5,
+      "triaged": 34
+    },
+    {
+      "alerts": 98,
+      "escalated": 4,
+      "events": 92708,
+      "memberId": "mem-harbourview",
+      "month": "2026-09",
+      "tickets": 4,
+      "triaged": 24
+    },
+    {
+      "alerts": 109,
+      "escalated": 5,
+      "events": 164677,
+      "memberId": "mem-harbourview",
+      "month": "2026-10",
+      "tickets": 5,
+      "triaged": 35
+    },
+    {
+      "alerts": 156,
+      "escalated": 5,
+      "events": 165008,
+      "memberId": "mem-cedar-valley",
+      "month": "2026-05",
+      "tickets": 5,
+      "triaged": 31
+    },
+    {
+      "alerts": 112,
+      "escalated": 6,
+      "events": 169499,
+      "memberId": "mem-cedar-valley",
+      "month": "2026-06",
+      "tickets": 6,
+      "triaged": 35
+    },
+    {
+      "alerts": 186,
+      "escalated": 5,
+      "events": 261117,
+      "memberId": "mem-cedar-valley",
+      "month": "2026-07",
+      "tickets": 5,
+      "triaged": 35
+    },
+    {
+      "alerts": 120,
+      "escalated": 6,
+      "events": 145585,
+      "memberId": "mem-cedar-valley",
+      "month": "2026-08",
+      "tickets": 6,
+      "triaged": 36
+    },
+    {
+      "alerts": 147,
+      "escalated": 4,
+      "events": 163861,
+      "memberId": "mem-cedar-valley",
+      "month": "2026-09",
+      "tickets": 4,
+      "triaged": 29
+    },
+    {
+      "alerts": 68,
+      "escalated": 4,
+      "events": 62536,
+      "memberId": "mem-cedar-valley",
+      "month": "2026-10",
+      "tickets": 4,
+      "triaged": 16
+    }
+  ],
+  "seed": 20260501,
+  "version": 1
+}

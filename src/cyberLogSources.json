@@ -1,0 +1,351 @@
+{
+  "generator": "src/cyberFixtures.gen.ts",
+  "kind": "logSources",
+  "records": [
+    {
+      "cadenceHours": 1,
+      "id": "src-001",
+      "lastEventAt": "2026-10-31T08:22:00.000Z",
+      "memberId": "mem-lakeshore",
+      "type": "firewall"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-002",
+      "lastEventAt": "2026-10-31T08:52:00.000Z",
+      "memberId": "mem-lakeshore",
+      "type": "endpoint-detection"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-003",
+      "lastEventAt": "2026-10-31T08:53:00.000Z",
+      "memberId": "mem-lakeshore",
+      "type": "identity-provider"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-004",
+      "lastEventAt": "2026-10-31T08:07:00.000Z",
+      "memberId": "mem-lakeshore",
+      "type": "email-gateway"
+    },
+    {
+      "cadenceHours": 24,
+      "id": "src-005",
+      "lastEventAt": "2026-10-31T08:15:00.000Z",
+      "memberId": "mem-lakeshore",
+      "type": "backup-service"
+    },
+    {
+      "cadenceHours": 6,
+      "id": "src-006",
+      "lastEventAt": "2026-10-31T05:24:00.000Z",
+      "memberId": "mem-lakeshore",
+      "type": "clinical-device-network"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-007",
+      "lastEventAt": "2026-10-31T08:11:00.000Z",
+      "memberId": "mem-lakeshore",
+      "type": "server-syslog"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-008",
+      "lastEventAt": "2026-10-31T08:45:00.000Z",
+      "memberId": "mem-lakeshore",
+      "type": "vpn-appliance"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-009",
+      "lastEventAt": "2026-10-31T08:01:00.000Z",
+      "memberId": "mem-riverbend",
+      "type": "firewall"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-010",
+      "lastEventAt": "2026-10-31T08:26:00.000Z",
+      "memberId": "mem-riverbend",
+      "type": "endpoint-detection"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-011",
+      "lastEventAt": "2026-10-31T08:14:00.000Z",
+      "memberId": "mem-riverbend",
+      "type": "identity-provider"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-012",
+      "lastEventAt": "2026-10-31T08:37:00.000Z",
+      "memberId": "mem-riverbend",
+      "type": "email-gateway"
+    },
+    {
+      "cadenceHours": 24,
+      "id": "src-013",
+      "lastEventAt": "2026-10-31T07:17:00.000Z",
+      "memberId": "mem-riverbend",
+      "type": "backup-service"
+    },
+    {
+      "cadenceHours": 6,
+      "id": "src-014",
+      "lastEventAt": "2026-10-31T06:54:00.000Z",
+      "memberId": "mem-riverbend",
+      "type": "clinical-device-network"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-015",
+      "lastEventAt": "2026-10-31T08:29:00.000Z",
+      "memberId": "mem-maple-grove",
+      "type": "firewall"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-016",
+      "lastEventAt": "2026-10-31T08:48:00.000Z",
+      "memberId": "mem-maple-grove",
+      "type": "endpoint-detection"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-017",
+      "lastEventAt": "2026-10-31T08:39:00.000Z",
+      "memberId": "mem-maple-grove",
+      "type": "identity-provider"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-018",
+      "lastEventAt": "2026-10-31T08:03:00.000Z",
+      "memberId": "mem-maple-grove",
+      "type": "email-gateway"
+    },
+    {
+      "cadenceHours": 24,
+      "id": "src-019",
+      "lastEventAt": "2026-10-22T18:00:00.000Z",
+      "memberId": "mem-maple-grove",
+      "type": "backup-service"
+    },
+    {
+      "cadenceHours": 6,
+      "id": "src-020",
+      "lastEventAt": "2026-10-26T08:00:00.000Z",
+      "memberId": "mem-maple-grove",
+      "type": "clinical-device-network"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-021",
+      "lastEventAt": "2026-10-31T08:47:00.000Z",
+      "memberId": "mem-maple-grove",
+      "type": "vpn-appliance"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-022",
+      "lastEventAt": "2026-10-31T08:20:00.000Z",
+      "memberId": "mem-st-brendans",
+      "type": "firewall"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-023",
+      "lastEventAt": "2026-10-31T08:25:00.000Z",
+      "memberId": "mem-st-brendans",
+      "type": "endpoint-detection"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-024",
+      "lastEventAt": "2026-10-31T08:18:00.000Z",
+      "memberId": "mem-st-brendans",
+      "type": "identity-provider"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-025",
+      "lastEventAt": "2026-10-31T08:30:00.000Z",
+      "memberId": "mem-st-brendans",
+      "type": "email-gateway"
+    },
+    {
+      "cadenceHours": 24,
+      "id": "src-026",
+      "lastEventAt": "2026-10-31T08:32:00.000Z",
+      "memberId": "mem-st-brendans",
+      "type": "backup-service"
+    },
+    {
+      "cadenceHours": 6,
+      "id": "src-027",
+      "lastEventAt": "2026-10-31T05:23:00.000Z",
+      "memberId": "mem-st-brendans",
+      "type": "clinical-device-network"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-028",
+      "lastEventAt": "2026-10-31T08:10:00.000Z",
+      "memberId": "mem-st-brendans",
+      "type": "server-syslog"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-029",
+      "lastEventAt": "2026-10-31T08:20:00.000Z",
+      "memberId": "mem-st-brendans",
+      "type": "vpn-appliance"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-030",
+      "lastEventAt": "2026-10-31T08:51:00.000Z",
+      "memberId": "mem-northern-lights",
+      "type": "firewall"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-031",
+      "lastEventAt": "2026-10-31T08:11:00.000Z",
+      "memberId": "mem-northern-lights",
+      "type": "endpoint-detection"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-032",
+      "lastEventAt": "2026-10-31T08:26:00.000Z",
+      "memberId": "mem-northern-lights",
+      "type": "identity-provider"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-033",
+      "lastEventAt": "2026-10-31T08:41:00.000Z",
+      "memberId": "mem-northern-lights",
+      "type": "email-gateway"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-034",
+      "lastEventAt": "2026-10-31T08:30:00.000Z",
+      "memberId": "mem-pinehurst",
+      "type": "firewall"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-035",
+      "lastEventAt": "2026-10-31T08:29:00.000Z",
+      "memberId": "mem-pinehurst",
+      "type": "endpoint-detection"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-036",
+      "lastEventAt": "2026-10-31T08:15:00.000Z",
+      "memberId": "mem-pinehurst",
+      "type": "identity-provider"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-037",
+      "lastEventAt": "2026-10-31T08:06:00.000Z",
+      "memberId": "mem-pinehurst",
+      "type": "email-gateway"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-038",
+      "lastEventAt": "2026-10-31T08:50:00.000Z",
+      "memberId": "mem-harbourview",
+      "type": "firewall"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-039",
+      "lastEventAt": "2026-10-31T08:12:00.000Z",
+      "memberId": "mem-harbourview",
+      "type": "endpoint-detection"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-040",
+      "lastEventAt": "2026-10-31T08:24:00.000Z",
+      "memberId": "mem-harbourview",
+      "type": "identity-provider"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-041",
+      "lastEventAt": "2026-10-31T08:25:00.000Z",
+      "memberId": "mem-harbourview",
+      "type": "email-gateway"
+    },
+    {
+      "cadenceHours": 24,
+      "id": "src-042",
+      "lastEventAt": "2026-10-31T07:12:00.000Z",
+      "memberId": "mem-harbourview",
+      "type": "backup-service"
+    },
+    {
+      "cadenceHours": 6,
+      "id": "src-043",
+      "lastEventAt": "2026-10-31T08:03:00.000Z",
+      "memberId": "mem-harbourview",
+      "type": "clinical-device-network"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-044",
+      "lastEventAt": "2026-10-31T08:37:00.000Z",
+      "memberId": "mem-cedar-valley",
+      "type": "firewall"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-045",
+      "lastEventAt": "2026-10-31T08:10:00.000Z",
+      "memberId": "mem-cedar-valley",
+      "type": "endpoint-detection"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-046",
+      "lastEventAt": "2026-10-31T08:35:00.000Z",
+      "memberId": "mem-cedar-valley",
+      "type": "identity-provider"
+    },
+    {
+      "cadenceHours": 1,
+      "id": "src-047",
+      "lastEventAt": "2026-10-31T08:09:00.000Z",
+      "memberId": "mem-cedar-valley",
+      "type": "email-gateway"
+    },
+    {
+      "cadenceHours": 24,
+      "id": "src-048",
+      "lastEventAt": "2026-10-31T08:11:00.000Z",
+      "memberId": "mem-cedar-valley",
+      "type": "backup-service"
+    },
+    {
+      "cadenceHours": 6,
+      "id": "src-049",
+      "lastEventAt": "2026-10-31T06:27:00.000Z",
+      "memberId": "mem-cedar-valley",
+      "type": "clinical-device-network"
+    }
+  ],
+  "seed": 20260501,
+  "version": 1
+}

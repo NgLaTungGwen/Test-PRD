@@ -1,0 +1,48 @@
+{
+  "generator": "src/cyberFixtures.gen.ts",
+  "kind": "retainer",
+  "records": [
+    {
+      "consumedHours": 9,
+      "memberId": "mem-lakeshore",
+      "purchasedHours": 60
+    },
+    {
+      "consumedHours": 9,
+      "memberId": "mem-riverbend",
+      "purchasedHours": 40
+    },
+    {
+      "consumedHours": 8.5,
+      "memberId": "mem-maple-grove",
+      "purchasedHours": 20
+    },
+    {
+      "consumedHours": 8,
+      "memberId": "mem-st-brendans",
+      "purchasedHours": 60
+    },
+    {
+      "consumedHours": 6,
+      "memberId": "mem-northern-lights",
+      "purchasedHours": 20
+    },
+    {
+      "consumedHours": 2.5,
+      "memberId": "mem-pinehurst",
+      "purchasedHours": 20
+    },
+    {
+      "consumedHours": 9.5,
+      "memberId": "mem-harbourview",
+      "purchasedHours": 40
+    },
+    {
+      "consumedHours": 2.5,
+      "memberId": "mem-cedar-valley",
+      "purchasedHours": 40
+    }
+  ],
+  "seed": 20260501,
+  "version": 1
+}

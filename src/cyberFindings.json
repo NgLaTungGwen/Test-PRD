@@ -1,0 +1,440 @@
+{
+  "generator": "src/cyberFixtures.gen.ts",
+  "kind": "findings",
+  "records": [
+    {
+      "dueDate": "2026-08-11",
+      "id": "fnd-001",
+      "memberId": "mem-lakeshore",
+      "severity": "high",
+      "status": "closed",
+      "title": "Multi-factor authentication not enforced for remote access"
+    },
+    {
+      "dueDate": "2026-07-29",
+      "id": "fnd-002",
+      "memberId": "mem-lakeshore",
+      "severity": "medium",
+      "status": "closed",
+      "title": "Local administrator rights on shared clinical workstations"
+    },
+    {
+      "dueDate": "2026-07-08",
+      "id": "fnd-003",
+      "memberId": "mem-lakeshore",
+      "severity": "medium",
+      "status": "closed",
+      "title": "Backup restore test not evidenced this quarter"
+    },
+    {
+      "dueDate": "2026-08-30",
+      "id": "fnd-004",
+      "memberId": "mem-lakeshore",
+      "severity": "low",
+      "status": "closed",
+      "title": "Joiner-mover-leaver reviews behind schedule"
+    },
+    {
+      "dueDate": "2026-11-17",
+      "id": "fnd-005",
+      "memberId": "mem-lakeshore",
+      "severity": "medium",
+      "status": "open",
+      "title": "Legacy TLS still enabled on the patient portal"
+    },
+    {
+      "dueDate": "2026-09-23",
+      "id": "fnd-006",
+      "memberId": "mem-lakeshore",
+      "severity": "high",
+      "status": "closed",
+      "title": "Endpoint agent missing from four imaging workstations"
+    },
+    {
+      "dueDate": "2026-07-06",
+      "id": "fnd-007",
+      "memberId": "mem-lakeshore",
+      "severity": "high",
+      "status": "closed",
+      "title": "Guest wireless not segmented from the clinical network"
+    },
+    {
+      "dueDate": "2026-11-22",
+      "id": "fnd-008",
+      "memberId": "mem-riverbend",
+      "severity": "medium",
+      "status": "open",
+      "title": "Local administrator rights on shared clinical workstations"
+    },
+    {
+      "dueDate": "2027-01-14",
+      "id": "fnd-009",
+      "memberId": "mem-riverbend",
+      "severity": "medium",
+      "status": "open",
+      "title": "Backup restore test not evidenced this quarter"
+    },
+    {
+      "dueDate": "2027-01-10",
+      "id": "fnd-010",
+      "memberId": "mem-riverbend",
+      "severity": "low",
+      "status": "open",
+      "title": "Joiner-mover-leaver reviews behind schedule"
+    },
+    {
+      "dueDate": "2026-11-15",
+      "id": "fnd-011",
+      "memberId": "mem-riverbend",
+      "severity": "medium",
+      "status": "open",
+      "title": "Legacy TLS still enabled on the patient portal"
+    },
+    {
+      "dueDate": "2026-08-25",
+      "id": "fnd-012",
+      "memberId": "mem-riverbend",
+      "severity": "high",
+      "status": "closed",
+      "title": "Endpoint agent missing from four imaging workstations"
+    },
+    {
+      "dueDate": "2026-06-25",
+      "id": "fnd-013",
+      "memberId": "mem-riverbend",
+      "severity": "high",
+      "status": "closed",
+      "title": "Guest wireless not segmented from the clinical network"
+    },
+    {
+      "dueDate": "2026-09-05",
+      "id": "fnd-014",
+      "memberId": "mem-maple-grove",
+      "severity": "medium",
+      "status": "closed",
+      "title": "Backup restore test not evidenced this quarter"
+    },
+    {
+      "dueDate": "2026-09-02",
+      "id": "fnd-015",
+      "memberId": "mem-maple-grove",
+      "severity": "low",
+      "status": "closed",
+      "title": "Joiner-mover-leaver reviews behind schedule"
+    },
+    {
+      "dueDate": "2027-01-12",
+      "id": "fnd-016",
+      "memberId": "mem-maple-grove",
+      "severity": "medium",
+      "status": "open",
+      "title": "Legacy TLS still enabled on the patient portal"
+    },
+    {
+      "dueDate": "2026-11-16",
+      "id": "fnd-017",
+      "memberId": "mem-maple-grove",
+      "severity": "high",
+      "status": "open",
+      "title": "Endpoint agent missing from four imaging workstations"
+    },
+    {
+      "dueDate": "2026-11-11",
+      "id": "fnd-018",
+      "memberId": "mem-maple-grove",
+      "severity": "high",
+      "status": "open",
+      "title": "Guest wireless not segmented from the clinical network"
+    },
+    {
+      "dueDate": "2027-01-24",
+      "id": "fnd-019",
+      "memberId": "mem-maple-grove",
+      "severity": "low",
+      "status": "open",
+      "title": "Password policy below the member baseline"
+    },
+    {
+      "dueDate": "2026-08-10",
+      "id": "fnd-020",
+      "memberId": "mem-st-brendans",
+      "severity": "low",
+      "status": "closed",
+      "title": "Joiner-mover-leaver reviews behind schedule"
+    },
+    {
+      "dueDate": "2026-06-23",
+      "id": "fnd-021",
+      "memberId": "mem-st-brendans",
+      "severity": "medium",
+      "status": "closed",
+      "title": "Legacy TLS still enabled on the patient portal"
+    },
+    {
+      "dueDate": "2026-08-04",
+      "id": "fnd-022",
+      "memberId": "mem-st-brendans",
+      "severity": "high",
+      "status": "closed",
+      "title": "Endpoint agent missing from four imaging workstations"
+    },
+    {
+      "dueDate": "2026-09-02",
+      "id": "fnd-023",
+      "memberId": "mem-st-brendans",
+      "severity": "high",
+      "status": "closed",
+      "title": "Guest wireless not segmented from the clinical network"
+    },
+    {
+      "dueDate": "2026-12-22",
+      "id": "fnd-024",
+      "memberId": "mem-st-brendans",
+      "severity": "low",
+      "status": "open",
+      "title": "Password policy below the member baseline"
+    },
+    {
+      "dueDate": "2027-01-10",
+      "id": "fnd-025",
+      "memberId": "mem-st-brendans",
+      "severity": "high",
+      "status": "open",
+      "title": "Multi-factor authentication not enforced for remote access"
+    },
+    {
+      "dueDate": "2026-09-25",
+      "id": "fnd-026",
+      "memberId": "mem-st-brendans",
+      "severity": "medium",
+      "status": "closed",
+      "title": "Local administrator rights on shared clinical workstations"
+    },
+    {
+      "dueDate": "2026-08-24",
+      "id": "fnd-027",
+      "memberId": "mem-northern-lights",
+      "severity": "medium",
+      "status": "closed",
+      "title": "Legacy TLS still enabled on the patient portal"
+    },
+    {
+      "dueDate": "2026-12-01",
+      "id": "fnd-028",
+      "memberId": "mem-northern-lights",
+      "severity": "high",
+      "status": "open",
+      "title": "Endpoint agent missing from four imaging workstations"
+    },
+    {
+      "dueDate": "2026-11-26",
+      "id": "fnd-029",
+      "memberId": "mem-northern-lights",
+      "severity": "high",
+      "status": "open",
+      "title": "Guest wireless not segmented from the clinical network"
+    },
+    {
+      "dueDate": "2026-12-26",
+      "id": "fnd-030",
+      "memberId": "mem-northern-lights",
+      "severity": "low",
+      "status": "open",
+      "title": "Password policy below the member baseline"
+    },
+    {
+      "dueDate": "2026-07-24",
+      "id": "fnd-031",
+      "memberId": "mem-pinehurst",
+      "severity": "high",
+      "status": "closed",
+      "title": "Endpoint agent missing from four imaging workstations"
+    },
+    {
+      "dueDate": "2026-12-15",
+      "id": "fnd-032",
+      "memberId": "mem-pinehurst",
+      "severity": "high",
+      "status": "open",
+      "title": "Guest wireless not segmented from the clinical network"
+    },
+    {
+      "dueDate": "2027-01-25",
+      "id": "fnd-033",
+      "memberId": "mem-pinehurst",
+      "severity": "low",
+      "status": "open",
+      "title": "Password policy below the member baseline"
+    },
+    {
+      "dueDate": "2026-08-29",
+      "id": "fnd-034",
+      "memberId": "mem-pinehurst",
+      "severity": "high",
+      "status": "closed",
+      "title": "Multi-factor authentication not enforced for remote access"
+    },
+    {
+      "dueDate": "2026-09-22",
+      "id": "fnd-035",
+      "memberId": "mem-harbourview",
+      "severity": "high",
+      "status": "closed",
+      "title": "Guest wireless not segmented from the clinical network"
+    },
+    {
+      "dueDate": "2026-08-03",
+      "id": "fnd-036",
+      "memberId": "mem-harbourview",
+      "severity": "low",
+      "status": "closed",
+      "title": "Password policy below the member baseline"
+    },
+    {
+      "dueDate": "2026-08-03",
+      "id": "fnd-037",
+      "memberId": "mem-harbourview",
+      "severity": "high",
+      "status": "closed",
+      "title": "Multi-factor authentication not enforced for remote access"
+    },
+    {
+      "dueDate": "2026-11-16",
+      "id": "fnd-038",
+      "memberId": "mem-harbourview",
+      "severity": "medium",
+      "status": "open",
+      "title": "Local administrator rights on shared clinical workstations"
+    },
+    {
+      "dueDate": "2026-11-06",
+      "id": "fnd-039",
+      "memberId": "mem-harbourview",
+      "severity": "medium",
+      "status": "open",
+      "title": "Backup restore test not evidenced this quarter"
+    },
+    {
+      "dueDate": "2027-01-01",
+      "id": "fnd-040",
+      "memberId": "mem-harbourview",
+      "severity": "low",
+      "status": "open",
+      "title": "Joiner-mover-leaver reviews behind schedule"
+    },
+    {
+      "dueDate": "2026-08-23",
+      "id": "fnd-041",
+      "memberId": "mem-cedar-valley",
+      "severity": "low",
+      "status": "closed",
+      "title": "Password policy below the member baseline"
+    },
+    {
+      "dueDate": "2026-12-28",
+      "id": "fnd-042",
+      "memberId": "mem-cedar-valley",
+      "severity": "high",
+      "status": "open",
+      "title": "Multi-factor authentication not enforced for remote access"
+    },
+    {
+      "dueDate": "2026-12-22",
+      "id": "fnd-043",
+      "memberId": "mem-cedar-valley",
+      "severity": "medium",
+      "status": "open",
+      "title": "Local administrator rights on shared clinical workstations"
+    },
+    {
+      "dueDate": "2026-07-24",
+      "id": "fnd-044",
+      "memberId": "mem-cedar-valley",
+      "severity": "medium",
+      "status": "closed",
+      "title": "Backup restore test not evidenced this quarter"
+    },
+    {
+      "dueDate": "2026-09-23",
+      "id": "fnd-045",
+      "memberId": "mem-cedar-valley",
+      "severity": "low",
+      "status": "closed",
+      "title": "Joiner-mover-leaver reviews behind schedule"
+    },
+    {
+      "dueDate": "2026-06-09",
+      "id": "fnd-046",
+      "memberId": "mem-cedar-valley",
+      "severity": "medium",
+      "status": "closed",
+      "title": "Legacy TLS still enabled on the patient portal"
+    },
+    {
+      "dueDate": "2026-11-13",
+      "id": "fnd-047",
+      "memberId": "mem-riverbend",
+      "severity": "high",
+      "status": "open",
+      "title": "Phishing campaign: payroll-portal look-alike domain harvested four staff credentials"
+    },
+    {
+      "dueDate": "2026-11-20",
+      "id": "fnd-048",
+      "memberId": "mem-riverbend",
+      "severity": "medium",
+      "status": "open",
+      "title": "Phishing campaign: mail gateway impersonation rules missing for the payroll sender"
+    },
+    {
+      "dueDate": "2026-12-04",
+      "id": "fnd-049",
+      "memberId": "mem-riverbend",
+      "severity": "low",
+      "status": "open",
+      "title": "Phishing campaign: security awareness refresher outstanding for affected staff"
+    },
+    {
+      "dueDate": "2026-09-18",
+      "id": "fnd-050",
+      "memberId": "mem-maple-grove",
+      "severity": "critical",
+      "status": "open",
+      "title": "Remote access VPN appliance unpatched against the October advisory"
+    },
+    {
+      "dueDate": "2026-08-29",
+      "id": "fnd-051",
+      "memberId": "mem-maple-grove",
+      "severity": "critical",
+      "status": "open",
+      "title": "Domain administrator accounts without multi-factor authentication"
+    },
+    {
+      "dueDate": "2026-10-02",
+      "id": "fnd-052",
+      "memberId": "mem-maple-grove",
+      "severity": "critical",
+      "status": "open",
+      "title": "Backup server reachable from the general care-home network"
+    },
+    {
+      "dueDate": "2026-08-14",
+      "id": "fnd-053",
+      "memberId": "mem-st-brendans",
+      "severity": "critical",
+      "status": "closed",
+      "title": "Emergency change process bypassed for a theatre system patch"
+    },
+    {
+      "dueDate": "2026-11-21",
+      "id": "fnd-054",
+      "memberId": "mem-lakeshore",
+      "severity": "critical",
+      "status": "open",
+      "title": "Remote access VPN appliance patch rollout pending final cluster"
+    }
+  ],
+  "seed": 20260501,
+  "version": 1
+}

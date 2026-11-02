@@ -1,0 +1,379 @@
+{
+  "generator": "src/cyberFixtures.gen.ts",
+  "kind": "reports",
+  "records": [
+    {
+      "id": "rpt-001",
+      "kind": "monthly",
+      "memberId": "mem-lakeshore",
+      "month": "2026-05",
+      "title": "May 2026 security service report — Lakeshore Regional Health Network"
+    },
+    {
+      "id": "rpt-002",
+      "kind": "monthly",
+      "memberId": "mem-lakeshore",
+      "month": "2026-06",
+      "title": "June 2026 security service report — Lakeshore Regional Health Network"
+    },
+    {
+      "id": "rpt-003",
+      "kind": "monthly",
+      "memberId": "mem-lakeshore",
+      "month": "2026-07",
+      "title": "July 2026 security service report — Lakeshore Regional Health Network"
+    },
+    {
+      "id": "rpt-004",
+      "kind": "monthly",
+      "memberId": "mem-lakeshore",
+      "month": "2026-08",
+      "title": "August 2026 security service report — Lakeshore Regional Health Network"
+    },
+    {
+      "id": "rpt-005",
+      "kind": "monthly",
+      "memberId": "mem-lakeshore",
+      "month": "2026-09",
+      "title": "September 2026 security service report — Lakeshore Regional Health Network"
+    },
+    {
+      "id": "rpt-006",
+      "kind": "monthly",
+      "memberId": "mem-lakeshore",
+      "month": "2026-10",
+      "title": "October 2026 security service report — Lakeshore Regional Health Network"
+    },
+    {
+      "id": "rpt-007",
+      "kind": "monthly",
+      "memberId": "mem-riverbend",
+      "month": "2026-05",
+      "title": "May 2026 security service report — Riverbend Community Health Centre"
+    },
+    {
+      "id": "rpt-008",
+      "kind": "monthly",
+      "memberId": "mem-riverbend",
+      "month": "2026-06",
+      "title": "June 2026 security service report — Riverbend Community Health Centre"
+    },
+    {
+      "id": "rpt-009",
+      "kind": "monthly",
+      "memberId": "mem-riverbend",
+      "month": "2026-07",
+      "title": "July 2026 security service report — Riverbend Community Health Centre"
+    },
+    {
+      "id": "rpt-010",
+      "kind": "monthly",
+      "memberId": "mem-riverbend",
+      "month": "2026-08",
+      "title": "August 2026 security service report — Riverbend Community Health Centre"
+    },
+    {
+      "id": "rpt-011",
+      "kind": "monthly",
+      "memberId": "mem-riverbend",
+      "month": "2026-09",
+      "title": "September 2026 security service report — Riverbend Community Health Centre"
+    },
+    {
+      "id": "rpt-012",
+      "kind": "monthly",
+      "memberId": "mem-riverbend",
+      "month": "2026-10",
+      "title": "October 2026 security service report — Riverbend Community Health Centre"
+    },
+    {
+      "id": "rpt-013",
+      "kind": "monthly",
+      "memberId": "mem-maple-grove",
+      "month": "2026-05",
+      "title": "May 2026 security service report — Maple Grove Long-Term Care"
+    },
+    {
+      "id": "rpt-014",
+      "kind": "monthly",
+      "memberId": "mem-maple-grove",
+      "month": "2026-06",
+      "title": "June 2026 security service report — Maple Grove Long-Term Care"
+    },
+    {
+      "id": "rpt-015",
+      "kind": "monthly",
+      "memberId": "mem-maple-grove",
+      "month": "2026-07",
+      "title": "July 2026 security service report — Maple Grove Long-Term Care"
+    },
+    {
+      "id": "rpt-016",
+      "kind": "monthly",
+      "memberId": "mem-maple-grove",
+      "month": "2026-08",
+      "title": "August 2026 security service report — Maple Grove Long-Term Care"
+    },
+    {
+      "id": "rpt-017",
+      "kind": "monthly",
+      "memberId": "mem-maple-grove",
+      "month": "2026-09",
+      "title": "September 2026 security service report — Maple Grove Long-Term Care"
+    },
+    {
+      "id": "rpt-018",
+      "kind": "monthly",
+      "memberId": "mem-maple-grove",
+      "month": "2026-10",
+      "title": "October 2026 security service report — Maple Grove Long-Term Care"
+    },
+    {
+      "id": "rpt-019",
+      "kind": "monthly",
+      "memberId": "mem-st-brendans",
+      "month": "2026-05",
+      "title": "May 2026 security service report — St. Brendan's Memorial Hospital"
+    },
+    {
+      "id": "rpt-020",
+      "kind": "monthly",
+      "memberId": "mem-st-brendans",
+      "month": "2026-06",
+      "title": "June 2026 security service report — St. Brendan's Memorial Hospital"
+    },
+    {
+      "id": "rpt-021",
+      "kind": "monthly",
+      "memberId": "mem-st-brendans",
+      "month": "2026-07",
+      "title": "July 2026 security service report — St. Brendan's Memorial Hospital"
+    },
+    {
+      "id": "rpt-022",
+      "kind": "monthly",
+      "memberId": "mem-st-brendans",
+      "month": "2026-08",
+      "title": "August 2026 security service report — St. Brendan's Memorial Hospital"
+    },
+    {
+      "id": "rpt-023",
+      "kind": "monthly",
+      "memberId": "mem-st-brendans",
+      "month": "2026-09",
+      "title": "September 2026 security service report — St. Brendan's Memorial Hospital"
+    },
+    {
+      "id": "rpt-024",
+      "kind": "monthly",
+      "memberId": "mem-st-brendans",
+      "month": "2026-10",
+      "title": "October 2026 security service report — St. Brendan's Memorial Hospital"
+    },
+    {
+      "id": "rpt-025",
+      "kind": "monthly",
+      "memberId": "mem-northern-lights",
+      "month": "2026-05",
+      "title": "May 2026 security service report — Northern Lights Health Centre"
+    },
+    {
+      "id": "rpt-026",
+      "kind": "monthly",
+      "memberId": "mem-northern-lights",
+      "month": "2026-06",
+      "title": "June 2026 security service report — Northern Lights Health Centre"
+    },
+    {
+      "id": "rpt-027",
+      "kind": "monthly",
+      "memberId": "mem-northern-lights",
+      "month": "2026-07",
+      "title": "July 2026 security service report — Northern Lights Health Centre"
+    },
+    {
+      "id": "rpt-028",
+      "kind": "monthly",
+      "memberId": "mem-northern-lights",
+      "month": "2026-08",
+      "title": "August 2026 security service report — Northern Lights Health Centre"
+    },
+    {
+      "id": "rpt-029",
+      "kind": "monthly",
+      "memberId": "mem-northern-lights",
+      "month": "2026-09",
+      "title": "September 2026 security service report — Northern Lights Health Centre"
+    },
+    {
+      "id": "rpt-030",
+      "kind": "monthly",
+      "memberId": "mem-northern-lights",
+      "month": "2026-10",
+      "title": "October 2026 security service report — Northern Lights Health Centre"
+    },
+    {
+      "id": "rpt-031",
+      "kind": "monthly",
+      "memberId": "mem-pinehurst",
+      "month": "2026-05",
+      "title": "May 2026 security service report — Pinehurst Seniors Residence"
+    },
+    {
+      "id": "rpt-032",
+      "kind": "monthly",
+      "memberId": "mem-pinehurst",
+      "month": "2026-06",
+      "title": "June 2026 security service report — Pinehurst Seniors Residence"
+    },
+    {
+      "id": "rpt-033",
+      "kind": "monthly",
+      "memberId": "mem-pinehurst",
+      "month": "2026-07",
+      "title": "July 2026 security service report — Pinehurst Seniors Residence"
+    },
+    {
+      "id": "rpt-034",
+      "kind": "monthly",
+      "memberId": "mem-pinehurst",
+      "month": "2026-08",
+      "title": "August 2026 security service report — Pinehurst Seniors Residence"
+    },
+    {
+      "id": "rpt-035",
+      "kind": "monthly",
+      "memberId": "mem-pinehurst",
+      "month": "2026-09",
+      "title": "September 2026 security service report — Pinehurst Seniors Residence"
+    },
+    {
+      "id": "rpt-036",
+      "kind": "monthly",
+      "memberId": "mem-pinehurst",
+      "month": "2026-10",
+      "title": "October 2026 security service report — Pinehurst Seniors Residence"
+    },
+    {
+      "id": "rpt-037",
+      "kind": "monthly",
+      "memberId": "mem-harbourview",
+      "month": "2026-05",
+      "title": "May 2026 security service report — Harbourview Day Surgery Centre"
+    },
+    {
+      "id": "rpt-038",
+      "kind": "monthly",
+      "memberId": "mem-harbourview",
+      "month": "2026-06",
+      "title": "June 2026 security service report — Harbourview Day Surgery Centre"
+    },
+    {
+      "id": "rpt-039",
+      "kind": "monthly",
+      "memberId": "mem-harbourview",
+      "month": "2026-07",
+      "title": "July 2026 security service report — Harbourview Day Surgery Centre"
+    },
+    {
+      "id": "rpt-040",
+      "kind": "monthly",
+      "memberId": "mem-harbourview",
+      "month": "2026-08",
+      "title": "August 2026 security service report — Harbourview Day Surgery Centre"
+    },
+    {
+      "id": "rpt-041",
+      "kind": "monthly",
+      "memberId": "mem-harbourview",
+      "month": "2026-09",
+      "title": "September 2026 security service report — Harbourview Day Surgery Centre"
+    },
+    {
+      "id": "rpt-042",
+      "kind": "monthly",
+      "memberId": "mem-harbourview",
+      "month": "2026-10",
+      "title": "October 2026 security service report — Harbourview Day Surgery Centre"
+    },
+    {
+      "id": "rpt-043",
+      "kind": "monthly",
+      "memberId": "mem-cedar-valley",
+      "month": "2026-05",
+      "title": "May 2026 security service report — Cedar Valley Mental Health Partners"
+    },
+    {
+      "id": "rpt-044",
+      "kind": "monthly",
+      "memberId": "mem-cedar-valley",
+      "month": "2026-06",
+      "title": "June 2026 security service report — Cedar Valley Mental Health Partners"
+    },
+    {
+      "id": "rpt-045",
+      "kind": "monthly",
+      "memberId": "mem-cedar-valley",
+      "month": "2026-07",
+      "title": "July 2026 security service report — Cedar Valley Mental Health Partners"
+    },
+    {
+      "id": "rpt-046",
+      "kind": "monthly",
+      "memberId": "mem-cedar-valley",
+      "month": "2026-08",
+      "title": "August 2026 security service report — Cedar Valley Mental Health Partners"
+    },
+    {
+      "id": "rpt-047",
+      "kind": "monthly",
+      "memberId": "mem-cedar-valley",
+      "month": "2026-09",
+      "title": "September 2026 security service report — Cedar Valley Mental Health Partners"
+    },
+    {
+      "id": "rpt-048",
+      "kind": "monthly",
+      "memberId": "mem-cedar-valley",
+      "month": "2026-10",
+      "title": "October 2026 security service report — Cedar Valley Mental Health Partners"
+    },
+    {
+      "id": "rpt-049",
+      "kind": "incident",
+      "memberId": "mem-lakeshore",
+      "month": "2026-10",
+      "title": "P1 incident report inc-001 — Lakeshore Regional Health Network (October 2026)"
+    },
+    {
+      "id": "rpt-050",
+      "kind": "incident",
+      "memberId": "mem-riverbend",
+      "month": "2026-09",
+      "title": "P2 incident report inc-002 — Riverbend Community Health Centre (September 2026)"
+    },
+    {
+      "id": "rpt-051",
+      "kind": "incident",
+      "memberId": "mem-maple-grove",
+      "month": "2026-08",
+      "title": "P2 incident report inc-003 — Maple Grove Long-Term Care (August 2026)"
+    },
+    {
+      "id": "rpt-052",
+      "kind": "incident",
+      "memberId": "mem-st-brendans",
+      "month": "2026-07",
+      "title": "P2 incident report inc-004 — St. Brendan's Memorial Hospital (July 2026)"
+    },
+    {
+      "id": "rpt-053",
+      "kind": "incident",
+      "memberId": "mem-harbourview",
+      "month": "2026-10",
+      "title": "P2 incident report inc-005 — Harbourview Day Surgery Centre (October 2026)"
+    }
+  ],
+  "seed": 20260501,
+  "version": 1
+}
