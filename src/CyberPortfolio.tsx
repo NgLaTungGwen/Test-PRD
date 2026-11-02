@@ -1,17 +1,29 @@
 import { IllustrativeFigure } from './IllustrativeFigure';
-import { getPortfolioRows, getShellMonths } from './cyberData';
+import { getPortfolioRows, getShellMonths, selectForScope } from './cyberData';
+import { useCyberScope } from './cyberScope';
 
 /**
- * The Program Lead's first screen: one row per member, with the figures the
- * programme is steered by. Every number goes through IllustrativeFigure.
+ * The Program Lead's first screen: one row per member of the current scope,
+ * with the figures the programme is steered by. Every number goes through
+ * IllustrativeFigure.
+ *
+ * The rows are computed from the scope on each render — the whole portfolio,
+ * or the one member a deep link put in focus — so nothing of a previous role
+ * or member can still be in the table after a switch.
  */
 export function CyberPortfolio() {
-  const rows = getPortfolioRows();
+  const { scope } = useCyberScope();
+  const rows = getPortfolioRows(selectForScope(scope).members);
   const months = getShellMonths();
   const latestMonth = months[months.length - 1];
 
   return (
-    <section className="cyber-screen" data-testid="cyber-portfolio">
+    <section
+      className="cyber-screen"
+      data-testid="cyber-portfolio"
+      data-scope-member={scope.memberId ?? 'none'}
+      data-rows={rows.length}
+    >
       <h1>Portfolio</h1>
       <p className="cyber-screen__lede">
         Every member organisation in the programme, with posture, open work and service

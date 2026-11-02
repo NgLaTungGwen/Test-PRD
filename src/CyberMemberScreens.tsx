@@ -2,37 +2,40 @@ import type { ReactNode } from 'react';
 
 import { IllustrativeFigure } from './IllustrativeFigure';
 import {
-  activeMemberId,
   getFacilityById,
   getMemberById,
+  getScopedReports,
   isOverdue,
-  selectByScope,
+  selectForScope,
 } from './cyberData';
-import type { CyberScopeSelection } from './cyberData';
+import type { ScopedFixtures, ScopedReport } from './cyberData';
 import { useCyberScope } from './cyberScope';
 
 /**
  * The member-facing screens.
  *
- * Every one of them derives its rows from `selectByScope(role, facilityId)`
- * and from nothing else, so choosing a facility in the header re-scopes all of
- * them at once: there is no second, screen-local read path that could keep
- * showing another facility's work.
+ * Every one of them derives its rows from `selectForScope(scope)` and from
+ * nothing else, on every render, so switching role, facility or member in the
+ * URL re-scopes all of them at once: there is no screen-local copy of a row
+ * that could keep showing the previous context's work.
  */
 function useMemberScope(): {
-  selection: CyberScopeSelection;
+  selection: ScopedFixtures;
+  reports: ScopedReport[];
   facilityId?: string;
   facilityName: string;
   facilitySite: string;
   memberName: string;
 } {
-  const { role, facilityId } = useCyberScope();
-  const memberId = activeMemberId(role, facilityId);
-  const facility = getFacilityById(facilityId);
+  const { scope } = useCyberScope();
+  const selection = selectForScope(scope);
+  const memberId = selection.members[0]?.id;
+  const facility = getFacilityById(scope.facilityId ?? undefined);
   const inScope = facility !== undefined && facility.memberId === memberId ? facility : undefined;
 
   return {
-    selection: selectByScope(role, facilityId),
+    selection,
+    reports: getScopedReports(memberId, inScope?.id),
     facilityId: inScope?.id,
     facilityName: inScope?.name ?? 'All facilities',
     facilitySite: inScope?.site ?? 'All facilities',
@@ -181,10 +184,8 @@ export function MemberFindings() {
 
 /** Facility-scoped reports: `GET /cyber/member/reports`. */
 export function MemberReports() {
-  const { selection, facilityId, facilityName, facilitySite, memberName } = useMemberScope();
-  const reports = [...selection.reports].sort((left, right) =>
-    right.month.localeCompare(left.month),
-  );
+  const { reports: scoped, facilityId, facilityName, facilitySite, memberName } = useMemberScope();
+  const reports = [...scoped].sort((left, right) => right.month.localeCompare(left.month));
 
   return (
     <MemberScreen

@@ -1,20 +1,36 @@
 import { createContext, useContext, useSyncExternalStore } from 'react';
 import type { ReactNode } from 'react';
 
-import { cyberRoles, defaultCyberFacilityId, facilitiesForRole } from './cyberData';
+import {
+  cyberFacilityById,
+  cyberRoles,
+  defaultCyberFacilityId,
+  facilitiesForRole,
+  legacyRoleFor,
+} from './cyberData';
+import {
+  CyberScopeProvider as ScopeStoreProvider,
+  currentCyberSearch,
+  getCyberScope,
+  resetCyberScope,
+  setCyberScope,
+  subscribeCyberScope,
+} from './cyberScope';
+import type { CyberRole, CyberScope } from './cyberScope';
 
 /**
  * Who is looking at the cyber posture screens, and at which facility.
  *
- * The state lives in one module-level store rather than in component state so
- * that the overview screen, the findings screen and the filter controls all
- * read exactly the same value, and so a test can call the same setters the
- * controls call and re-render. The provider puts a snapshot of that store on
- * the React context; `useCyberScopeContext` reads it, falling back to the
- * store itself when a screen is rendered outside the provider.
+ * This is the posture screens' view of the one demo scope: the role, the
+ * facility and the focused member all live in the URL query string, in
+ * `cyberScope.tsx`, and this module only translates between that scope and
+ * the posture fixture's own role and facility ids. There is no second copy
+ * of the state, so a role or facility switch made anywhere — the header, the
+ * sidebar, a deep link, the browser's Back button — reaches these screens
+ * with no stale data left behind.
  *
  * A fresh load starts as the first role in the fixture, scoped to the first
- * facility in the fixture.
+ * facility that role may see.
  */
 export type CyberScopeContextState = {
   role: string;
@@ -22,8 +38,11 @@ export type CyberScopeContextState = {
 };
 
 export type CyberScopeContextValue = CyberScopeContextState & {
+  /** The whole demo scope, for a screen that needs the member too. */
+  scope: CyberScope;
   setRole(role: string): void;
   setFacility(id: string): void;
+  setScope(patch: Partial<CyberScope>): void;
 };
 
 /** The role a fresh load starts in: the first role the fixture declares. */
@@ -48,44 +67,48 @@ export function facilityForRole(role: string, currentFacilityId?: string): strin
   return allowed[0]?.id ?? defaultCyberFacilityId();
 }
 
-let state: CyberScopeContextState = { ...INITIAL_CYBER_SCOPE };
-const listeners = new Set<() => void>();
+/**
+ * The posture screens' scope for a demo scope: the fixture role the scope
+ * role reads as, and a facility of the posture fixture that role may see.
+ */
+export function postureScopeFor(scope: CyberScope): CyberScopeContextState {
+  const role = legacyRoleFor(scope.role);
+  const requested =
+    scope.facilityId !== null && cyberFacilityById(scope.facilityId) !== undefined
+      ? scope.facilityId
+      : undefined;
 
-function emit(): void {
-  for (const listener of [...listeners]) listener();
+  return { role, facilityId: facilityForRole(role, requested) };
 }
 
-function subscribe(listener: () => void): () => void {
-  listeners.add(listener);
-  return () => {
-    listeners.delete(listener);
-  };
-}
+/* The derivation is cached by query string so one query yields one stable
+ * snapshot object and `useSyncExternalStore` has nothing to loop over. */
+let cachedSearch: string | null = null;
+let cachedState: CyberScopeContextState = { ...INITIAL_CYBER_SCOPE };
 
-/** The current scope, outside React. */
+/** The current posture scope, outside React. */
 export function getCyberScopeContextState(): CyberScopeContextState {
-  return state;
+  const search = currentCyberSearch();
+  if (cachedSearch !== search) {
+    cachedSearch = search;
+    cachedState = postureScopeFor(getCyberScope());
+  }
+  return cachedState;
 }
 
 /** Select a role. Re-scopes the facility when the new role cannot see it. */
 export function setCyberScopeRole(role: string): void {
-  const facilityId = facilityForRole(role, state.facilityId);
-  if (state.role === role && state.facilityId === facilityId) return;
-  state = { role, facilityId };
-  emit();
+  setCyberScope({ role: role as CyberRole });
 }
 
 /** Choose a facility. This is what the findings screen's selector calls. */
 export function setCyberScopeFacility(id: string): void {
-  if (state.facilityId === id) return;
-  state = { ...state, facilityId: id };
-  emit();
+  setCyberScope({ facilityId: id });
 }
 
 /** Put the scope back to a fresh load. Used by tests between cases. */
 export function resetCyberScopeContext(): void {
-  state = { ...INITIAL_CYBER_SCOPE };
-  emit();
+  resetCyberScope();
 }
 
 const ScopeContext = createContext<CyberScopeContextState | null>(null);
@@ -93,34 +116,41 @@ const ScopeContext = createContext<CyberScopeContextState | null>(null);
 export type CyberScopeProviderProps = { children: ReactNode };
 
 /**
- * Makes the cyber scope available to the tree. Mounted once, around the cyber
+ * Makes the cyber scope available to the tree. Mounted around the cyber
  * route group, so the screens and their filters cannot disagree.
  */
 export function CyberScopeProvider({ children }: CyberScopeProviderProps) {
   const snapshot = useSyncExternalStore(
-    subscribe,
+    subscribeCyberScope,
     getCyberScopeContextState,
     getCyberScopeContextState,
   );
 
-  return <ScopeContext.Provider value={snapshot}>{children}</ScopeContext.Provider>;
+  return (
+    <ScopeStoreProvider>
+      <ScopeContext.Provider value={snapshot}>{children}</ScopeContext.Provider>
+    </ScopeStoreProvider>
+  );
 }
 
-/** The active role and facility, with the two setters the controls use. */
+/** The active role and facility, with the setters the controls use. */
 export function useCyberScopeContext(): CyberScopeContextValue {
   const fromContext = useContext(ScopeContext);
   const fallback = useSyncExternalStore(
-    subscribe,
+    subscribeCyberScope,
     getCyberScopeContextState,
     getCyberScopeContextState,
   );
   const current = fromContext ?? fallback;
+  const scope = useSyncExternalStore(subscribeCyberScope, getCyberScope, getCyberScope);
 
   return {
+    scope,
     role: current.role,
     facilityId: current.facilityId,
     setRole: setCyberScopeRole,
     setFacility: setCyberScopeFacility,
+    setScope: setCyberScope,
   };
 }
 

@@ -420,8 +420,43 @@ export type Facility = {
   city: string;
 };
 
-/** The three demo roles the /cyber shell offers. */
+/**
+ * The three data roles the committed fixtures are sliced by.
+ *
+ * The demo offers more roles than this — see `CyberRole` in `cyberScope.tsx`,
+ * which carries the five scope roles the URL may name — but every one of them
+ * reads the fixtures as one of these three. `legacyRoleFor` is the mapping.
+ */
 export type CyberRole = 'program-lead' | 'member-exec' | 'member-it';
+
+/**
+ * The data role a scope role reads the fixtures as.
+ *
+ * The scope roles are the five the URL may carry; the fixtures only know the
+ * three the mock data set was generated for. A HealthPRO-side role reads the
+ * whole portfolio, a member-side role reads its own member's slice.
+ */
+export function legacyRoleFor(role: string): CyberRole {
+  switch (role) {
+    case 'member-exec':
+    case 'MemberExec':
+      return 'member-exec';
+    case 'member-it':
+    case 'MemberSecLead':
+    case 'MemberOps':
+      return 'member-it';
+    default:
+      return 'program-lead';
+  }
+}
+
+/**
+ * Whether a scope role signs in on behalf of a member rather than of
+ * HealthPRO. Accepts both the scope role ids and the three data role ids.
+ */
+export function isMemberScopeRole(role: string): boolean {
+  return isMemberRole(legacyRoleFor(role));
+}
 
 /** A record that belongs to one facility of one member. */
 export type FacilityScoped = { facilityId: string };
@@ -596,6 +631,73 @@ export function selectByScope(role: CyberRole, facilityId?: string): CyberScopeS
   };
 }
 
+/* ------------------------------------------------------------------ *
+ * The scope-driven read path.
+ *
+ * `selectForScope` takes the whole scope — role, facility and the focused
+ * member — and returns the fixture slices that scope may see. It is a pure
+ * function of its argument: a screen that calls it on every render cannot
+ * show a row of a scope it is no longer in.
+ * ------------------------------------------------------------------ */
+
+/** One member organisation, as the scoped selection returns it. */
+export type MemberRow = CyberMember;
+
+/** One finding, with the facility it belongs to. */
+export type FindingRow = ScopedFinding;
+
+/** One SLA ticket. */
+export type TicketRow = CyberTicket;
+
+/** One incident, with the facility it belongs to. */
+export type IncidentRow = ScopedIncident;
+
+/** The fixture slices one scope may see. */
+export type ScopedFixtures = {
+  members: MemberRow[];
+  findings: FindingRow[];
+  tickets: TicketRow[];
+  incidents: IncidentRow[];
+};
+
+/**
+ * The fixture slices a scope may see.
+ *
+ * - a member-side role sees its own member, narrowed to the selected facility
+ *   where a record carries one;
+ * - a HealthPRO-side role with a member in focus (`?memberId=`) sees that
+ *   member's slice, so a deep link opens on that member's context;
+ * - a HealthPRO-side role with no member in focus sees the whole portfolio.
+ */
+export function selectForScope(scope: {
+  role: string;
+  facilityId: string | null;
+  memberId: string | null;
+}): ScopedFixtures {
+  if (isMemberScopeRole(scope.role)) {
+    const facility = getFacilityById(scope.facilityId ?? undefined);
+    const memberId = facility?.memberId ?? scope.memberId ?? DEFAULT_MEMBER_ID;
+    const facilityId = facility?.memberId === memberId ? facility.id : undefined;
+    const member = getMemberById(memberId);
+
+    return {
+      members: member === undefined ? [] : [member],
+      findings: getScopedFindings(memberId, facilityId),
+      tickets: getTickets(memberId),
+      incidents: getScopedIncidents(memberId, facilityId),
+    };
+  }
+
+  const focused = scope.memberId === null ? undefined : getMemberById(scope.memberId)?.id;
+
+  return {
+    members: focused === undefined ? getMembers() : [getMemberById(focused) as CyberMember],
+    findings: getScopedFindings(focused),
+    tickets: getTickets(focused),
+    incidents: getScopedIncidents(focused),
+  };
+}
+
 /** The SLA / MTTA rows, for one member or for all of them, oldest month first. */
 export function getServicePerformance(memberId?: string): ServicePerformanceRow[] {
   return memberId === undefined
@@ -625,11 +727,17 @@ export type PortfolioRow = {
   slaAttainmentPercent: number;
 };
 
-/** The portfolio summary: one row per member, in member table order. */
-export function getPortfolioRows(): PortfolioRow[] {
+/**
+ * The portfolio summary: one row per member, in member table order.
+ *
+ * The members are an argument rather than a module read so the screen can
+ * hand it the members of the current scope — the whole portfolio, or the one
+ * member a deep link put in focus — and never a row the scope cannot see.
+ */
+export function getPortfolioRows(members: CyberMember[] = getMembers()): PortfolioRow[] {
   const latestMonth = SHELL.months[SHELL.months.length - 1] as string;
 
-  return getMembers().map((member) => {
+  return members.map((member) => {
     const performance = SHELL.servicePerformance.find(
       (row) => row.memberId === member.id && row.month === latestMonth,
     );

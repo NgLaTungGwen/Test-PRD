@@ -9,9 +9,15 @@ import CyberSidebar from './CyberSidebar';
 import FacilitySelector from './FacilitySelector';
 import { IllustrativeNotice } from './IllustrativeFigure';
 import TierCatalogue from './TierCatalogue';
-import { CYBER_ROLES, activeMemberId, isMemberRole } from './cyberData';
-import type { CyberRole } from './cyberData';
-import { CyberScopeProvider, useCyberScope } from './cyberScope';
+import { CYBER_ROLES } from './cyberData';
+import {
+  CYBER_SCOPE_ROLES,
+  CyberScopeProvider,
+  isMemberScope,
+  normaliseRole,
+  useCyberScope,
+} from './cyberScope';
+import type { CyberRole, CyberScope } from './cyberScope';
 import {
   closeSearch,
   searchCyber,
@@ -103,34 +109,58 @@ function CyberPocScreen({ path }: { path: string }) {
  */
 function CyberPocRoutes() {
   const path = usePath();
+  const { scope } = useCyberScope();
   const resolved = path === '/cyber-poc/' ? '/cyber-poc' : path;
 
   return (
     <CyberPocScopeProvider>
       <div className="cyber-group" data-testid="cyber-poc-group" data-path={resolved}>
-        <CyberPocScreen path={resolved} />
+        {/* Keyed by the scope: a role, facility or member change swaps the
+            screen rather than merging into it, so no filter or list of the
+            previous context can survive the switch. */}
+        <CyberPocScreen key={scopeKey(scope)} path={resolved} />
       </div>
     </CyberPocScopeProvider>
   );
 }
 
-/** The header's role switcher: the three demo roles, driving the cyber scope. */
-function RoleSwitcher() {
-  const { role, setRole } = useCyberScope();
+/** The scope, as one string: what a screen is keyed and re-rendered by. */
+export function scopeKey(scope: CyberScope): string {
+  return `${scope.role}|${scope.facilityId ?? ''}|${scope.memberId ?? ''}`;
+}
+
+/**
+ * The header's role switcher: the three roles the shell shipped with.
+ *
+ * It reads and writes the same scope — the URL query — as the sidebar's
+ * five-role switcher, so the two can never disagree. When the scope is in
+ * one of the roles this requirement adds, that role is offered here too
+ * rather than leaving the control showing nothing.
+ */
+function HeaderRoleSwitcher() {
+  const { scope, setScope } = useCyberScope();
+  const entry = CYBER_SCOPE_ROLES.find((candidate) => candidate.id === scope.role);
+  const value = entry?.legacyId ?? scope.role;
+  const extra = entry?.legacyId === undefined ? entry : undefined;
 
   function handleChange(event: ChangeEvent<HTMLSelectElement>): void {
-    setRole(event.target.value as CyberRole);
+    setScope({ role: (normaliseRole(event.target.value) ?? 'ProgramLead') as CyberRole });
   }
 
   return (
     <label className="shell-header__role" data-testid="role-switcher">
       <span className="shell-header__label">Role</span>
-      <select aria-label="Role" data-testid="role-select" value={role} onChange={handleChange}>
-        {CYBER_ROLES.map((entry) => (
-          <option key={entry.id} value={entry.id}>
-            {entry.label}
+      <select aria-label="Role" data-testid="role-select" value={value} onChange={handleChange}>
+        {CYBER_ROLES.map((item) => (
+          <option key={item.id} value={item.id}>
+            {item.label}
           </option>
         ))}
+        {extra === undefined ? null : (
+          <option key={extra.id} value={extra.id}>
+            {extra.label}
+          </option>
+        )}
       </select>
     </label>
   );
@@ -208,8 +238,7 @@ function SearchPalette() {
 /** The app shell: header, ⌘K search, role switcher, left sidebar and outlet. */
 function Shell() {
   const path = usePath();
-  const { role, facilityId } = useCyberScope();
-  const memberId = activeMemberId(role, facilityId);
+  const { scope, role } = useCyberScope();
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent): void {
@@ -226,7 +255,14 @@ function Shell() {
   }, []);
 
   return (
-    <div className="app-shell" data-testid="app-shell" data-role={role}>
+    <div
+      className="app-shell"
+      data-testid="app-shell"
+      data-role={role}
+      data-scope-role={scope.role}
+      data-scope-facility={scope.facilityId ?? 'none'}
+      data-scope-member={scope.memberId ?? 'none'}
+    >
       <header className="shell-header" data-testid="shell-header">
         <a
           className="shell-header__brand"
@@ -248,10 +284,8 @@ function Shell() {
           Search <kbd>⌘K</kbd>
         </button>
 
-        <RoleSwitcher />
-        {isMemberRole(role) && memberId !== undefined ? (
-          <FacilitySelector memberId={memberId} />
-        ) : null}
+        <HeaderRoleSwitcher />
+        {isMemberScope(scope.role) ? <FacilitySelector /> : null}
       </header>
 
       <div className="app-shell__body">

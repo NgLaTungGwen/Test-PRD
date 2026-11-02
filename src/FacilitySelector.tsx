@@ -1,29 +1,47 @@
 import type { ChangeEvent } from 'react';
 
-import { getFacilities } from './cyberData';
-import { useCyberScope } from './cyberScope';
+import { DEFAULT_MEMBER_ID, getFacilities } from './cyberData';
+import { setCyberScope, useCyberScope } from './cyberScope';
 
 export type FacilitySelectorProps = {
-  /** The member whose facilities the selector lists. */
-  memberId: string;
+  /**
+   * The member whose facilities the selector lists. Optional: with no props
+   * it lists the facilities of the member the scope is acting for, which is
+   * the member the URL query names.
+   */
+  memberId?: string;
 };
+
+/**
+ * Choose a facility. This is what the selector's `onChange` calls, and what a
+ * test drives when it switches facility "through the control".
+ *
+ * Choosing a facility of another member carries the member with it: the scope
+ * resets `memberId` to the facility's owner, so no panel of the previous
+ * member can survive the switch.
+ */
+export function chooseFacility(id: string): void {
+  setCyberScope({ facilityId: id });
+}
 
 /**
  * The header's facility selector, shown for member roles only.
  *
- * Choosing a facility writes it into the cyber scope, and every member screen
- * reads its rows back out of that scope, so one change here re-scopes all of
- * them at once.
+ * It holds no selection of its own: the value comes from the scope in the URL
+ * query and the change writes the query back, so every member screen — and
+ * the selector itself after a deep link or a Back navigation — reads one
+ * facility and one member.
  */
-export function FacilitySelector({ memberId }: FacilitySelectorProps) {
-  const { facilityId, setFacility } = useCyberScope();
-  const facilities = getFacilities(memberId);
-  const selected = facilities.some((facility) => facility.id === facilityId)
-    ? (facilityId as string)
+export function FacilitySelector({ memberId }: FacilitySelectorProps = {}) {
+  const { scope } = useCyberScope();
+  const owner = memberId ?? scope.memberId ?? DEFAULT_MEMBER_ID;
+  const facilities = getFacilities(owner);
+  const selected = facilities.some((facility) => facility.id === scope.facilityId)
+    ? (scope.facilityId as string)
     : (facilities[0]?.id ?? '');
 
   function handleChange(event: ChangeEvent<HTMLSelectElement>): void {
-    setFacility(event.target.value);
+    chooseFacility(event.target.value);
   }
 
   return (
