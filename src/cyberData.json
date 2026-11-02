@@ -1,0 +1,1898 @@
+{
+  "generator": "generate-cyber-fixtures.mjs",
+  "kind": "cyber-shell-bundle",
+  "version": 1,
+  "seed": 20260401,
+  "months": [
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08",
+    "2026-09",
+    "2026-10"
+  ],
+  "members": [
+    {
+      "id": "mem-lakeshore",
+      "name": "Lakeshore Regional Health Network",
+      "province": "Ontario",
+      "size": "Large",
+      "tier": "advanced",
+      "type": "Acute hospital network"
+    },
+    {
+      "id": "mem-riverbend",
+      "name": "Riverbend Community Health Centre",
+      "province": "British Columbia",
+      "size": "Medium",
+      "tier": "standard",
+      "type": "Community health centre"
+    },
+    {
+      "id": "mem-maple-grove",
+      "name": "Maple Grove Long-Term Care",
+      "province": "Alberta",
+      "size": "Medium",
+      "tier": "essentials",
+      "type": "Long-term care home"
+    },
+    {
+      "id": "mem-st-brendans",
+      "name": "St. Brendan's Memorial Hospital",
+      "province": "Nova Scotia",
+      "size": "Large",
+      "tier": "advanced",
+      "type": "Acute hospital"
+    },
+    {
+      "id": "mem-northern-lights",
+      "name": "Northern Lights Health Centre",
+      "province": "Manitoba",
+      "size": "Small",
+      "tier": "essentials",
+      "type": "Rural health centre"
+    },
+    {
+      "id": "mem-pinehurst",
+      "name": "Pinehurst Seniors Residence",
+      "province": "Saskatchewan",
+      "size": "Small",
+      "tier": "essentials",
+      "type": "Long-term care home"
+    },
+    {
+      "id": "mem-harbourview",
+      "name": "Harbourview Day Surgery Centre",
+      "province": "Quebec",
+      "size": "Medium",
+      "tier": "standard",
+      "type": "Ambulatory surgery centre"
+    },
+    {
+      "id": "mem-cedar-valley",
+      "name": "Cedar Valley Mental Health Partners",
+      "province": "New Brunswick",
+      "size": "Medium",
+      "tier": "standard",
+      "type": "Mental health network"
+    }
+  ],
+  "facilities": [
+    {
+      "id": "fac-001",
+      "memberId": "mem-lakeshore",
+      "name": "Lakeshore Regional Health Network — Lakeview Annex",
+      "site": "Lakeview Annex",
+      "kind": "Acute site",
+      "city": "Ontario"
+    },
+    {
+      "id": "fac-002",
+      "memberId": "mem-lakeshore",
+      "name": "Lakeshore Regional Health Network — North Campus",
+      "site": "North Campus",
+      "kind": "Acute site",
+      "city": "Ontario"
+    },
+    {
+      "id": "fac-003",
+      "memberId": "mem-riverbend",
+      "name": "Riverbend Community Health Centre — Lakeview Annex",
+      "site": "Lakeview Annex",
+      "kind": "Acute site",
+      "city": "British Columbia"
+    },
+    {
+      "id": "fac-004",
+      "memberId": "mem-riverbend",
+      "name": "Riverbend Community Health Centre — Riverside Site",
+      "site": "Riverside Site",
+      "kind": "Acute site",
+      "city": "British Columbia"
+    },
+    {
+      "id": "fac-005",
+      "memberId": "mem-riverbend",
+      "name": "Riverbend Community Health Centre — Main Campus",
+      "site": "Main Campus",
+      "kind": "Acute site",
+      "city": "British Columbia"
+    },
+    {
+      "id": "fac-006",
+      "memberId": "mem-maple-grove",
+      "name": "Maple Grove Long-Term Care — Westgate Clinic",
+      "site": "Westgate Clinic",
+      "kind": "Ambulatory site",
+      "city": "Alberta"
+    },
+    {
+      "id": "fac-007",
+      "memberId": "mem-maple-grove",
+      "name": "Maple Grove Long-Term Care — North Campus",
+      "site": "North Campus",
+      "kind": "Administrative site",
+      "city": "Alberta"
+    },
+    {
+      "id": "fac-008",
+      "memberId": "mem-maple-grove",
+      "name": "Maple Grove Long-Term Care — Lakeview Annex",
+      "site": "Lakeview Annex",
+      "kind": "Residential site",
+      "city": "Alberta"
+    },
+    {
+      "id": "fac-009",
+      "memberId": "mem-st-brendans",
+      "name": "St. Brendan's Memorial Hospital — Main Campus",
+      "site": "Main Campus",
+      "kind": "Residential site",
+      "city": "Nova Scotia"
+    },
+    {
+      "id": "fac-010",
+      "memberId": "mem-st-brendans",
+      "name": "St. Brendan's Memorial Hospital — North Campus",
+      "site": "North Campus",
+      "kind": "Residential site",
+      "city": "Nova Scotia"
+    },
+    {
+      "id": "fac-011",
+      "memberId": "mem-st-brendans",
+      "name": "St. Brendan's Memorial Hospital — Eastfield Site",
+      "site": "Eastfield Site",
+      "kind": "Administrative site",
+      "city": "Nova Scotia"
+    },
+    {
+      "id": "fac-012",
+      "memberId": "mem-northern-lights",
+      "name": "Northern Lights Health Centre — Main Campus",
+      "site": "Main Campus",
+      "kind": "Administrative site",
+      "city": "Manitoba"
+    },
+    {
+      "id": "fac-013",
+      "memberId": "mem-northern-lights",
+      "name": "Northern Lights Health Centre — Lakeview Annex",
+      "site": "Lakeview Annex",
+      "kind": "Administrative site",
+      "city": "Manitoba"
+    },
+    {
+      "id": "fac-014",
+      "memberId": "mem-pinehurst",
+      "name": "Pinehurst Seniors Residence — Eastfield Site",
+      "site": "Eastfield Site",
+      "kind": "Residential site",
+      "city": "Saskatchewan"
+    },
+    {
+      "id": "fac-015",
+      "memberId": "mem-pinehurst",
+      "name": "Pinehurst Seniors Residence — Westgate Clinic",
+      "site": "Westgate Clinic",
+      "kind": "Acute site",
+      "city": "Saskatchewan"
+    },
+    {
+      "id": "fac-016",
+      "memberId": "mem-pinehurst",
+      "name": "Pinehurst Seniors Residence — Lakeview Annex",
+      "site": "Lakeview Annex",
+      "kind": "Administrative site",
+      "city": "Saskatchewan"
+    },
+    {
+      "id": "fac-017",
+      "memberId": "mem-harbourview",
+      "name": "Harbourview Day Surgery Centre — North Campus",
+      "site": "North Campus",
+      "kind": "Acute site",
+      "city": "Quebec"
+    },
+    {
+      "id": "fac-018",
+      "memberId": "mem-harbourview",
+      "name": "Harbourview Day Surgery Centre — Lakeview Annex",
+      "site": "Lakeview Annex",
+      "kind": "Residential site",
+      "city": "Quebec"
+    },
+    {
+      "id": "fac-019",
+      "memberId": "mem-cedar-valley",
+      "name": "Cedar Valley Mental Health Partners — Main Campus",
+      "site": "Main Campus",
+      "kind": "Ambulatory site",
+      "city": "New Brunswick"
+    },
+    {
+      "id": "fac-020",
+      "memberId": "mem-cedar-valley",
+      "name": "Cedar Valley Mental Health Partners — Lakeview Annex",
+      "site": "Lakeview Annex",
+      "kind": "Acute site",
+      "city": "New Brunswick"
+    }
+  ],
+  "incidents": [
+    {
+      "containmentMins": 130,
+      "id": "inc-001",
+      "memberId": "mem-lakeshore",
+      "openActions": [
+        {
+          "id": "act-001",
+          "owner": "Lakeshore IT Operations"
+        },
+        {
+          "id": "act-002",
+          "owner": "Lakeshore Network Team"
+        },
+        {
+          "id": "act-003",
+          "owner": "Lakeshore Clinical Applications"
+        }
+      ],
+      "severity": "P1",
+      "timeline": [
+        {
+          "at": "2026-10-12T01:42:00.000Z",
+          "step": "VPN login: the remote access appliance accepts a successful single-factor login for a valid clinical staff account from an unrecognised overseas address."
+        },
+        {
+          "at": "2026-10-12T01:58:00.000Z",
+          "step": "Detection: impossible-travel VPN session correlated with the unpatched appliance advisory and raised to P1 by the SOC."
+        },
+        {
+          "at": "2026-10-12T02:05:00.000Z",
+          "step": "Acknowledged: on-call analyst engaged the member within the P1 target and opened a bridge with Lakeshore IT Operations."
+        },
+        {
+          "at": "2026-10-12T02:21:00.000Z",
+          "step": "Lateral movement: the VPN session pivots over SMB to a file server using the same stolen credentials."
+        },
+        {
+          "at": "2026-10-12T02:44:00.000Z",
+          "step": "Credential dumping: an unsigned process reads LSASS memory on the file server, harvesting cached domain credentials."
+        },
+        {
+          "at": "2026-10-12T03:06:00.000Z",
+          "step": "Containment begins: the VPN account is disabled, the appliance session is terminated and the file server is isolated from the network."
+        },
+        {
+          "at": "2026-10-12T03:40:00.000Z",
+          "step": "Credential reset: every account exposed by the dump is force-reset and the attacker address is blocked at the perimeter."
+        },
+        {
+          "at": "2026-10-12T04:08:00.000Z",
+          "step": "Contained: no further authentication from the attacker infrastructure; containment confirmed 2h10m after detection."
+        }
+      ],
+      "facilityId": "fac-002"
+    },
+    {
+      "containmentMins": 95,
+      "id": "inc-002",
+      "memberId": "mem-riverbend",
+      "openActions": [
+        {
+          "id": "act-004",
+          "owner": "Riverbend Practice Administration"
+        }
+      ],
+      "severity": "P2",
+      "timeline": [
+        {
+          "at": "2026-09-15T07:56:00.000Z",
+          "step": "Phishing campaign: 34 near-identical mails impersonating the payroll portal reach staff mailboxes from a look-alike domain."
+        },
+        {
+          "at": "2026-09-15T08:12:00.000Z",
+          "step": "Detection: the email gateway retro-scan flags the campaign and the SOC raises a P2."
+        },
+        {
+          "at": "2026-09-15T08:33:00.000Z",
+          "step": "Acknowledged: analyst confirms four staff submitted credentials to the harvesting page."
+        },
+        {
+          "at": "2026-09-15T09:10:00.000Z",
+          "step": "Containment: the campaign is purged from all mailboxes, the look-alike domain is blocked and the four accounts are reset with sessions revoked."
+        },
+        {
+          "at": "2026-09-15T09:47:00.000Z",
+          "step": "Contained: no successful sign-in from the harvesting infrastructure; awareness follow-up scheduled with the member."
+        }
+      ],
+      "facilityId": "fac-004"
+    },
+    {
+      "containmentMins": 150,
+      "id": "inc-003",
+      "memberId": "mem-maple-grove",
+      "openActions": [
+        {
+          "id": "act-005",
+          "owner": "Maple Grove Facilities IT"
+        },
+        {
+          "id": "act-006",
+          "owner": "Maple Grove Care Operations"
+        }
+      ],
+      "severity": "P2",
+      "timeline": [
+        {
+          "at": "2026-08-07T22:22:00.000Z",
+          "step": "Malware detected on a shared nursing-station workstation after a USB drive is mounted out of hours."
+        },
+        {
+          "at": "2026-08-07T22:35:00.000Z",
+          "step": "Detection: endpoint agent quarantines the payload and the SOC raises a P2."
+        },
+        {
+          "at": "2026-08-08T00:11:00.000Z",
+          "step": "Containment: workstation isolated, USB device blocked estate-wide and the account re-imaged."
+        },
+        {
+          "at": "2026-08-08T01:05:00.000Z",
+          "step": "Contained: no onward connection observed; removable-media policy raised as a finding."
+        }
+      ],
+      "facilityId": "fac-008"
+    },
+    {
+      "containmentMins": 70,
+      "id": "inc-004",
+      "memberId": "mem-st-brendans",
+      "openActions": [],
+      "severity": "P2",
+      "timeline": [
+        {
+          "at": "2026-07-21T12:50:00.000Z",
+          "step": "Unapproved remote access tool installed on a diagnostic imaging workstation by a third-party engineer."
+        },
+        {
+          "at": "2026-07-21T13:04:00.000Z",
+          "step": "Detection: the SOC raises a P2 on the unsigned remote access binary."
+        },
+        {
+          "at": "2026-07-21T14:14:00.000Z",
+          "step": "Contained: tool removed, vendor session re-established through the approved jump host, change logged with the member."
+        }
+      ],
+      "facilityId": "fac-009"
+    },
+    {
+      "containmentMins": 55,
+      "id": "inc-005",
+      "memberId": "mem-harbourview",
+      "openActions": [
+        {
+          "id": "act-007",
+          "owner": "Harbourview Theatre Systems"
+        }
+      ],
+      "severity": "P2",
+      "timeline": [
+        {
+          "at": "2026-10-03T02:31:00.000Z",
+          "step": "Out-of-hours administrator logon to the theatre scheduling server from a non-standard workstation."
+        },
+        {
+          "at": "2026-10-03T02:47:00.000Z",
+          "step": "Detection: the SOC raises a P2 and the acknowledgement target is missed during the overnight handover."
+        },
+        {
+          "at": "2026-10-03T03:42:00.000Z",
+          "step": "Contained: logon confirmed as an unsanctioned maintenance window; shared administrator account retired in favour of named accounts."
+        }
+      ],
+      "facilityId": "fac-017"
+    }
+  ],
+  "findings": [
+    {
+      "dueDate": "2026-08-11",
+      "id": "fnd-001",
+      "memberId": "mem-lakeshore",
+      "severity": "high",
+      "status": "closed",
+      "title": "Multi-factor authentication not enforced for remote access",
+      "facilityId": "fac-002"
+    },
+    {
+      "dueDate": "2026-07-29",
+      "id": "fnd-002",
+      "memberId": "mem-lakeshore",
+      "severity": "medium",
+      "status": "closed",
+      "title": "Local administrator rights on shared clinical workstations",
+      "facilityId": "fac-001"
+    },
+    {
+      "dueDate": "2026-07-08",
+      "id": "fnd-003",
+      "memberId": "mem-lakeshore",
+      "severity": "medium",
+      "status": "closed",
+      "title": "Backup restore test not evidenced this quarter",
+      "facilityId": "fac-002"
+    },
+    {
+      "dueDate": "2026-08-30",
+      "id": "fnd-004",
+      "memberId": "mem-lakeshore",
+      "severity": "low",
+      "status": "closed",
+      "title": "Joiner-mover-leaver reviews behind schedule",
+      "facilityId": "fac-001"
+    },
+    {
+      "dueDate": "2026-11-17",
+      "id": "fnd-005",
+      "memberId": "mem-lakeshore",
+      "severity": "medium",
+      "status": "open",
+      "title": "Legacy TLS still enabled on the patient portal",
+      "facilityId": "fac-002"
+    },
+    {
+      "dueDate": "2026-09-23",
+      "id": "fnd-006",
+      "memberId": "mem-lakeshore",
+      "severity": "high",
+      "status": "closed",
+      "title": "Endpoint agent missing from four imaging workstations",
+      "facilityId": "fac-001"
+    },
+    {
+      "dueDate": "2026-07-06",
+      "id": "fnd-007",
+      "memberId": "mem-lakeshore",
+      "severity": "high",
+      "status": "closed",
+      "title": "Guest wireless not segmented from the clinical network",
+      "facilityId": "fac-002"
+    },
+    {
+      "dueDate": "2026-11-22",
+      "id": "fnd-008",
+      "memberId": "mem-riverbend",
+      "severity": "medium",
+      "status": "open",
+      "title": "Local administrator rights on shared clinical workstations",
+      "facilityId": "fac-005"
+    },
+    {
+      "dueDate": "2027-01-14",
+      "id": "fnd-009",
+      "memberId": "mem-riverbend",
+      "severity": "medium",
+      "status": "open",
+      "title": "Backup restore test not evidenced this quarter",
+      "facilityId": "fac-003"
+    },
+    {
+      "dueDate": "2027-01-10",
+      "id": "fnd-010",
+      "memberId": "mem-riverbend",
+      "severity": "low",
+      "status": "open",
+      "title": "Joiner-mover-leaver reviews behind schedule",
+      "facilityId": "fac-004"
+    },
+    {
+      "dueDate": "2026-11-15",
+      "id": "fnd-011",
+      "memberId": "mem-riverbend",
+      "severity": "medium",
+      "status": "open",
+      "title": "Legacy TLS still enabled on the patient portal",
+      "facilityId": "fac-005"
+    },
+    {
+      "dueDate": "2026-08-25",
+      "id": "fnd-012",
+      "memberId": "mem-riverbend",
+      "severity": "high",
+      "status": "closed",
+      "title": "Endpoint agent missing from four imaging workstations",
+      "facilityId": "fac-003"
+    },
+    {
+      "dueDate": "2026-06-25",
+      "id": "fnd-013",
+      "memberId": "mem-riverbend",
+      "severity": "high",
+      "status": "closed",
+      "title": "Guest wireless not segmented from the clinical network",
+      "facilityId": "fac-004"
+    },
+    {
+      "dueDate": "2026-09-05",
+      "id": "fnd-014",
+      "memberId": "mem-maple-grove",
+      "severity": "medium",
+      "status": "closed",
+      "title": "Backup restore test not evidenced this quarter",
+      "facilityId": "fac-006"
+    },
+    {
+      "dueDate": "2026-09-02",
+      "id": "fnd-015",
+      "memberId": "mem-maple-grove",
+      "severity": "low",
+      "status": "closed",
+      "title": "Joiner-mover-leaver reviews behind schedule",
+      "facilityId": "fac-007"
+    },
+    {
+      "dueDate": "2027-01-12",
+      "id": "fnd-016",
+      "memberId": "mem-maple-grove",
+      "severity": "medium",
+      "status": "open",
+      "title": "Legacy TLS still enabled on the patient portal",
+      "facilityId": "fac-008"
+    },
+    {
+      "dueDate": "2026-11-16",
+      "id": "fnd-017",
+      "memberId": "mem-maple-grove",
+      "severity": "high",
+      "status": "open",
+      "title": "Endpoint agent missing from four imaging workstations",
+      "facilityId": "fac-006"
+    },
+    {
+      "dueDate": "2026-11-11",
+      "id": "fnd-018",
+      "memberId": "mem-maple-grove",
+      "severity": "high",
+      "status": "open",
+      "title": "Guest wireless not segmented from the clinical network",
+      "facilityId": "fac-007"
+    },
+    {
+      "dueDate": "2027-01-24",
+      "id": "fnd-019",
+      "memberId": "mem-maple-grove",
+      "severity": "low",
+      "status": "open",
+      "title": "Password policy below the member baseline",
+      "facilityId": "fac-008"
+    },
+    {
+      "dueDate": "2026-08-10",
+      "id": "fnd-020",
+      "memberId": "mem-st-brendans",
+      "severity": "low",
+      "status": "closed",
+      "title": "Joiner-mover-leaver reviews behind schedule",
+      "facilityId": "fac-010"
+    },
+    {
+      "dueDate": "2026-06-23",
+      "id": "fnd-021",
+      "memberId": "mem-st-brendans",
+      "severity": "medium",
+      "status": "closed",
+      "title": "Legacy TLS still enabled on the patient portal",
+      "facilityId": "fac-011"
+    },
+    {
+      "dueDate": "2026-08-04",
+      "id": "fnd-022",
+      "memberId": "mem-st-brendans",
+      "severity": "high",
+      "status": "closed",
+      "title": "Endpoint agent missing from four imaging workstations",
+      "facilityId": "fac-009"
+    },
+    {
+      "dueDate": "2026-09-02",
+      "id": "fnd-023",
+      "memberId": "mem-st-brendans",
+      "severity": "high",
+      "status": "closed",
+      "title": "Guest wireless not segmented from the clinical network",
+      "facilityId": "fac-010"
+    },
+    {
+      "dueDate": "2026-12-22",
+      "id": "fnd-024",
+      "memberId": "mem-st-brendans",
+      "severity": "low",
+      "status": "open",
+      "title": "Password policy below the member baseline",
+      "facilityId": "fac-011"
+    },
+    {
+      "dueDate": "2027-01-10",
+      "id": "fnd-025",
+      "memberId": "mem-st-brendans",
+      "severity": "high",
+      "status": "open",
+      "title": "Multi-factor authentication not enforced for remote access",
+      "facilityId": "fac-009"
+    },
+    {
+      "dueDate": "2026-09-25",
+      "id": "fnd-026",
+      "memberId": "mem-st-brendans",
+      "severity": "medium",
+      "status": "closed",
+      "title": "Local administrator rights on shared clinical workstations",
+      "facilityId": "fac-010"
+    },
+    {
+      "dueDate": "2026-08-24",
+      "id": "fnd-027",
+      "memberId": "mem-northern-lights",
+      "severity": "medium",
+      "status": "closed",
+      "title": "Legacy TLS still enabled on the patient portal",
+      "facilityId": "fac-013"
+    },
+    {
+      "dueDate": "2026-12-01",
+      "id": "fnd-028",
+      "memberId": "mem-northern-lights",
+      "severity": "high",
+      "status": "open",
+      "title": "Endpoint agent missing from four imaging workstations",
+      "facilityId": "fac-012"
+    },
+    {
+      "dueDate": "2026-11-26",
+      "id": "fnd-029",
+      "memberId": "mem-northern-lights",
+      "severity": "high",
+      "status": "open",
+      "title": "Guest wireless not segmented from the clinical network",
+      "facilityId": "fac-013"
+    },
+    {
+      "dueDate": "2026-12-26",
+      "id": "fnd-030",
+      "memberId": "mem-northern-lights",
+      "severity": "low",
+      "status": "open",
+      "title": "Password policy below the member baseline",
+      "facilityId": "fac-012"
+    },
+    {
+      "dueDate": "2026-07-24",
+      "id": "fnd-031",
+      "memberId": "mem-pinehurst",
+      "severity": "high",
+      "status": "closed",
+      "title": "Endpoint agent missing from four imaging workstations",
+      "facilityId": "fac-015"
+    },
+    {
+      "dueDate": "2026-12-15",
+      "id": "fnd-032",
+      "memberId": "mem-pinehurst",
+      "severity": "high",
+      "status": "open",
+      "title": "Guest wireless not segmented from the clinical network",
+      "facilityId": "fac-016"
+    },
+    {
+      "dueDate": "2027-01-25",
+      "id": "fnd-033",
+      "memberId": "mem-pinehurst",
+      "severity": "low",
+      "status": "open",
+      "title": "Password policy below the member baseline",
+      "facilityId": "fac-014"
+    },
+    {
+      "dueDate": "2026-08-29",
+      "id": "fnd-034",
+      "memberId": "mem-pinehurst",
+      "severity": "high",
+      "status": "closed",
+      "title": "Multi-factor authentication not enforced for remote access",
+      "facilityId": "fac-015"
+    },
+    {
+      "dueDate": "2026-09-22",
+      "id": "fnd-035",
+      "memberId": "mem-harbourview",
+      "severity": "high",
+      "status": "closed",
+      "title": "Guest wireless not segmented from the clinical network",
+      "facilityId": "fac-017"
+    },
+    {
+      "dueDate": "2026-08-03",
+      "id": "fnd-036",
+      "memberId": "mem-harbourview",
+      "severity": "low",
+      "status": "closed",
+      "title": "Password policy below the member baseline",
+      "facilityId": "fac-018"
+    },
+    {
+      "dueDate": "2026-08-03",
+      "id": "fnd-037",
+      "memberId": "mem-harbourview",
+      "severity": "high",
+      "status": "closed",
+      "title": "Multi-factor authentication not enforced for remote access",
+      "facilityId": "fac-017"
+    },
+    {
+      "dueDate": "2026-11-16",
+      "id": "fnd-038",
+      "memberId": "mem-harbourview",
+      "severity": "medium",
+      "status": "open",
+      "title": "Local administrator rights on shared clinical workstations",
+      "facilityId": "fac-018"
+    },
+    {
+      "dueDate": "2026-11-06",
+      "id": "fnd-039",
+      "memberId": "mem-harbourview",
+      "severity": "medium",
+      "status": "open",
+      "title": "Backup restore test not evidenced this quarter",
+      "facilityId": "fac-017"
+    },
+    {
+      "dueDate": "2027-01-01",
+      "id": "fnd-040",
+      "memberId": "mem-harbourview",
+      "severity": "low",
+      "status": "open",
+      "title": "Joiner-mover-leaver reviews behind schedule",
+      "facilityId": "fac-018"
+    },
+    {
+      "dueDate": "2026-08-23",
+      "id": "fnd-041",
+      "memberId": "mem-cedar-valley",
+      "severity": "low",
+      "status": "closed",
+      "title": "Password policy below the member baseline",
+      "facilityId": "fac-019"
+    },
+    {
+      "dueDate": "2026-12-28",
+      "id": "fnd-042",
+      "memberId": "mem-cedar-valley",
+      "severity": "high",
+      "status": "open",
+      "title": "Multi-factor authentication not enforced for remote access",
+      "facilityId": "fac-020"
+    },
+    {
+      "dueDate": "2026-12-22",
+      "id": "fnd-043",
+      "memberId": "mem-cedar-valley",
+      "severity": "medium",
+      "status": "open",
+      "title": "Local administrator rights on shared clinical workstations",
+      "facilityId": "fac-019"
+    },
+    {
+      "dueDate": "2026-07-24",
+      "id": "fnd-044",
+      "memberId": "mem-cedar-valley",
+      "severity": "medium",
+      "status": "closed",
+      "title": "Backup restore test not evidenced this quarter",
+      "facilityId": "fac-020"
+    },
+    {
+      "dueDate": "2026-09-23",
+      "id": "fnd-045",
+      "memberId": "mem-cedar-valley",
+      "severity": "low",
+      "status": "closed",
+      "title": "Joiner-mover-leaver reviews behind schedule",
+      "facilityId": "fac-019"
+    },
+    {
+      "dueDate": "2026-06-09",
+      "id": "fnd-046",
+      "memberId": "mem-cedar-valley",
+      "severity": "medium",
+      "status": "closed",
+      "title": "Legacy TLS still enabled on the patient portal",
+      "facilityId": "fac-020"
+    },
+    {
+      "dueDate": "2026-11-13",
+      "id": "fnd-047",
+      "memberId": "mem-riverbend",
+      "severity": "high",
+      "status": "open",
+      "title": "Phishing campaign: payroll-portal look-alike domain harvested four staff credentials",
+      "facilityId": "fac-005"
+    },
+    {
+      "dueDate": "2026-11-20",
+      "id": "fnd-048",
+      "memberId": "mem-riverbend",
+      "severity": "medium",
+      "status": "open",
+      "title": "Phishing campaign: mail gateway impersonation rules missing for the payroll sender",
+      "facilityId": "fac-003"
+    },
+    {
+      "dueDate": "2026-12-04",
+      "id": "fnd-049",
+      "memberId": "mem-riverbend",
+      "severity": "low",
+      "status": "open",
+      "title": "Phishing campaign: security awareness refresher outstanding for affected staff",
+      "facilityId": "fac-004"
+    },
+    {
+      "dueDate": "2026-10-13",
+      "id": "fnd-050",
+      "memberId": "mem-maple-grove",
+      "severity": "critical",
+      "status": "open",
+      "title": "Remote access VPN appliance unpatched against the October advisory",
+      "facilityId": "fac-006"
+    },
+    {
+      "dueDate": "2026-08-29",
+      "id": "fnd-051",
+      "memberId": "mem-maple-grove",
+      "severity": "critical",
+      "status": "open",
+      "title": "Domain administrator accounts without multi-factor authentication",
+      "facilityId": "fac-007"
+    },
+    {
+      "dueDate": "2026-10-02",
+      "id": "fnd-052",
+      "memberId": "mem-maple-grove",
+      "severity": "critical",
+      "status": "open",
+      "title": "Backup server reachable from the general care-home network",
+      "facilityId": "fac-008"
+    },
+    {
+      "dueDate": "2026-08-14",
+      "id": "fnd-053",
+      "memberId": "mem-st-brendans",
+      "severity": "critical",
+      "status": "closed",
+      "title": "Emergency change process bypassed for a theatre system patch",
+      "facilityId": "fac-011"
+    },
+    {
+      "dueDate": "2026-11-21",
+      "id": "fnd-054",
+      "memberId": "mem-lakeshore",
+      "severity": "critical",
+      "status": "open",
+      "title": "Remote access VPN appliance patch rollout pending final cluster",
+      "facilityId": "fac-001"
+    }
+  ],
+  "reports": [
+    {
+      "id": "rpt-001",
+      "kind": "monthly",
+      "memberId": "mem-lakeshore",
+      "month": "2026-05",
+      "title": "May 2026 security service report — Lakeshore Regional Health Network",
+      "facilityId": "fac-002"
+    },
+    {
+      "id": "rpt-002",
+      "kind": "monthly",
+      "memberId": "mem-lakeshore",
+      "month": "2026-06",
+      "title": "June 2026 security service report — Lakeshore Regional Health Network",
+      "facilityId": "fac-001"
+    },
+    {
+      "id": "rpt-003",
+      "kind": "monthly",
+      "memberId": "mem-lakeshore",
+      "month": "2026-07",
+      "title": "July 2026 security service report — Lakeshore Regional Health Network",
+      "facilityId": "fac-002"
+    },
+    {
+      "id": "rpt-004",
+      "kind": "monthly",
+      "memberId": "mem-lakeshore",
+      "month": "2026-08",
+      "title": "August 2026 security service report — Lakeshore Regional Health Network",
+      "facilityId": "fac-001"
+    },
+    {
+      "id": "rpt-005",
+      "kind": "monthly",
+      "memberId": "mem-lakeshore",
+      "month": "2026-09",
+      "title": "September 2026 security service report — Lakeshore Regional Health Network",
+      "facilityId": "fac-002"
+    },
+    {
+      "id": "rpt-006",
+      "kind": "monthly",
+      "memberId": "mem-lakeshore",
+      "month": "2026-10",
+      "title": "October 2026 security service report — Lakeshore Regional Health Network",
+      "facilityId": "fac-001"
+    },
+    {
+      "id": "rpt-007",
+      "kind": "monthly",
+      "memberId": "mem-riverbend",
+      "month": "2026-05",
+      "title": "May 2026 security service report — Riverbend Community Health Centre",
+      "facilityId": "fac-005"
+    },
+    {
+      "id": "rpt-008",
+      "kind": "monthly",
+      "memberId": "mem-riverbend",
+      "month": "2026-06",
+      "title": "June 2026 security service report — Riverbend Community Health Centre",
+      "facilityId": "fac-003"
+    },
+    {
+      "id": "rpt-009",
+      "kind": "monthly",
+      "memberId": "mem-riverbend",
+      "month": "2026-07",
+      "title": "July 2026 security service report — Riverbend Community Health Centre",
+      "facilityId": "fac-004"
+    },
+    {
+      "id": "rpt-010",
+      "kind": "monthly",
+      "memberId": "mem-riverbend",
+      "month": "2026-08",
+      "title": "August 2026 security service report — Riverbend Community Health Centre",
+      "facilityId": "fac-005"
+    },
+    {
+      "id": "rpt-011",
+      "kind": "monthly",
+      "memberId": "mem-riverbend",
+      "month": "2026-09",
+      "title": "September 2026 security service report — Riverbend Community Health Centre",
+      "facilityId": "fac-003"
+    },
+    {
+      "id": "rpt-012",
+      "kind": "monthly",
+      "memberId": "mem-riverbend",
+      "month": "2026-10",
+      "title": "October 2026 security service report — Riverbend Community Health Centre",
+      "facilityId": "fac-004"
+    },
+    {
+      "id": "rpt-013",
+      "kind": "monthly",
+      "memberId": "mem-maple-grove",
+      "month": "2026-05",
+      "title": "May 2026 security service report — Maple Grove Long-Term Care",
+      "facilityId": "fac-008"
+    },
+    {
+      "id": "rpt-014",
+      "kind": "monthly",
+      "memberId": "mem-maple-grove",
+      "month": "2026-06",
+      "title": "June 2026 security service report — Maple Grove Long-Term Care",
+      "facilityId": "fac-006"
+    },
+    {
+      "id": "rpt-015",
+      "kind": "monthly",
+      "memberId": "mem-maple-grove",
+      "month": "2026-07",
+      "title": "July 2026 security service report — Maple Grove Long-Term Care",
+      "facilityId": "fac-007"
+    },
+    {
+      "id": "rpt-016",
+      "kind": "monthly",
+      "memberId": "mem-maple-grove",
+      "month": "2026-08",
+      "title": "August 2026 security service report — Maple Grove Long-Term Care",
+      "facilityId": "fac-008"
+    },
+    {
+      "id": "rpt-017",
+      "kind": "monthly",
+      "memberId": "mem-maple-grove",
+      "month": "2026-09",
+      "title": "September 2026 security service report — Maple Grove Long-Term Care",
+      "facilityId": "fac-006"
+    },
+    {
+      "id": "rpt-018",
+      "kind": "monthly",
+      "memberId": "mem-maple-grove",
+      "month": "2026-10",
+      "title": "October 2026 security service report — Maple Grove Long-Term Care",
+      "facilityId": "fac-007"
+    },
+    {
+      "id": "rpt-019",
+      "kind": "monthly",
+      "memberId": "mem-st-brendans",
+      "month": "2026-05",
+      "title": "May 2026 security service report — St. Brendan's Memorial Hospital",
+      "facilityId": "fac-009"
+    },
+    {
+      "id": "rpt-020",
+      "kind": "monthly",
+      "memberId": "mem-st-brendans",
+      "month": "2026-06",
+      "title": "June 2026 security service report — St. Brendan's Memorial Hospital",
+      "facilityId": "fac-010"
+    },
+    {
+      "id": "rpt-021",
+      "kind": "monthly",
+      "memberId": "mem-st-brendans",
+      "month": "2026-07",
+      "title": "July 2026 security service report — St. Brendan's Memorial Hospital",
+      "facilityId": "fac-011"
+    },
+    {
+      "id": "rpt-022",
+      "kind": "monthly",
+      "memberId": "mem-st-brendans",
+      "month": "2026-08",
+      "title": "August 2026 security service report — St. Brendan's Memorial Hospital",
+      "facilityId": "fac-009"
+    },
+    {
+      "id": "rpt-023",
+      "kind": "monthly",
+      "memberId": "mem-st-brendans",
+      "month": "2026-09",
+      "title": "September 2026 security service report — St. Brendan's Memorial Hospital",
+      "facilityId": "fac-010"
+    },
+    {
+      "id": "rpt-024",
+      "kind": "monthly",
+      "memberId": "mem-st-brendans",
+      "month": "2026-10",
+      "title": "October 2026 security service report — St. Brendan's Memorial Hospital",
+      "facilityId": "fac-011"
+    },
+    {
+      "id": "rpt-025",
+      "kind": "monthly",
+      "memberId": "mem-northern-lights",
+      "month": "2026-05",
+      "title": "May 2026 security service report — Northern Lights Health Centre",
+      "facilityId": "fac-013"
+    },
+    {
+      "id": "rpt-026",
+      "kind": "monthly",
+      "memberId": "mem-northern-lights",
+      "month": "2026-06",
+      "title": "June 2026 security service report — Northern Lights Health Centre",
+      "facilityId": "fac-012"
+    },
+    {
+      "id": "rpt-027",
+      "kind": "monthly",
+      "memberId": "mem-northern-lights",
+      "month": "2026-07",
+      "title": "July 2026 security service report — Northern Lights Health Centre",
+      "facilityId": "fac-013"
+    },
+    {
+      "id": "rpt-028",
+      "kind": "monthly",
+      "memberId": "mem-northern-lights",
+      "month": "2026-08",
+      "title": "August 2026 security service report — Northern Lights Health Centre",
+      "facilityId": "fac-012"
+    },
+    {
+      "id": "rpt-029",
+      "kind": "monthly",
+      "memberId": "mem-northern-lights",
+      "month": "2026-09",
+      "title": "September 2026 security service report — Northern Lights Health Centre",
+      "facilityId": "fac-013"
+    },
+    {
+      "id": "rpt-030",
+      "kind": "monthly",
+      "memberId": "mem-northern-lights",
+      "month": "2026-10",
+      "title": "October 2026 security service report — Northern Lights Health Centre",
+      "facilityId": "fac-012"
+    },
+    {
+      "id": "rpt-031",
+      "kind": "monthly",
+      "memberId": "mem-pinehurst",
+      "month": "2026-05",
+      "title": "May 2026 security service report — Pinehurst Seniors Residence",
+      "facilityId": "fac-015"
+    },
+    {
+      "id": "rpt-032",
+      "kind": "monthly",
+      "memberId": "mem-pinehurst",
+      "month": "2026-06",
+      "title": "June 2026 security service report — Pinehurst Seniors Residence",
+      "facilityId": "fac-016"
+    },
+    {
+      "id": "rpt-033",
+      "kind": "monthly",
+      "memberId": "mem-pinehurst",
+      "month": "2026-07",
+      "title": "July 2026 security service report — Pinehurst Seniors Residence",
+      "facilityId": "fac-014"
+    },
+    {
+      "id": "rpt-034",
+      "kind": "monthly",
+      "memberId": "mem-pinehurst",
+      "month": "2026-08",
+      "title": "August 2026 security service report — Pinehurst Seniors Residence",
+      "facilityId": "fac-015"
+    },
+    {
+      "id": "rpt-035",
+      "kind": "monthly",
+      "memberId": "mem-pinehurst",
+      "month": "2026-09",
+      "title": "September 2026 security service report — Pinehurst Seniors Residence",
+      "facilityId": "fac-016"
+    },
+    {
+      "id": "rpt-036",
+      "kind": "monthly",
+      "memberId": "mem-pinehurst",
+      "month": "2026-10",
+      "title": "October 2026 security service report — Pinehurst Seniors Residence",
+      "facilityId": "fac-014"
+    },
+    {
+      "id": "rpt-037",
+      "kind": "monthly",
+      "memberId": "mem-harbourview",
+      "month": "2026-05",
+      "title": "May 2026 security service report — Harbourview Day Surgery Centre",
+      "facilityId": "fac-017"
+    },
+    {
+      "id": "rpt-038",
+      "kind": "monthly",
+      "memberId": "mem-harbourview",
+      "month": "2026-06",
+      "title": "June 2026 security service report — Harbourview Day Surgery Centre",
+      "facilityId": "fac-018"
+    },
+    {
+      "id": "rpt-039",
+      "kind": "monthly",
+      "memberId": "mem-harbourview",
+      "month": "2026-07",
+      "title": "July 2026 security service report — Harbourview Day Surgery Centre",
+      "facilityId": "fac-017"
+    },
+    {
+      "id": "rpt-040",
+      "kind": "monthly",
+      "memberId": "mem-harbourview",
+      "month": "2026-08",
+      "title": "August 2026 security service report — Harbourview Day Surgery Centre",
+      "facilityId": "fac-018"
+    },
+    {
+      "id": "rpt-041",
+      "kind": "monthly",
+      "memberId": "mem-harbourview",
+      "month": "2026-09",
+      "title": "September 2026 security service report — Harbourview Day Surgery Centre",
+      "facilityId": "fac-017"
+    },
+    {
+      "id": "rpt-042",
+      "kind": "monthly",
+      "memberId": "mem-harbourview",
+      "month": "2026-10",
+      "title": "October 2026 security service report — Harbourview Day Surgery Centre",
+      "facilityId": "fac-018"
+    },
+    {
+      "id": "rpt-043",
+      "kind": "monthly",
+      "memberId": "mem-cedar-valley",
+      "month": "2026-05",
+      "title": "May 2026 security service report — Cedar Valley Mental Health Partners",
+      "facilityId": "fac-020"
+    },
+    {
+      "id": "rpt-044",
+      "kind": "monthly",
+      "memberId": "mem-cedar-valley",
+      "month": "2026-06",
+      "title": "June 2026 security service report — Cedar Valley Mental Health Partners",
+      "facilityId": "fac-019"
+    },
+    {
+      "id": "rpt-045",
+      "kind": "monthly",
+      "memberId": "mem-cedar-valley",
+      "month": "2026-07",
+      "title": "July 2026 security service report — Cedar Valley Mental Health Partners",
+      "facilityId": "fac-020"
+    },
+    {
+      "id": "rpt-046",
+      "kind": "monthly",
+      "memberId": "mem-cedar-valley",
+      "month": "2026-08",
+      "title": "August 2026 security service report — Cedar Valley Mental Health Partners",
+      "facilityId": "fac-019"
+    },
+    {
+      "id": "rpt-047",
+      "kind": "monthly",
+      "memberId": "mem-cedar-valley",
+      "month": "2026-09",
+      "title": "September 2026 security service report — Cedar Valley Mental Health Partners",
+      "facilityId": "fac-020"
+    },
+    {
+      "id": "rpt-048",
+      "kind": "monthly",
+      "memberId": "mem-cedar-valley",
+      "month": "2026-10",
+      "title": "October 2026 security service report — Cedar Valley Mental Health Partners",
+      "facilityId": "fac-019"
+    },
+    {
+      "id": "rpt-049",
+      "kind": "incident",
+      "memberId": "mem-lakeshore",
+      "month": "2026-10",
+      "title": "P1 incident report inc-001 — Lakeshore Regional Health Network (October 2026)",
+      "facilityId": "fac-002"
+    },
+    {
+      "id": "rpt-050",
+      "kind": "incident",
+      "memberId": "mem-riverbend",
+      "month": "2026-09",
+      "title": "P2 incident report inc-002 — Riverbend Community Health Centre (September 2026)",
+      "facilityId": "fac-005"
+    },
+    {
+      "id": "rpt-051",
+      "kind": "incident",
+      "memberId": "mem-maple-grove",
+      "month": "2026-08",
+      "title": "P2 incident report inc-003 — Maple Grove Long-Term Care (August 2026)",
+      "facilityId": "fac-008"
+    },
+    {
+      "id": "rpt-052",
+      "kind": "incident",
+      "memberId": "mem-st-brendans",
+      "month": "2026-07",
+      "title": "P2 incident report inc-004 — St. Brendan's Memorial Hospital (July 2026)",
+      "facilityId": "fac-009"
+    },
+    {
+      "id": "rpt-053",
+      "kind": "incident",
+      "memberId": "mem-harbourview",
+      "month": "2026-10",
+      "title": "P2 incident report inc-005 — Harbourview Day Surgery Centre (October 2026)",
+      "facilityId": "fac-017"
+    }
+  ],
+  "advisories": [
+    {
+      "action": "Add impersonation rules for payroll senders at the mail gateway and brief staff on the look-alike domain pattern.",
+      "affectedMemberIds": [
+        "mem-riverbend",
+        "mem-pinehurst",
+        "mem-cedar-valley"
+      ],
+      "id": "adv-001",
+      "publishedAt": "2026-05-14T09:00:00.000Z",
+      "severity": "medium",
+      "summary": "A long-running phishing campaign is impersonating payroll and benefits portals at care providers, using look-alike domains registered days before each wave.",
+      "title": "Credential-harvesting campaign targeting healthcare payroll portals"
+    },
+    {
+      "action": "Block unknown removable media estate-wide and confirm endpoint agent coverage on shared workstations.",
+      "affectedMemberIds": [
+        "mem-maple-grove",
+        "mem-pinehurst",
+        "mem-northern-lights"
+      ],
+      "id": "adv-002",
+      "publishedAt": "2026-06-23T09:00:00.000Z",
+      "severity": "high",
+      "summary": "Loader malware is being delivered on USB media left at shared nursing stations, then quarantined only where endpoint agents are current.",
+      "title": "Ransomware operators abusing unmanaged removable media in care homes"
+    },
+    {
+      "action": "Block unapproved remote-support binaries and route vendor sessions through the approved jump host.",
+      "affectedMemberIds": [
+        "mem-st-brendans",
+        "mem-lakeshore",
+        "mem-harbourview"
+      ],
+      "id": "adv-003",
+      "publishedAt": "2026-07-09T09:00:00.000Z",
+      "severity": "medium",
+      "summary": "Third-party engineers are installing unapproved remote-support tools on diagnostic imaging workstations, bypassing the approved jump host.",
+      "title": "Unsigned remote-support tooling used by imaging service engineers"
+    },
+    {
+      "action": "Apply the vendor firmware update to every affected appliance, force-reset remote access credentials and review VPN authentication logs for sessions from unrecognised networks.",
+      "affectedMemberIds": [
+        "mem-lakeshore",
+        "mem-st-brendans",
+        "mem-maple-grove"
+      ],
+      "id": "adv-004",
+      "publishedAt": "2026-10-06T09:00:00.000Z",
+      "severity": "critical",
+      "summary": "A pre-authentication bypass in a widely deployed remote-access VPN appliance allows a valid-looking session to be established without the second factor. Exploitation has been observed against healthcare members running the affected firmware, and the three members below are confirmed to run it.",
+      "title": "Authentication bypass in a remote-access VPN appliance (exploited in the wild)"
+    },
+    {
+      "action": "Enable credential guard on file servers, alert on LSASS access by unsigned processes and force-reset any credentials cached on an affected host.",
+      "affectedMemberIds": [
+        "mem-lakeshore",
+        "mem-st-brendans"
+      ],
+      "id": "adv-005",
+      "publishedAt": "2026-10-14T09:00:00.000Z",
+      "severity": "critical",
+      "summary": "Intrusions that begin at a compromised remote-access session are moving to file servers within the hour and dumping LSASS memory for cached domain credentials.",
+      "title": "Credential dumping follow-on activity after remote-access compromise"
+    },
+    {
+      "action": "Confirm every collector resumed after maintenance and alert on sources quiet for more than 72 hours.",
+      "affectedMemberIds": [
+        "mem-maple-grove",
+        "mem-northern-lights",
+        "mem-harbourview",
+        "mem-cedar-valley"
+      ],
+      "id": "adv-006",
+      "publishedAt": "2026-10-22T09:00:00.000Z",
+      "severity": "medium",
+      "summary": "Clinical device and backup collectors are failing to restart after scheduled maintenance, leaving the member with no detection coverage on those sources.",
+      "title": "Silent telemetry loss after clinical network maintenance windows"
+    }
+  ],
+  "servicePerformance": [
+    {
+      "memberId": "mem-lakeshore",
+      "month": "2026-05",
+      "tickets": 8,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 26.8,
+      "mttrMins": 724.6
+    },
+    {
+      "memberId": "mem-lakeshore",
+      "month": "2026-06",
+      "tickets": 9,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 33,
+      "mttrMins": 684.6
+    },
+    {
+      "memberId": "mem-lakeshore",
+      "month": "2026-07",
+      "tickets": 9,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 34.9,
+      "mttrMins": 1080.1
+    },
+    {
+      "memberId": "mem-lakeshore",
+      "month": "2026-08",
+      "tickets": 7,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 43.4,
+      "mttrMins": 1175.3
+    },
+    {
+      "memberId": "mem-lakeshore",
+      "month": "2026-09",
+      "tickets": 8,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 36.5,
+      "mttrMins": 1808.4
+    },
+    {
+      "memberId": "mem-lakeshore",
+      "month": "2026-10",
+      "tickets": 10,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 24.8,
+      "mttrMins": 853
+    },
+    {
+      "memberId": "mem-riverbend",
+      "month": "2026-05",
+      "tickets": 4,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 60.5,
+      "mttrMins": 909
+    },
+    {
+      "memberId": "mem-riverbend",
+      "month": "2026-06",
+      "tickets": 5,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 87.6,
+      "mttrMins": 1097.2
+    },
+    {
+      "memberId": "mem-riverbend",
+      "month": "2026-07",
+      "tickets": 4,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 51.5,
+      "mttrMins": 960.3
+    },
+    {
+      "memberId": "mem-riverbend",
+      "month": "2026-08",
+      "tickets": 6,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 67.5,
+      "mttrMins": 941.5
+    },
+    {
+      "memberId": "mem-riverbend",
+      "month": "2026-09",
+      "tickets": 5,
+      "breached": 1,
+      "slaAttainmentPercent": 80,
+      "mttaMins": 67.6,
+      "mttrMins": 899.2
+    },
+    {
+      "memberId": "mem-riverbend",
+      "month": "2026-10",
+      "tickets": 6,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 60.7,
+      "mttrMins": 1288.5
+    },
+    {
+      "memberId": "mem-maple-grove",
+      "month": "2026-05",
+      "tickets": 4,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 212.5,
+      "mttrMins": 2186.5
+    },
+    {
+      "memberId": "mem-maple-grove",
+      "month": "2026-06",
+      "tickets": 5,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 155.6,
+      "mttrMins": 1407.2
+    },
+    {
+      "memberId": "mem-maple-grove",
+      "month": "2026-07",
+      "tickets": 4,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 172.3,
+      "mttrMins": 919.3
+    },
+    {
+      "memberId": "mem-maple-grove",
+      "month": "2026-08",
+      "tickets": 6,
+      "breached": 1,
+      "slaAttainmentPercent": 83.3,
+      "mttaMins": 118,
+      "mttrMins": 1065.5
+    },
+    {
+      "memberId": "mem-maple-grove",
+      "month": "2026-09",
+      "tickets": 6,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 145.8,
+      "mttrMins": 1263.2
+    },
+    {
+      "memberId": "mem-maple-grove",
+      "month": "2026-10",
+      "tickets": 4,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 129.8,
+      "mttrMins": 1943.3
+    },
+    {
+      "memberId": "mem-st-brendans",
+      "month": "2026-05",
+      "tickets": 7,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 37.7,
+      "mttrMins": 1075.7
+    },
+    {
+      "memberId": "mem-st-brendans",
+      "month": "2026-06",
+      "tickets": 6,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 21.3,
+      "mttrMins": 666.7
+    },
+    {
+      "memberId": "mem-st-brendans",
+      "month": "2026-07",
+      "tickets": 8,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 23.8,
+      "mttrMins": 657.9
+    },
+    {
+      "memberId": "mem-st-brendans",
+      "month": "2026-08",
+      "tickets": 8,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 24.5,
+      "mttrMins": 947.4
+    },
+    {
+      "memberId": "mem-st-brendans",
+      "month": "2026-09",
+      "tickets": 7,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 34,
+      "mttrMins": 1164.6
+    },
+    {
+      "memberId": "mem-st-brendans",
+      "month": "2026-10",
+      "tickets": 8,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 35.8,
+      "mttrMins": 970.9
+    },
+    {
+      "memberId": "mem-northern-lights",
+      "month": "2026-05",
+      "tickets": 4,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 97,
+      "mttrMins": 815.8
+    },
+    {
+      "memberId": "mem-northern-lights",
+      "month": "2026-06",
+      "tickets": 4,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 183,
+      "mttrMins": 1778.5
+    },
+    {
+      "memberId": "mem-northern-lights",
+      "month": "2026-07",
+      "tickets": 4,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 117.3,
+      "mttrMins": 1063.5
+    },
+    {
+      "memberId": "mem-northern-lights",
+      "month": "2026-08",
+      "tickets": 3,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 70.3,
+      "mttrMins": 916.3
+    },
+    {
+      "memberId": "mem-northern-lights",
+      "month": "2026-09",
+      "tickets": 4,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 126,
+      "mttrMins": 1094
+    },
+    {
+      "memberId": "mem-northern-lights",
+      "month": "2026-10",
+      "tickets": 2,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 116,
+      "mttrMins": 969.5
+    },
+    {
+      "memberId": "mem-pinehurst",
+      "month": "2026-05",
+      "tickets": 2,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 245,
+      "mttrMins": 1241.5
+    },
+    {
+      "memberId": "mem-pinehurst",
+      "month": "2026-06",
+      "tickets": 3,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 116.7,
+      "mttrMins": 742
+    },
+    {
+      "memberId": "mem-pinehurst",
+      "month": "2026-07",
+      "tickets": 3,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 154.3,
+      "mttrMins": 1140.7
+    },
+    {
+      "memberId": "mem-pinehurst",
+      "month": "2026-08",
+      "tickets": 2,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 128.5,
+      "mttrMins": 1000
+    },
+    {
+      "memberId": "mem-pinehurst",
+      "month": "2026-09",
+      "tickets": 4,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 92,
+      "mttrMins": 1037.5
+    },
+    {
+      "memberId": "mem-pinehurst",
+      "month": "2026-10",
+      "tickets": 3,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 169,
+      "mttrMins": 1367.3
+    },
+    {
+      "memberId": "mem-harbourview",
+      "month": "2026-05",
+      "tickets": 5,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 59.4,
+      "mttrMins": 690
+    },
+    {
+      "memberId": "mem-harbourview",
+      "month": "2026-06",
+      "tickets": 6,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 55.7,
+      "mttrMins": 596.2
+    },
+    {
+      "memberId": "mem-harbourview",
+      "month": "2026-07",
+      "tickets": 4,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 73,
+      "mttrMins": 731.8
+    },
+    {
+      "memberId": "mem-harbourview",
+      "month": "2026-08",
+      "tickets": 5,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 97.8,
+      "mttrMins": 1584.2
+    },
+    {
+      "memberId": "mem-harbourview",
+      "month": "2026-09",
+      "tickets": 4,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 109,
+      "mttrMins": 2081.3
+    },
+    {
+      "memberId": "mem-harbourview",
+      "month": "2026-10",
+      "tickets": 5,
+      "breached": 1,
+      "slaAttainmentPercent": 80,
+      "mttaMins": 79.6,
+      "mttrMins": 812
+    },
+    {
+      "memberId": "mem-cedar-valley",
+      "month": "2026-05",
+      "tickets": 5,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 82.8,
+      "mttrMins": 1281.8
+    },
+    {
+      "memberId": "mem-cedar-valley",
+      "month": "2026-06",
+      "tickets": 6,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 58.3,
+      "mttrMins": 1331.7
+    },
+    {
+      "memberId": "mem-cedar-valley",
+      "month": "2026-07",
+      "tickets": 5,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 48.8,
+      "mttrMins": 1026.2
+    },
+    {
+      "memberId": "mem-cedar-valley",
+      "month": "2026-08",
+      "tickets": 6,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 98.2,
+      "mttrMins": 1130.5
+    },
+    {
+      "memberId": "mem-cedar-valley",
+      "month": "2026-09",
+      "tickets": 4,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 65,
+      "mttrMins": 666.5
+    },
+    {
+      "memberId": "mem-cedar-valley",
+      "month": "2026-10",
+      "tickets": 4,
+      "breached": 0,
+      "slaAttainmentPercent": 100,
+      "mttaMins": 79.8,
+      "mttrMins": 1255
+    }
+  ],
+  "catalogue": [
+    {
+      "id": "essentials",
+      "name": "Essentials",
+      "services": [
+        "Managed detection and response for endpoints and email",
+        "8x5 analyst triage with out-of-hours escalation",
+        "Quarterly posture report",
+        "Annual tabletop exercise",
+        "20 hours of incident response retainer"
+      ],
+      "facilitySize": "Single facility, up to 250 endpoints",
+      "reportCadence": "Quarterly",
+      "irRetainerHours": 20,
+      "irTimeToEngageMinutes": 240,
+      "memberCount": 3
+    },
+    {
+      "id": "standard",
+      "name": "Standard",
+      "services": [
+        "Managed detection and response for endpoints, email and cloud workloads",
+        "24x7 analyst triage",
+        "Monthly posture report and service review",
+        "Two tabletop exercises a year",
+        "Guided remediation support",
+        "40 hours of incident response retainer"
+      ],
+      "facilitySize": "Up to 3 facilities, up to 1,000 endpoints",
+      "reportCadence": "Monthly",
+      "irRetainerHours": 40,
+      "irTimeToEngageMinutes": 60,
+      "memberCount": 3
+    },
+    {
+      "id": "advanced",
+      "name": "Advanced",
+      "services": [
+        "Managed detection and response across endpoints, email, cloud and clinical device networks",
+        "24x7 analyst triage with a named lead analyst",
+        "Monthly posture report, service review and threat briefing",
+        "Quarterly tabletop exercises and purple-team drills",
+        "Hands-on remediation support",
+        "60 hours of incident response retainer"
+      ],
+      "facilitySize": "Multi-facility estate, 1,000+ endpoints",
+      "reportCadence": "Monthly with weekly operational review",
+      "irRetainerHours": 80,
+      "irTimeToEngageMinutes": 15,
+      "memberCount": 2
+    }
+  ]
+}
