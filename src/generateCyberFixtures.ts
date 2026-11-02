@@ -447,10 +447,228 @@ export async function generate(
 }
 
 /* ------------------------------------------------------------------ *
+ * The parity fixture bundle.
+ *
+ * `src/cyberFixtures.json` is the single committed data file the cyber
+ * posture overview and findings screens read. It is shaped like the service
+ * model fixture the existing screens render from (`src/tiers.json`): one
+ * object, one array per entity, plain scalar fields, so the existing table
+ * and card patterns render it unchanged.
+ *
+ * It is built by the same seeded PRNG as the fixtures above, from the same
+ * invented name pools, so two runs of the same seed write byte-identical
+ * bytes and no name in it can read as a real one.
+ * ------------------------------------------------------------------ */
+
+export type CyberGrade = 'A' | 'B' | 'C' | 'D' | 'E' | 'F';
+
+export type CyberPriority = 'P1' | 'P2' | 'P3' | 'P4';
+
+/** The grades the bundle uses, best first. */
+export const BUNDLE_GRADES: CyberGrade[] = ['A', 'B', 'C', 'D', 'E', 'F'];
+
+/** The priorities the bundle uses, most urgent first. */
+export const BUNDLE_PRIORITIES: CyberPriority[] = ['P1', 'P2', 'P3', 'P4'];
+
+export type CyberBundleFacility = {
+  id: string;
+  name: string;
+  site: string;
+  region: string;
+  serviceTier: string;
+};
+
+export type CyberBundleRole = {
+  id: string;
+  label: string;
+  /** The facilities this role may see. The screens filter by nothing else. */
+  facilityIds: string[];
+};
+
+export type CyberBundleFinding = {
+  id: string;
+  facilityId: string;
+  title: string;
+  grade: CyberGrade;
+  priority: CyberPriority;
+  owner: string;
+  raisedOn: string;
+  status: string;
+};
+
+export type CyberBundleSummary = {
+  facilityId: string;
+  grade: CyberGrade;
+  counts: Record<CyberPriority, number>;
+};
+
+export type CyberFixtureBundle = {
+  generator: string;
+  kind: 'cyber-parity';
+  facilities: CyberBundleFacility[];
+  roles: CyberBundleRole[];
+  findings: CyberBundleFinding[];
+  summaries: CyberBundleSummary[];
+  seed: number;
+  version: number;
+};
+
+/** The file the bundle is written to. */
+export const BUNDLE_FILENAME = 'cyberFixtures.json';
+
+/** How many facilities and findings the bundle carries. */
+const BUNDLE_FACILITY_COUNT = 4;
+
+const BUNDLE_FINDINGS_PER_FACILITY = 7;
+
+const FINDING_STATUSES = ['open', 'in-remediation', 'awaiting-evidence'];
+
+/** The roles the cyber screens are scoped by, in sidebar order. */
+const BUNDLE_ROLES: { id: string; label: string }[] = [
+  { id: 'program-lead', label: 'HealthPRO Program Lead' },
+  { id: 'member-exec', label: 'Member Executive' },
+  { id: 'member-it', label: 'Member IT Lead' },
+];
+
+/** Grade -> points, best first, used to roll findings up to a facility grade. */
+function gradePoints(grade: CyberGrade): number {
+  return BUNDLE_GRADES.length - 1 - BUNDLE_GRADES.indexOf(grade);
+}
+
+/** The rounded mean of a facility's finding grades, as a grade. */
+function rollUpGrade(grades: CyberGrade[]): CyberGrade {
+  if (grades.length === 0) return 'C';
+  const mean = grades.reduce((total, grade) => total + gradePoints(grade), 0) / grades.length;
+  const points = Math.round(mean);
+  return BUNDLE_GRADES[BUNDLE_GRADES.length - 1 - points] as CyberGrade;
+}
+
+function buildBundleFacilities(random: () => number): CyberBundleFacility[] {
+  const used = new Set<string>();
+  const facilities: CyberBundleFacility[] = [];
+
+  for (let index = 0; index < BUNDLE_FACILITY_COUNT; index += 1) {
+    let place = pick(random, PLACE_WORDS);
+    while (used.has(place)) {
+      place = PLACE_WORDS[(PLACE_WORDS.indexOf(place) + 1) % PLACE_WORDS.length] as string;
+    }
+    used.add(place);
+
+    const site = `${place} ${pick(random, FACILITY_TYPES)}`;
+    facilities.push({
+      id: identifier('cyb-fac', index),
+      name: synthetic(site),
+      site,
+      region: pick(random, REGIONS),
+      serviceTier: pick(random, TIERS),
+    });
+  }
+
+  return facilities;
+}
+
+function buildBundleFindings(
+  random: () => number,
+  facilities: CyberBundleFacility[],
+): CyberBundleFinding[] {
+  const findings: CyberBundleFinding[] = [];
+  let index = 0;
+
+  for (const facility of facilities) {
+    for (let slot = 0; slot < BUNDLE_FINDINGS_PER_FACILITY; slot += 1) {
+      // Walk the theme pool one step per finding, so no facility lists the
+      // same control theme twice.
+      const theme = CONTROL_THEMES[index % CONTROL_THEMES.length] as string;
+      findings.push({
+        id: identifier('cyb-fnd', index),
+        facilityId: facility.id,
+        title: theme,
+        grade: pick(random, BUNDLE_GRADES),
+        priority: pick(random, BUNDLE_PRIORITIES),
+        owner: personName(random),
+        raisedOn: isoDate(intBetween(random, 0, 320)),
+        status: pick(random, FINDING_STATUSES),
+      });
+      index += 1;
+    }
+  }
+
+  return findings;
+}
+
+function buildBundleRoles(facilities: CyberBundleFacility[]): CyberBundleRole[] {
+  const ids = facilities.map((facility) => facility.id);
+
+  return BUNDLE_ROLES.map((role) => {
+    if (role.id === 'member-exec') return { ...role, facilityIds: ids.slice(0, 2) };
+    if (role.id === 'member-it') return { ...role, facilityIds: ids.slice(1) };
+    return { ...role, facilityIds: [...ids] };
+  });
+}
+
+function buildBundleSummaries(
+  facilities: CyberBundleFacility[],
+  findings: CyberBundleFinding[],
+): CyberBundleSummary[] {
+  return facilities.map((facility) => {
+    const own = findings.filter((finding) => finding.facilityId === facility.id);
+    const counts = { P1: 0, P2: 0, P3: 0, P4: 0 } as Record<CyberPriority, number>;
+    for (const finding of own) counts[finding.priority] += 1;
+
+    return {
+      facilityId: facility.id,
+      grade: rollUpGrade(own.map((finding) => finding.grade)),
+      counts,
+    };
+  });
+}
+
+/** Builds the parity fixture bundle for a seed, without touching the disk. */
+export function buildCyberFixtureBundle(seed: number = DEFAULT_SEED): CyberFixtureBundle {
+  const random = createRandom(seed);
+
+  const facilities = buildBundleFacilities(random);
+  const findings = buildBundleFindings(random, facilities);
+
+  return {
+    generator: 'src/generateCyberFixtures.ts',
+    kind: 'cyber-parity',
+    facilities,
+    roles: buildBundleRoles(facilities),
+    findings,
+    summaries: buildBundleSummaries(facilities, findings),
+    seed,
+    version: FIXTURE_FORMAT_VERSION,
+  };
+}
+
+/** Stable JSON text for the bundle: sorted keys, two-space indent, one newline. */
+export function serialiseBundle(bundle: CyberFixtureBundle): string {
+  return `${JSON.stringify(sortDeep(bundle), null, 2)}\n`;
+}
+
+/**
+ * Writes `cyberFixtures.json` for `seed` into `outDir`.
+ *
+ * Returns the paths written, so a caller can compare two runs file by file.
+ * Kept separate from `generate` so the four `cyber-*.json` fixtures that
+ * module already owns keep writing exactly the files they always did.
+ */
+export async function generateCyberFixtureBundle(
+  seed: number = DEFAULT_SEED,
+  outDir: string = DEFAULT_OUT_DIR,
+): Promise<string[]> {
+  await mkdir(outDir, { recursive: true });
+  const target = join(outDir, BUNDLE_FILENAME);
+  await writeFile(target, serialiseBundle(buildCyberFixtureBundle(seed)), 'utf8');
+  return [target];
+}
+
+/* ------------------------------------------------------------------ *
  * CLI entry point.
  * ------------------------------------------------------------------ */
 
-export type CyberFixtureArgv = { seed?: string; out?: string };
+export type CyberFixtureArgv = { seed?: string; out?: string; bundle?: boolean };
 
 /** Parses `--seed=<n> --out=<dir>` (and the two-token forms) out of argv. */
 export function parseArgv(argv: readonly string[]): CyberFixtureArgv {
@@ -466,6 +684,7 @@ export function parseArgv(argv: readonly string[]): CyberFixtureArgv {
     };
     if (flag === '--seed') parsed.seed = next();
     if (flag === '--out') parsed.out = next();
+    if (flag === '--bundle') parsed.bundle = true;
   }
 
   return parsed;
@@ -484,7 +703,12 @@ export async function main(
   }
 
   const outDir = argv.out === undefined ? DEFAULT_OUT_DIR : resolve(argv.out);
-  const written = await generate(seed, outDir);
+  // `--bundle` writes the parity fixture bundle only; without it the four
+  // committed `cyber-*.json` fixtures are written, exactly as before.
+  const written =
+    argv.bundle === true
+      ? await generateCyberFixtureBundle(seed, outDir)
+      : await generate(seed, outDir);
 
   process.stdout.write(`gen:cyber-fixtures: seed ${seed} -> ${outDir}\n`);
   for (const file of written) {

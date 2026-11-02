@@ -1,0 +1,188 @@
+/*
+ * The two new semantic token sets for the cyber screens: grade (A–F) and
+ * priority (P1–P4).
+ *
+ * Nothing here invents a colour, a font or a spacing step. Every value below
+ * is either a `var()` reference to a token the Innovation Pathway shell
+ * already declares in `src/cyber.css`, or a `color-mix()` of two of them, and
+ * every length repeats a step the shell already uses. The derivation of each
+ * new token is written beside it so the component audit can assert it.
+ *
+ * Existing palette this file derives from (declared in src/cyber.css):
+ *   --cyber-ink       #10243a   body ink
+ *   --cyber-muted     #5a6b7d   secondary ink
+ *   --cyber-line      #d7dee6   hairline
+ *   --cyber-surface   #ffffff   card / table surface
+ *   --cyber-accent    #0b5cab   interactive accent
+ *   --cyber-warn-bg   #fff4d6   notice surface
+ *   --cyber-warn-ink  #6b4b00   notice ink
+ *   --cyber-warn-line #d9a400   notice hairline
+ *
+ * Existing spacing / type steps repeated below: 0.25rem and 0.5rem padding
+ * (.cyber-card__facts, .sidebar__link), 6px radius (.shell-header__search),
+ * 0.75rem type with 0.04em tracking (.illustrative-figure__label), and the
+ * 1px --cyber-line border used by every card and table.
+ */
+
+:root {
+  /* ---------------------------------------------------------------- *
+   * Token set 1 of 2 — grade A–F.
+   *
+   * The ramp runs from the interactive accent (strongest posture) to the
+   * notice ink (weakest), through the body and secondary inks, so an A and
+   * an F read as the two ends of one scale that the shell already owns.
+   * ---------------------------------------------------------------- */
+
+  /* grade A  <- --cyber-accent / --cyber-surface */
+  --cyber-grade-a-ink: var(--cyber-accent);
+  --cyber-grade-a-bg: color-mix(in srgb, var(--cyber-accent) 12%, var(--cyber-surface));
+
+  /* grade B  <- --cyber-accent + --cyber-ink / --cyber-surface */
+  --cyber-grade-b-ink: color-mix(in srgb, var(--cyber-accent) 70%, var(--cyber-ink));
+  --cyber-grade-b-bg: color-mix(in srgb, var(--cyber-accent) 8%, var(--cyber-surface));
+
+  /* grade C  <- --cyber-ink / --cyber-surface */
+  --cyber-grade-c-ink: var(--cyber-ink);
+  --cyber-grade-c-bg: color-mix(in srgb, var(--cyber-ink) 6%, var(--cyber-surface));
+
+  /* grade D  <- --cyber-muted / --cyber-surface */
+  --cyber-grade-d-ink: var(--cyber-muted);
+  --cyber-grade-d-bg: color-mix(in srgb, var(--cyber-muted) 8%, var(--cyber-surface));
+
+  /* grade E  <- --cyber-warn-ink + --cyber-muted / --cyber-warn-bg */
+  --cyber-grade-e-ink: color-mix(in srgb, var(--cyber-warn-ink) 70%, var(--cyber-muted));
+  --cyber-grade-e-bg: color-mix(in srgb, var(--cyber-warn-bg) 60%, var(--cyber-surface));
+
+  /* grade F  <- --cyber-warn-ink / --cyber-warn-bg */
+  --cyber-grade-f-ink: var(--cyber-warn-ink);
+  --cyber-grade-f-bg: var(--cyber-warn-bg);
+
+  /* ---------------------------------------------------------------- *
+   * Token set 2 of 2 — priority P1–P4.
+   *
+   * The same two ends of the same palette, read the other way round: P1 is
+   * the notice pair the shell already uses for "look at this", P4 the muted
+   * pair it uses for secondary text.
+   * ---------------------------------------------------------------- */
+
+  /* priority P1 <- --cyber-warn-ink / --cyber-warn-bg */
+  --cyber-priority-p1-ink: var(--cyber-warn-ink);
+  --cyber-priority-p1-bg: var(--cyber-warn-bg);
+
+  /* priority P2 <- --cyber-warn-ink + --cyber-ink / --cyber-warn-bg */
+  --cyber-priority-p2-ink: color-mix(in srgb, var(--cyber-warn-ink) 75%, var(--cyber-ink));
+  --cyber-priority-p2-bg: color-mix(in srgb, var(--cyber-warn-bg) 65%, var(--cyber-surface));
+
+  /* priority P3 <- --cyber-ink / --cyber-surface */
+  --cyber-priority-p3-ink: var(--cyber-ink);
+  --cyber-priority-p3-bg: color-mix(in srgb, var(--cyber-ink) 6%, var(--cyber-surface));
+
+  /* priority P4 <- --cyber-muted / --cyber-surface */
+  --cyber-priority-p4-ink: var(--cyber-muted);
+  --cyber-priority-p4-bg: color-mix(in srgb, var(--cyber-muted) 8%, var(--cyber-surface));
+}
+
+/* ---------------------------------------------------------------- *
+ * The one presentation the new token sets have: the existing badge
+ * shape, taking its colours from a grade or priority token.
+ *
+ * Geometry, radius, border and type are copied from rules that already
+ * exist in src/cyber.css — .shell-header__search (6px radius, 1px
+ * --cyber-line border), .sidebar__link / .cyber-card__facts (0.5rem /
+ * 0.25rem padding) and .illustrative-figure__label (0.75rem type,
+ * 0.04em tracking) — so a badge sits on the same grid as the rest of
+ * the shell.
+ * ---------------------------------------------------------------- */
+
+.cyber-chip {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--cyber-line);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--cyber-ink);
+  background: var(--cyber-surface);
+}
+
+.cyber-chip--grade-a {
+  color: var(--cyber-grade-a-ink);
+  background: var(--cyber-grade-a-bg);
+}
+
+.cyber-chip--grade-b {
+  color: var(--cyber-grade-b-ink);
+  background: var(--cyber-grade-b-bg);
+}
+
+.cyber-chip--grade-c {
+  color: var(--cyber-grade-c-ink);
+  background: var(--cyber-grade-c-bg);
+}
+
+.cyber-chip--grade-d {
+  color: var(--cyber-grade-d-ink);
+  background: var(--cyber-grade-d-bg);
+}
+
+.cyber-chip--grade-e {
+  color: var(--cyber-grade-e-ink);
+  background: var(--cyber-grade-e-bg);
+}
+
+.cyber-chip--grade-f {
+  color: var(--cyber-grade-f-ink);
+  background: var(--cyber-grade-f-bg);
+}
+
+.cyber-chip--priority-p1 {
+  color: var(--cyber-priority-p1-ink);
+  background: var(--cyber-priority-p1-bg);
+}
+
+.cyber-chip--priority-p2 {
+  color: var(--cyber-priority-p2-ink);
+  background: var(--cyber-priority-p2-bg);
+}
+
+.cyber-chip--priority-p3 {
+  color: var(--cyber-priority-p3-ink);
+  background: var(--cyber-priority-p3-bg);
+}
+
+.cyber-chip--priority-p4 {
+  color: var(--cyber-priority-p4-ink);
+  background: var(--cyber-priority-p4-bg);
+}
+
+/* ---------------------------------------------------------------- *
+ * Print. The same rule the existing POC print view follows: the shell
+ * chrome collapses and the illustrative notice stays on the page, in
+ * its own colours, unbroken. Only existing banner tokens are used.
+ * ---------------------------------------------------------------- */
+
+@media print {
+  .shell-header,
+  .sidebar,
+  .search-palette {
+    display: none !important;
+  }
+
+  .illustrative-banner[data-print='true'] {
+    display: block !important;
+    visibility: visible !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border: 1px solid var(--cyber-warn-line);
+    background: var(--cyber-warn-bg) !important;
+    color: var(--cyber-warn-ink) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cyber-chip {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

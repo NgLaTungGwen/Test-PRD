@@ -647,3 +647,218 @@ export function getPortfolioRows(): PortfolioRow[] {
     };
   });
 }
+
+/* ------------------------------------------------------------------ *
+ * The cyber posture screens: facilities, findings and rollups.
+ *
+ * Everything below comes out of `src/cyberFixtures.json`, written by
+ * `src/generateCyberFixtures.ts` (`npm run gen:cyber-parity-fixtures`) and
+ * committed exactly as it writes it. The selectors follow the style of
+ * `src/tiers.ts`: the fixture is imported statically, read once into
+ * module-level indexes, and every selector returns a copy of a pre-computed
+ * slice rather than re-walking the data on each render.
+ * ------------------------------------------------------------------ */
+import parityFixture from './cyberFixtures.json';
+
+/** A posture grade, best (A) to worst (F). */
+export type CyberGrade = 'A' | 'B' | 'C' | 'D' | 'E' | 'F';
+
+/** A finding priority, most urgent (P1) to least (P4). */
+export type CyberPriority = 'P1' | 'P2' | 'P3' | 'P4';
+
+/** One facility of the cyber posture data set. */
+export type CyberFacility = {
+  id: string;
+  name: string;
+  site: string;
+  region: string;
+  serviceTier: string;
+};
+
+/** One cyber finding, as the findings table lists it. */
+export type CyberFinding = {
+  id: string;
+  facilityId: string;
+  title: string;
+  grade: CyberGrade;
+  priority: CyberPriority;
+  owner: string;
+  raisedOn: string;
+  status: string;
+};
+
+/** One facility's posture grade and its finding counts by priority. */
+export type FacilityRollup = {
+  facilityId: string;
+  grade: CyberGrade;
+  counts: Record<CyberPriority, number>;
+};
+
+/** A role, and the facilities it may see. */
+export type CyberScopeRole = { id: string; label: string; facilityIds: string[] };
+
+/** One option of a filter control: the value it sets and the label it shows. */
+export type FilterOption = { value: string; label: string };
+
+/** The grades the posture data set uses, best first. */
+export const CYBER_GRADES: CyberGrade[] = ['A', 'B', 'C', 'D', 'E', 'F'];
+
+/** The priorities the posture data set uses, most urgent first. */
+export const CYBER_PRIORITIES: CyberPriority[] = ['P1', 'P2', 'P3', 'P4'];
+
+/** The value a filter carries when it is not filtering. */
+export const ANY_FILTER_VALUE = 'all';
+
+type ParityBundle = {
+  generator: string;
+  kind: string;
+  seed: number;
+  version: number;
+  facilities: CyberFacility[];
+  roles: CyberScopeRole[];
+  findings: CyberFinding[];
+  summaries: FacilityRollup[];
+};
+
+const PARITY = parityFixture as unknown as ParityBundle;
+
+/** The seed `src/cyberFixtures.json` was generated from. */
+export const PARITY_SEED: number = PARITY.seed;
+
+/* Memoised indexes: built once, on first import, and never recomputed. */
+const FINDINGS_BY_FACILITY = new Map<string, CyberFinding[]>();
+for (const facility of PARITY.facilities) FINDINGS_BY_FACILITY.set(facility.id, []);
+for (const finding of PARITY.findings) {
+  const bucket = FINDINGS_BY_FACILITY.get(finding.facilityId);
+  if (bucket === undefined) FINDINGS_BY_FACILITY.set(finding.facilityId, [finding]);
+  else bucket.push(finding);
+}
+
+const ROLLUP_BY_FACILITY = new Map<string, FacilityRollup>(
+  PARITY.summaries.map((summary) => [summary.facilityId, summary]),
+);
+
+const FACILITY_BY_ID = new Map<string, CyberFacility>(
+  PARITY.facilities.map((facility) => [facility.id, facility]),
+);
+
+const ROLE_BY_ID = new Map<string, CyberScopeRole>(PARITY.roles.map((role) => [role.id, role]));
+
+/** Every facility in the posture data set, in fixture order. */
+export function cyberFacilities(): CyberFacility[] {
+  return [...PARITY.facilities];
+}
+
+/** One facility by id, or `undefined`. */
+export function cyberFacilityById(id: string): CyberFacility | undefined {
+  return FACILITY_BY_ID.get(id);
+}
+
+/** The facility a fresh load is scoped to: the first one in the fixture. */
+export function defaultCyberFacilityId(): string {
+  return PARITY.facilities[0]?.id ?? '';
+}
+
+/** The roles the posture screens are scoped by, in fixture order. */
+export function cyberRoles(): CyberScopeRole[] {
+  return PARITY.roles.map((role) => ({ ...role, facilityIds: [...role.facilityIds] }));
+}
+
+/** The facilities a role may see; every facility for an unknown role. */
+export function facilitiesForRole(role: string): CyberFacility[] {
+  const entry = ROLE_BY_ID.get(role);
+  if (entry === undefined) return cyberFacilities();
+  return entry.facilityIds
+    .map((id) => FACILITY_BY_ID.get(id))
+    .filter((facility): facility is CyberFacility => facility !== undefined);
+}
+
+/** Every finding of one facility, in fixture order. */
+export function findingsByFacility(facilityId: string): CyberFinding[] {
+  return [...(FINDINGS_BY_FACILITY.get(facilityId) ?? [])];
+}
+
+/** Every finding a role may see, in fixture order. */
+export function findingsByRole(role: string): CyberFinding[] {
+  const visible = new Set(facilitiesForRole(role).map((facility) => facility.id));
+  return PARITY.findings.filter((finding) => visible.has(finding.facilityId));
+}
+
+/** Every facility's grade and priority counts, in fixture order. */
+export function gradeRollups(): FacilityRollup[] {
+  return PARITY.summaries.map((summary) => ({ ...summary, counts: { ...summary.counts } }));
+}
+
+/** The grade and priority counts a role may see. */
+export function gradeRollupsForRole(role: string): FacilityRollup[] {
+  const visible = new Set(facilitiesForRole(role).map((facility) => facility.id));
+  return gradeRollups().filter((rollup) => visible.has(rollup.facilityId));
+}
+
+/** One facility's rollup, or `undefined`. */
+export function rollupForFacility(facilityId: string): FacilityRollup | undefined {
+  const summary = ROLLUP_BY_FACILITY.get(facilityId);
+  return summary === undefined ? undefined : { ...summary, counts: { ...summary.counts } };
+}
+
+export type FindingFilter = {
+  /** `'all'` for every facility a role may see, or one facility id. */
+  facilityId?: string;
+  /** `'all'` or one grade. */
+  grade?: string;
+  /** `'all'` or one priority. */
+  priority?: string;
+};
+
+/**
+ * The findings a role may see, narrowed by the three filter controls.
+ *
+ * The role decides what exists; the filters only narrow it. Nothing
+ * downstream filters again, so the table shows what this returns.
+ */
+export function filterFindings(role: string, filter: FindingFilter = {}): CyberFinding[] {
+  const { facilityId = ANY_FILTER_VALUE, grade = ANY_FILTER_VALUE, priority = ANY_FILTER_VALUE } =
+    filter;
+
+  return findingsByRole(role).filter(
+    (finding) =>
+      (facilityId === ANY_FILTER_VALUE || finding.facilityId === facilityId) &&
+      (grade === ANY_FILTER_VALUE || finding.grade === grade) &&
+      (priority === ANY_FILTER_VALUE || finding.priority === priority),
+  );
+}
+
+/**
+ * The facility filter's options for a role: one per facility it may see.
+ *
+ * Unlike the grade and priority filters there is no "all" option here: the
+ * facility is the scope the screens share, exactly as the existing header
+ * facility selector holds it, and a scope is always one facility.
+ */
+export function facilityFilterOptions(role: string): FilterOption[] {
+  return facilitiesForRole(role).map((facility) => ({
+    value: facility.id,
+    label: facility.name,
+  }));
+}
+
+/** The grade filter's options: "All grades", then A to F. */
+export function gradeFilterOptions(): FilterOption[] {
+  return [
+    { value: ANY_FILTER_VALUE, label: 'All grades' },
+    ...CYBER_GRADES.map((grade) => ({ value: grade, label: `Grade ${grade}` })),
+  ];
+}
+
+/** The priority filter's options: "All priorities", then P1 to P4. */
+export function priorityFilterOptions(): FilterOption[] {
+  return [
+    { value: ANY_FILTER_VALUE, label: 'All priorities' },
+    ...CYBER_PRIORITIES.map((priority) => ({ value: priority, label: priority })),
+  ];
+}
+
+/** The name a facility is shown under, or its id if it is not in the fixture. */
+export function cyberFacilityName(facilityId: string): string {
+  return FACILITY_BY_ID.get(facilityId)?.name ?? facilityId;
+}
