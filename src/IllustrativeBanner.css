@@ -1,0 +1,23 @@
+/*
+ * The standing illustrative banner.
+ *
+ * The base `.illustrative-banner` colours live in `cyber.css` with the rest of
+ * the shell; this stylesheet only adds the standing strip the cyber route
+ * group carries above every screen, and pulls in the print rules that carry
+ * that strip into a PDF export.
+ */
+@import './print.css';
+
+.illustrative-banner--standing {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: block;
+  margin-bottom: 1rem;
+  border-left: 6px solid var(--cyber-warn-line);
+  letter-spacing: 0.02em;
+}
+
+.illustrative-banner--standing .illustrative-banner__text {
+  text-transform: none;
+}
