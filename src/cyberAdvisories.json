@@ -63,8 +63,8 @@
       "id": "adv-005",
       "publishedAt": "2026-10-14T09:00:00.000Z",
       "severity": "critical",
-      "summary": "Intrusions that begin at the vulnerable VPN appliance are moving to file servers within the hour and dumping LSASS memory for cached domain credentials.",
-      "title": "Credential dumping follow-on activity after VPN appliance compromise"
+      "summary": "Intrusions that begin at a compromised remote-access session are moving to file servers within the hour and dumping LSASS memory for cached domain credentials.",
+      "title": "Credential dumping follow-on activity after remote-access compromise"
     },
     {
       "action": "Confirm every collector resumed after maintenance and alert on sources quiet for more than 72 hours.",

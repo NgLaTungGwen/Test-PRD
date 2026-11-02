@@ -360,6 +360,11 @@ describe('Mock data', () => {
   });
 
   it('VPN advisory affects correct three members', () => {
+    // Exactly one advisory in the data set is the VPN appliance advisory, so
+    // "the VPN appliance advisory" names one row and not a family of them.
+    const vpnAdvisories = getAdvisories().filter((row) => /vpn appliance/i.test(row.title));
+    expect(vpnAdvisories.map((row) => row.id)).toEqual([VPN_ADVISORY_ID]);
+
     const advisory = getAdvisoryById(VPN_ADVISORY_ID);
     expect(advisory, 'the VPN appliance advisory is missing').toBeDefined();
     if (advisory === undefined) return;

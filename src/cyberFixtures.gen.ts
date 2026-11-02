@@ -988,7 +988,8 @@ const FINDING_THEMES: { title: string; severity: FindingSeverity }[] = [
 
 /** Maple Grove's three critical findings that are past due and still open. */
 const MAPLE_GROVE_OVERDUE: { title: string; dueDate: string }[] = [
-  { title: 'Remote access VPN appliance unpatched against the October advisory', dueDate: '2026-09-18' },
+  // Raised off the 6 October VPN appliance advisory, so it falls due after it.
+  { title: 'Remote access VPN appliance unpatched against the October advisory', dueDate: '2026-10-13' },
   { title: 'Domain administrator accounts without multi-factor authentication', dueDate: '2026-08-29' },
   { title: 'Backup server reachable from the general care-home network', dueDate: '2026-10-02' },
 ];
@@ -1160,11 +1161,11 @@ function buildAdvisories(): Advisory[] {
     },
     {
       id: 'adv-005',
-      title: 'Credential dumping follow-on activity after VPN appliance compromise',
+      title: 'Credential dumping follow-on activity after remote-access compromise',
       publishedAt: '2026-10-14T09:00:00.000Z',
       severity: 'critical',
       summary:
-        'Intrusions that begin at the vulnerable VPN appliance are moving to file servers within the hour and dumping LSASS memory for cached domain credentials.',
+        'Intrusions that begin at a compromised remote-access session are moving to file servers within the hour and dumping LSASS memory for cached domain credentials.',
       action:
         'Enable credential guard on file servers, alert on LSASS access by unsigned processes and force-reset any credentials cached on an affected host.',
       affectedMemberIds: [LAKESHORE_ID, ST_BRENDANS_ID],
