@@ -1,0 +1,72 @@
+{
+  "generator": "src/cyberFixtures.gen.ts",
+  "kind": "members",
+  "records": [
+    {
+      "id": "mem-lakeshore",
+      "name": "Lakeshore Regional Health Network",
+      "province": "Ontario",
+      "size": "Large",
+      "tier": "advanced",
+      "type": "Acute hospital network"
+    },
+    {
+      "id": "mem-riverbend",
+      "name": "Riverbend Community Health Centre",
+      "province": "British Columbia",
+      "size": "Medium",
+      "tier": "standard",
+      "type": "Community health centre"
+    },
+    {
+      "id": "mem-maple-grove",
+      "name": "Maple Grove Long-Term Care",
+      "province": "Alberta",
+      "size": "Medium",
+      "tier": "essentials",
+      "type": "Long-term care home"
+    },
+    {
+      "id": "mem-st-brendans",
+      "name": "St. Brendan's Memorial Hospital",
+      "province": "Nova Scotia",
+      "size": "Large",
+      "tier": "advanced",
+      "type": "Acute hospital"
+    },
+    {
+      "id": "mem-northern-lights",
+      "name": "Northern Lights Health Centre",
+      "province": "Manitoba",
+      "size": "Small",
+      "tier": "essentials",
+      "type": "Rural health centre"
+    },
+    {
+      "id": "mem-pinehurst",
+      "name": "Pinehurst Seniors Residence",
+      "province": "Saskatchewan",
+      "size": "Small",
+      "tier": "essentials",
+      "type": "Long-term care home"
+    },
+    {
+      "id": "mem-harbourview",
+      "name": "Harbourview Day Surgery Centre",
+      "province": "Quebec",
+      "size": "Medium",
+      "tier": "standard",
+      "type": "Ambulatory surgery centre"
+    },
+    {
+      "id": "mem-cedar-valley",
+      "name": "Cedar Valley Mental Health Partners",
+      "province": "New Brunswick",
+      "size": "Medium",
+      "tier": "standard",
+      "type": "Mental health network"
+    }
+  ],
+  "seed": 20260501,
+  "version": 1
+}

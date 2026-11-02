@@ -1,0 +1,177 @@
+{
+  "generator": "src/cyberFixtures.gen.ts",
+  "kind": "incidents",
+  "records": [
+    {
+      "containmentMins": 130,
+      "id": "inc-001",
+      "memberId": "mem-lakeshore",
+      "openActions": [
+        {
+          "id": "act-001",
+          "owner": "Lakeshore IT Operations"
+        },
+        {
+          "id": "act-002",
+          "owner": "Lakeshore Network Team"
+        },
+        {
+          "id": "act-003",
+          "owner": "Lakeshore Clinical Applications"
+        }
+      ],
+      "severity": "P1",
+      "timeline": [
+        {
+          "at": "2026-10-12T01:42:00.000Z",
+          "step": "VPN login: the remote access appliance accepts a successful single-factor login for a valid clinical staff account from an unrecognised overseas address."
+        },
+        {
+          "at": "2026-10-12T01:58:00.000Z",
+          "step": "Detection: impossible-travel VPN session correlated with the unpatched appliance advisory and raised to P1 by the SOC."
+        },
+        {
+          "at": "2026-10-12T02:05:00.000Z",
+          "step": "Acknowledged: on-call analyst engaged the member within the P1 target and opened a bridge with Lakeshore IT Operations."
+        },
+        {
+          "at": "2026-10-12T02:21:00.000Z",
+          "step": "Lateral movement: the VPN session pivots over SMB to a file server using the same stolen credentials."
+        },
+        {
+          "at": "2026-10-12T02:44:00.000Z",
+          "step": "Credential dumping: an unsigned process reads LSASS memory on the file server, harvesting cached domain credentials."
+        },
+        {
+          "at": "2026-10-12T03:06:00.000Z",
+          "step": "Containment begins: the VPN account is disabled, the appliance session is terminated and the file server is isolated from the network."
+        },
+        {
+          "at": "2026-10-12T03:40:00.000Z",
+          "step": "Credential reset: every account exposed by the dump is force-reset and the attacker address is blocked at the perimeter."
+        },
+        {
+          "at": "2026-10-12T04:08:00.000Z",
+          "step": "Contained: no further authentication from the attacker infrastructure; containment confirmed 2h10m after detection."
+        }
+      ]
+    },
+    {
+      "containmentMins": 95,
+      "id": "inc-002",
+      "memberId": "mem-riverbend",
+      "openActions": [
+        {
+          "id": "act-004",
+          "owner": "Riverbend Practice Administration"
+        }
+      ],
+      "severity": "P2",
+      "timeline": [
+        {
+          "at": "2026-09-15T07:56:00.000Z",
+          "step": "Phishing campaign: 34 near-identical mails impersonating the payroll portal reach staff mailboxes from a look-alike domain."
+        },
+        {
+          "at": "2026-09-15T08:12:00.000Z",
+          "step": "Detection: the email gateway retro-scan flags the campaign and the SOC raises a P2."
+        },
+        {
+          "at": "2026-09-15T08:33:00.000Z",
+          "step": "Acknowledged: analyst confirms four staff submitted credentials to the harvesting page."
+        },
+        {
+          "at": "2026-09-15T09:10:00.000Z",
+          "step": "Containment: the campaign is purged from all mailboxes, the look-alike domain is blocked and the four accounts are reset with sessions revoked."
+        },
+        {
+          "at": "2026-09-15T09:47:00.000Z",
+          "step": "Contained: no successful sign-in from the harvesting infrastructure; awareness follow-up scheduled with the member."
+        }
+      ]
+    },
+    {
+      "containmentMins": 150,
+      "id": "inc-003",
+      "memberId": "mem-maple-grove",
+      "openActions": [
+        {
+          "id": "act-005",
+          "owner": "Maple Grove Facilities IT"
+        },
+        {
+          "id": "act-006",
+          "owner": "Maple Grove Care Operations"
+        }
+      ],
+      "severity": "P2",
+      "timeline": [
+        {
+          "at": "2026-08-07T22:22:00.000Z",
+          "step": "Malware detected on a shared nursing-station workstation after a USB drive is mounted out of hours."
+        },
+        {
+          "at": "2026-08-07T22:35:00.000Z",
+          "step": "Detection: endpoint agent quarantines the payload and the SOC raises a P2."
+        },
+        {
+          "at": "2026-08-08T00:11:00.000Z",
+          "step": "Containment: workstation isolated, USB device blocked estate-wide and the account re-imaged."
+        },
+        {
+          "at": "2026-08-08T01:05:00.000Z",
+          "step": "Contained: no onward connection observed; removable-media policy raised as a finding."
+        }
+      ]
+    },
+    {
+      "containmentMins": 70,
+      "id": "inc-004",
+      "memberId": "mem-st-brendans",
+      "openActions": [],
+      "severity": "P2",
+      "timeline": [
+        {
+          "at": "2026-07-21T12:50:00.000Z",
+          "step": "Unapproved remote access tool installed on a diagnostic imaging workstation by a third-party engineer."
+        },
+        {
+          "at": "2026-07-21T13:04:00.000Z",
+          "step": "Detection: the SOC raises a P2 on the unsigned remote access binary."
+        },
+        {
+          "at": "2026-07-21T14:14:00.000Z",
+          "step": "Contained: tool removed, vendor session re-established through the approved jump host, change logged with the member."
+        }
+      ]
+    },
+    {
+      "containmentMins": 55,
+      "id": "inc-005",
+      "memberId": "mem-harbourview",
+      "openActions": [
+        {
+          "id": "act-007",
+          "owner": "Harbourview Theatre Systems"
+        }
+      ],
+      "severity": "P2",
+      "timeline": [
+        {
+          "at": "2026-10-03T02:31:00.000Z",
+          "step": "Out-of-hours administrator logon to the theatre scheduling server from a non-standard workstation."
+        },
+        {
+          "at": "2026-10-03T02:47:00.000Z",
+          "step": "Detection: the SOC raises a P2 and the acknowledgement target is missed during the overnight handover."
+        },
+        {
+          "at": "2026-10-03T03:42:00.000Z",
+          "step": "Contained: logon confirmed as an unsanctioned maintenance window; shared administrator account retired in favour of named accounts."
+        }
+      ]
+    }
+  ],
+  "seed": 20260501,
+  "version": 1
+}

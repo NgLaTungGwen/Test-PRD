@@ -9,6 +9,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "gen:cyber-fixtures": "node src/generateCyberFixtures.ts",
+    "gen:cyber-mock-data": "node src/cyberFixtures.gen.ts",
     "test": "vitest run"
   },
   "dependencies": {

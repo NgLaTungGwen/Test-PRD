@@ -1,0 +1,43 @@
+{
+  "generator": "src/cyberFixtures.gen.ts",
+  "kind": "tiers",
+  "records": [
+    {
+      "id": "essentials",
+      "name": "Essentials",
+      "services": [
+        "Managed detection and response for endpoints and email",
+        "8x5 analyst triage with out-of-hours escalation",
+        "Quarterly posture report",
+        "Annual tabletop exercise",
+        "20 hours of incident response retainer"
+      ]
+    },
+    {
+      "id": "standard",
+      "name": "Standard",
+      "services": [
+        "Managed detection and response for endpoints, email and cloud workloads",
+        "24x7 analyst triage",
+        "Monthly posture report and service review",
+        "Two tabletop exercises a year",
+        "Guided remediation support",
+        "40 hours of incident response retainer"
+      ]
+    },
+    {
+      "id": "advanced",
+      "name": "Advanced",
+      "services": [
+        "Managed detection and response across endpoints, email, cloud and clinical device networks",
+        "24x7 analyst triage with a named lead analyst",
+        "Monthly posture report, service review and threat briefing",
+        "Quarterly tabletop exercises and purple-team drills",
+        "Hands-on remediation support",
+        "60 hours of incident response retainer"
+      ]
+    }
+  ],
+  "seed": 20260501,
+  "version": 1
+}
